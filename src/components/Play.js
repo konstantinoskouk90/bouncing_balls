@@ -8,15 +8,12 @@ export default class Canvas extends Component {
 
         super();
         
-                this.gravity = 0.5;
-        this.bounciness = 0.8;
-        this.friction = 0.99;
-        this.isRaining = false;
         this.state = {
-            totalBalls: []
+            totalBalls: [],
+            gravity: 0.5,
+            bounciness: 0.8,
+            friction: 0.99
         }
-
-        //this.onMove = this.onMove.bind(this);
     }
 
     componentDidMount = () => {
@@ -30,29 +27,20 @@ export default class Canvas extends Component {
 
         this.onMove = (b) => {
             b.axisX += b.vx;
-            b.vy += this.gravity;
+            b.vy += this.state.gravity;
             b.axisY += b.vy;
         }
     }
 
     drawBalls = () => {
-        var self = this;
+        
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        this.state.totalBalls.forEach(function (ball) {
-
-            self.onMove(ball);
-            self.drawBall(ball.axisX, ball.axisY, ball.radius, ball.color);
-            self.collisionDetection(ball);
-        });
-
-        if (this.isRaining) {
-            this.state.totalBalls.push(new Ball(Math.ceil(Math.random() * this.canvas.width), this.canvas.height / 4));
-            if (this.balls.length > 200) { this.balls.shift() };
-        };
-
-        //console.log("ABC");
-
+        this.state.totalBalls.map(ball => this.onMove(ball));
+        this.state.totalBalls.map(ball => this.drawBall(ball.axisX, ball.axisY, ball.radius, ball.color));
+        this.state.totalBalls.map(ball => this.collisionDetection(ball));
+        
+        //Recursion
         requestAnimationFrame(this.drawBalls);
     }
 
@@ -63,7 +51,6 @@ export default class Canvas extends Component {
         this.context.arc(x, y, radius, 0, Math.PI * 2, true);
         this.context.closePath();
         this.context.fill();
-        console.log("in");
     }
 
     onCanvasClick = (event) => {
@@ -75,27 +62,23 @@ export default class Canvas extends Component {
         this.setState({
             totalBalls: balls
         });
-
-        console.log(this.state.totalBalls);
-
-        // console.log(this.state.totalBalls.length);
     }
 
     collisionDetection = (ball) => {
         if (ball.axisY >= this.canvas.height - ball.radius) {
-            ball.vy *= -this.bounciness;
-            ball.vx *= this.friction;
+            ball.vy *= -this.state.bounciness;
+            ball.vx *= this.state.friction;
             ball.axisY = this.canvas.height - ball.radius;
         } else if (ball.axisY <= 0 + ball.radius) {
             ball.axisY = 0 + ball.radius;
-            ball.vy *= -this.bounciness;
+            ball.vy *= -this.state.bounciness;
         }
 
         if (ball.axisX >= this.canvas.width - ball.radius) {
-            ball.vx *= -this.bounciness;
+            ball.vx *= -this.state.bounciness;
             ball.axisX = this.canvas.width - ball.radius;
         } else if (ball.axisX <= 0 + ball.radius) {
-            ball.vx *= -this.bounciness;
+            ball.vx *= -this.state.bounciness;
             ball.axisX = 0 + ball.radius;
         }
     }

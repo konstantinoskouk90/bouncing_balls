@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
 
 export default class Ball extends Component {
-    
-    constructor(x, y) {
-        
+
+    constructor(axis, radius, color) {
+
         super();
-        
-        this.x = x;
-        this.y = y;
+
+        this.axisX = axis.x;
+        this.axisY = axis.y;
+        this.radius = radius;
+        this.color = color;
+        this.vx = Math.ceil(Math.random() * 30 - 15);
+        this.vy = Math.ceil(Math.random() * 30 - 15);
+    }
+
+    onMove = () => {
+        this.axisX += this.vx;
+        this.vy += gravity;
+        this.axisY += this.vy;
+    }
+
+    render = () => {
+        return false;
     }
 }

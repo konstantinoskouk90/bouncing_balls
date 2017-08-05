@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Ball from './Ball';
+import Mouse from './Mouse';
 
 export default class Canvas extends Component {
 
@@ -16,14 +17,11 @@ export default class Canvas extends Component {
         //
     }
 
-    onCanvasClick = (e) => {
+    onCanvasClick = (event) => {
 
-        //this.mousePos(e);
-
-        console.log(e.clientX + "|" + e.clientY);
-
-        const ball = [new Ball(e.clientX, e.clientY)],
-            balls = [...this.state.totalBalls, ...ball];
+        const mouse = new Mouse(event),
+              ball = [new Ball(mouse, 15, "rgb(223,12,12)")],
+              balls = [...this.state.totalBalls, ...ball];
 
         this.setState({
             totalBalls: balls
@@ -34,7 +32,7 @@ export default class Canvas extends Component {
 
     render = () => {
         return (
-            <canvas id="canvas" onClick={this.onCanvasClick}></canvas>
+            <canvas onClick={this.onCanvasClick}></canvas>
         );
     }
 }

@@ -3,7 +3,7 @@ import Ball from './Ball';
 import Mouse from './Mouse';
 import Options from './Options';
 
-export default class Canvas extends Component {
+export default class Play extends Component {
 
     constructor() {
 

@@ -1,4 +1,216 @@
-canvas {
-  width: 500px;
-  height: 500px;
+@import url('https://fonts.googleapis.com/css?family=Sniglet:400,800');
+
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body{
+	height:100%;
+	margin:0;
+	padding:0;
+}
+
+body {
+	background-color: rgb(26,187,230);
+}
+
+.top-header {
+	width: 100%;
+	height: 32px;
+	background-color: rgb(16,167,210);
+	border-bottom: 1px solid rgb(168,38,37);
+}
+
+.top-nav {
+	padding-top: 2.5px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+
+a {
+   text-decoration: none;
+}
+
+#canvas-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 25px;
+}
+
+canvas {	
+	padding: 0;
+	margin: 0;
+	background-color: white;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.main-nav {
+  text-align: center;
+  display: block;
+  padding: 10px 15px;
+  margin-left: 5px;
+  font-family: Sniglet;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.main-nav a {
+	text-align: center;
+	display: block;
+	padding: 7px 22.5px;
+	letter-spacing: 1px;
+}
+
+.main-nav a.active {
+  color: rgb(255,255,255);
+}
+
+.main-nav a:not(.active) {
+  color: rgb(4,0,6);
+}
+
+.main-nav a:not(.active):hover {
+  color: rgb(224,224,224);
+}
+
+.name {
+  font-size: 1em;
+  margin: 0;
+  font-family: Sniglet;
+  font-weight: 800;
+  text-align: center;
+  display: block;
+  padding: 5px 7.5px;
+  font-size: 2.25em;
+  color: rgb(239,20,1);
+  text-shadow: 3px 1px 3px rgb(0,0,0);
+  cursor: default;
+}
+
+.top-nav a {
+  text-align: center;
+  display: block;
+  padding: 5px 7.5px;
+  color: rgb(4,0,6);
+  font-size: .75em;
+  font-family: Sniglet;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.top-nav a:hover {
+	color: rgb(255,255,255);
+}
+
+video {
+	width: 100%;
+	max-width: 800px;
+	height: auto;
+	margin-right: auto;
+}
+
+.home-container {
+	padding: 1.5em 0;
+	margin-bottom: 28px;
+}
+
+/* ---- Layout Containers ---- */
+.main-header {
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+}
+
+.header-container {
+	border-bottom: 1px solid rgb(168,38,37);
+}
+
+/* ---- Page Elements ---- */
+
+.logo {
+	width: 190px;
+}
+.headline {
+	margin-bottom: 0;
+}
+.feat-img {
+	border-radius: 5px;
+}
+
+.show {
+	visibility: visible;
+}
+
+.hide {
+	visibility: hidden;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 768px) {
+	.top-nav,
+	.main-header,
+	.home-container {
+		width: 80%;
+		height: 100%;
+		max-width: 1150px;
+		margin: 0 auto;
+	}
+	.home-container {
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: left;
+	}
+}
+
+@media (min-width: 768px) {
+	.top-header,
+	.top-nav,
+	.main-header,
+	.main-nav,
+	.home-container {
+		display: flex;
+	}
+	.main-header {
+		flex-direction: column;
+		align-items: center;
+	}
+	.top-nav {
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+	}
+}
+
+@media (min-width: 1025px) {
+	.home-container {
+		display: flex;
+	}
+	.main-header {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+	.top-nav {
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: left;
+	}
 }

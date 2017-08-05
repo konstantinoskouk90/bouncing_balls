@@ -14,12 +14,6 @@ export default class Ball extends Component {
         this.vy = Math.ceil(Math.random() * 30 - 15);
     }
 
-    onMove = () => {
-        this.axisX += this.vx;
-        this.vy += gravity;
-        this.axisY += this.vy;
-    }
-
     render = () => {
         return false;
     }

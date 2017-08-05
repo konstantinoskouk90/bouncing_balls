@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Ball from './Ball';
 import Mouse from './Mouse';
+import Options from './Options';
 
 export default class Canvas extends Component {
 
     constructor() {
 
         super();
-        
+
         this.state = {
             totalBalls: [],
             gravity: 0.5,
@@ -33,18 +34,17 @@ export default class Canvas extends Component {
     }
 
     drawBalls = () => {
-        
+
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.state.totalBalls.map(ball => this.onMove(ball));
         this.state.totalBalls.map(ball => this.drawBall(ball.axisX, ball.axisY, ball.radius, ball.color));
         this.state.totalBalls.map(ball => this.collisionDetection(ball));
-        
+
         //Recursion
         requestAnimationFrame(this.drawBalls);
     }
 
-    // A simple function to draw balls
     drawBall = (x, y, radius, color) => {
         this.context.fillStyle = color;
         this.context.beginPath();
@@ -85,8 +85,11 @@ export default class Canvas extends Component {
 
     render = () => {
         return (
-            <div id="canvas-container">
-                <canvas onClick={this.onCanvasClick}></canvas>
+            <div id="play-wrapper">
+                <div id="canvas-container">
+                    <canvas onClick={this.onCanvasClick}></canvas>
+                </div>
+                <Options />
             </div>
         );
     }

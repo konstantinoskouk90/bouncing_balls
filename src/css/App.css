@@ -55,6 +55,14 @@ canvas {
 	background-color: white;
 }
 
+#options-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 25px;
+}
+
 /* ================================= 
   Base Layout Styles
 ==================================== */

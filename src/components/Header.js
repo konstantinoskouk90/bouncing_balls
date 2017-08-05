@@ -17,7 +17,7 @@ const Header = props => (
     <ul className="main-nav">
       {/* Main Navigation Links */}
       <li><NavLink to="/play">PLAY</NavLink></li>
-      <li><NavLink to="/options">OPTIONS</NavLink></li>
+      <li><NavLink to="/settings">SETTINGS</NavLink></li>
       <li><NavLink to="/about">ABOUT</NavLink></li>
     </ul>
   </header>

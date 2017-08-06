@@ -1,66 +1,80 @@
-$(document).ready(function () {
+import React, { Component } from 'react';
 
-	$("#mixColor").css("background-color", "rgb(150,100,150)");
-	$("#do").html("150 , 100 , 150");
-	function hexCodeZero(x) {
-		if (x <= 9) {
-			colorHex = ("0" + x.toString());
-		} else
-			if (x == 10) {
-				colorHex = "0a";
-			}
-			else
-				if (x == 11) {
-					colorHex = "0b";
-				}
-				else
-					if (x == 12) {
-						colorHex = "0c";
-					}
-					else
-						if (x == 13) {
-							colorHex = "0d";
-						}
+export default class Color extends Component {
 
-						else
-							if (x == 14) {
-								colorHex = "0e";
-							}
-							else
-								if (x == 15) {
-									colorHex = "0f";
-								}
-								else {
-									colorHex = x.toString(16);
-								}
-		return colorHex;
+    constructor() {
 
-	}
-	function getValue() {
-		
-		var color = $('#slide').val().toString();
+        super();
 
-		var mixColor = redColor + " , " + greenColor + " , " + blueColor;
+        this.state = {
+            rgbColor: sessionStorage.getItem("color") || { red: 223, green: 12, blue: 12 }
+        };
+    }
 
-		$("#mixColor").css("background-color", "rgb(" + redColor + "," + greenColor + "," + blueColor + ")");
-		$("#redDiv").css("background-color", "rgb(" + redColor + "," + "0" + "," + "0" + ")");
-		$("#greenDiv").css("background-color", "rgb(" + "0" + "," + greenColor + "," + "0" + ")");
-		$("#blueDiv").css("background-color", "rgb(" + "0" + "," + "0" + "," + blueColor + ")");
-		$("#do").html(mixColor);
+    componentDidMount = () => {
+        this.preview = document.getElementById("color-preview");
+    }
 
-		$("#valueRed").html(redColor);
-		$("#valueGreen").html(greenColor);
-		$("#valueBlue").html(blueColor);
+    setPreviewColor = () => {
+        this.preview.style.backgroundColor = `rgb(${this.state.rgbColor.red},${this.state.rgbColor.green},${this.state.rgbColor.blue})`;
+    }
 
-		var redHex_zero = hexCodeZero(parseInt(redColor));
-		var greenHex_zero = hexCodeZero(parseInt(greenColor));
-		var blueHex_zero = hexCodeZero(parseInt(blueColor));
+    handleChange = (e) => {
 
-		var hexString = redHex_zero + greenHex_zero + blueHex_zero;
-		$("#hexCode").html(hexString);
-	}
+        const color = e.target.getAttribute("id"),
+              rgbNewColor = this.state.rgbColor;
 
-	$("#slide").on('mousemove change', function () {
-		getValue();
-	});
-});
+        if(color === "red") {
+            rgbNewColor.red = e.target.value;
+        }
+
+        if(color === "green") {
+            rgbNewColor.green = e.target.value;
+        }
+
+        if(color === "blue") {
+            rgbNewColor.blue = e.target.value;
+        }
+
+        this.setState({ rgbColor: rgbNewColor });
+        this.setPreviewColor();
+    }
+
+    render = () => {
+        return (
+            <div className="settings-container">
+                <div className="title"> {this.props.title} </div>
+                <input
+                    className="color-slider"
+                    id="red"
+                    type="range"
+                    onChange={this.handleChange}
+                    value={this.state.value}
+                    min="0" max="255" 
+                    value={this.state.rgbColor.red} />
+                <input
+                    className="color-slider"
+                    id="green"
+                    type="range"
+                    onChange={this.handleChange}
+                    value={this.state.value}
+                    min="0" max="255"
+                    value={this.state.rgbColor.green} />
+                <input
+                    className="color-slider"
+                    id="blue"
+                    type="range"
+                    onChange={this.handleChange}
+                    value={this.state.value}
+                    min="0" max="255" 
+                    value={this.state.rgbColor.blue}/>
+                <div id="color-preview"></div>
+            </div>
+        );
+    }
+}
+
+Color.defaultProps = {
+    //default properties
+    title: "RGB Color"
+};

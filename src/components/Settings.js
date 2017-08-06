@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Ball from './Ball';
-import Mouse from './Mouse';
-import Options from './Options';
+import Gravity from './Gravity';
+import Color from './Color';
 
 export default class Settings extends Component {
 
@@ -10,9 +9,9 @@ export default class Settings extends Component {
         super();
 
         this.state = {
-            gravity: this.convertToNumber(this.getSSItem("gravity")) || 0.5,
-            bounciness: this.convertToNumber(this.getSSItem("bounciness")) || 1.0,
-            friction: this.convertToNumber(this.getSSItem("friction")) || 1.0
+            gravity: this.toNumber(this.getItem("gravity")) || 0.5,
+            bounciness: this.toNumber(this.getItem("bounciness")) || 1.0,
+            friction: this.toNumber(this.getItem("friction")) || 1.0
         }
     }
 
@@ -20,35 +19,44 @@ export default class Settings extends Component {
 
     updateGravity = (e) => {
         this.setState({
-            gravity: sessionStorage.setItem("gravity", e)
+            gravity: this.setItem("gravity", e)
         });
     }
 
     updateBounciness = (e) => {
         this.setState({
-            bounciness: sessionStorage.setItem("bounciness", e)
+            bounciness: this.setItem("bounciness", e)
         });
     }
 
     updateFriction = (e) => {
         this.setState({
-            friction: sessionStorage.setItem("friction", e)
+            friction: this.setItem("friction", e)
         });
     }
 
     //HELPER FUNCTIONS
 
-    convertToNumber = (str) => {
+    toNumber = (str) => {
         return Number(str);
     }
 
-    getSSItem = (item) => {
+    getItem = (item) => {
         return sessionStorage.getItem(item);
+    }
+
+    setItem = (item) => {
+        return sessionStorage.setItem(item);
     }
 
     //RENDER
 
     render = () => {
-        return false;
+        return (
+            <div id="settings-container">
+                <Gravity updateGravity={this.state.gravity} />
+                <Color updateGravity={this.state.color} />
+            </div>
+        );
     }
 }

@@ -74,11 +74,13 @@ export default class Settings extends Component {
     }
 
     resetDefault = () => {
-        
+        //Reset default settings
+        delete sessionStorage.settings;
     }
 
     //RENDER
     render = () => {
+        console.log(this.state);
         return (
             <div id="settings-container">
                 <Color curColor={this.state.color} updateColor={this.setColor} />

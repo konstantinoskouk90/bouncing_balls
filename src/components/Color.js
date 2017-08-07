@@ -2,41 +2,33 @@ import React, { Component } from 'react';
 
 export default class Color extends Component {
 
-    constructor() {
-
-        super();
-
-        this.state = {
-            rgbColor: sessionStorage.getItem("color") || { red: 223, green: 12, blue: 12 }
-        };
-    }
-
     componentDidMount = () => {
         this.preview = document.getElementById("color-preview");
+        this.setPreviewColor();
     }
 
     setPreviewColor = () => {
-        this.preview.style.backgroundColor = `rgb(${this.state.rgbColor.red},${this.state.rgbColor.green},${this.state.rgbColor.blue})`;
+        this.preview.style.backgroundColor = `rgb(${this.props.curColor.red},${this.props.curColor.green},${this.props.curColor.blue})`;
     }
 
     handleChange = (e) => {
+        
+        const id = e.target.getAttribute("id"),
+              color = this.props.curColor;
 
-        const color = e.target.getAttribute("id"),
-              rgbNewColor = this.state.rgbColor;
-
-        if(color === "red") {
-            rgbNewColor.red = e.target.value;
+        if (id === "red") {
+            color.red = Number(e.target.value);
         }
 
-        if(color === "green") {
-            rgbNewColor.green = e.target.value;
+        if (id === "green") {
+            color.green = Number(e.target.value);
         }
 
-        if(color === "blue") {
-            rgbNewColor.blue = e.target.value;
+        if (id === "blue") {
+            color.blue = Number(e.target.value);
         }
 
-        this.setState({ rgbColor: rgbNewColor });
+        this.props.updateColor(color);
         this.setPreviewColor();
     }
 
@@ -49,25 +41,22 @@ export default class Color extends Component {
                     id="red"
                     type="range"
                     onChange={this.handleChange}
-                    value={this.state.value}
-                    min="0" max="255" 
-                    value={this.state.rgbColor.red} />
+                    min="0" max="255"
+                    value={this.props.curColor.red} />
                 <input
                     className="color-slider"
                     id="green"
                     type="range"
                     onChange={this.handleChange}
-                    value={this.state.value}
                     min="0" max="255"
-                    value={this.state.rgbColor.green} />
+                    value={this.props.curColor.green} />
                 <input
                     className="color-slider"
                     id="blue"
                     type="range"
                     onChange={this.handleChange}
-                    value={this.state.value}
-                    min="0" max="255" 
-                    value={this.state.rgbColor.blue}/>
+                    min="0" max="255"
+                    value={this.props.curColor.blue} />
                 <div id="color-preview"></div>
             </div>
         );
@@ -76,5 +65,5 @@ export default class Color extends Component {
 
 Color.defaultProps = {
     //default properties
-    title: "RGB Color"
+    title: "Color"
 };

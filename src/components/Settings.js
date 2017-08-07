@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import Gravity from './Gravity';
 import Color from './Color';
+import Size from './Size';
+import Gravity from './Gravity';
+import Bounciness from './Bounciness';
+import Friction from './Friction';
+import Button from './Button';
+import settings from '../data/defaultSettings';
 
 export default class Settings extends Component {
 
@@ -8,55 +13,86 @@ export default class Settings extends Component {
 
         super();
 
+        //Store updated settings if sessionStorage item exists
+        if (JSON.parse(sessionStorage.getItem("settings"))) {
+            this.storage = JSON.parse(sessionStorage.getItem("settings"));
+            this.color = this.storage.color;
+            this.size = this.storage.size;
+            this.gravity = this.storage.gravity;
+            this.bounciness = this.storage.bounciness;
+            this.friction = this.storage.friction;
+        }
+        //Update or failsafe default settings
         this.state = {
-            gravity: this.toNumber(this.getItem("gravity")) || 0.5,
-            bounciness: this.toNumber(this.getItem("bounciness")) || 1.0,
-            friction: this.toNumber(this.getItem("friction")) || 1.0
+            color: this.color || settings.color,
+            size: this.size || settings.size,
+            gravity: this.gravity || settings.gravity,
+            bounciness: this.bounciness || settings.bounciness,
+            friction: this.friction || settings.friction
         }
     }
 
     //UPDATE FUNCTIONS
-
-    updateGravity = (e) => {
+    setColor = (c) => {
         this.setState({
-            gravity: this.setItem("gravity", e)
+            color: c
         });
     }
 
-    updateBounciness = (e) => {
+    setSize = (s) => {
         this.setState({
-            bounciness: this.setItem("bounciness", e)
+            size: s
         });
     }
 
-    updateFriction = (e) => {
+    setGravity = (g) => {
         this.setState({
-            friction: this.setItem("friction", e)
+            gravity: g / 100
         });
     }
 
-    //HELPER FUNCTIONS
-
-    toNumber = (str) => {
-        return Number(str);
+    setBounciness = (b) => {
+        this.setState({
+            bounciness: b / 100
+        });
     }
 
-    getItem = (item) => {
-        return sessionStorage.getItem(item);
+    setFriction = (f) => {
+        this.setState({
+            friction: f / 100
+        });
     }
 
-    setItem = (item) => {
-        return sessionStorage.setItem(item);
+    saveChanges = (e) => {
+        //Store the updated state to sessionStorage
+        sessionStorage.setItem("settings", JSON.stringify(this.state));
+        //When save & play button is clicked
+        if (e.target.getAttribute("id") === "save-play") {
+            //Programmatically redirect to /play category
+            this.props.history.push("/play");
+        }
+    }
+
+    resetDefault = () => {
+        
     }
 
     //RENDER
-
     render = () => {
         return (
             <div id="settings-container">
-                <Gravity updateGravity={this.state.gravity} />
-                <Color updateGravity={this.state.color} />
+                <Color curColor={this.state.color} updateColor={this.setColor} />
+                <Size curSize={this.state.size} updateSize={this.setSize} />
+                <Gravity curGravity={this.state.gravity} updateGravity={this.setGravity} />
+                <Bounciness curBounciness={this.state.bounciness} updateBounciness={this.setBounciness} />
+                <Friction curFriction={this.state.friction} updateFriction={this.setFriction} />
+                <Button save={this.saveChanges} reset={this.resetDefault} />
             </div>
         );
     }
 }
+
+Settings.defaultProps = {
+    //default properties
+    settings: "Color"
+};

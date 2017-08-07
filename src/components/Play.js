@@ -12,9 +12,11 @@ export default class Play extends Component {
 
         this.state = {
             totalBalls: [],
-            gravity: this.toNumber(this.getItem("gravity")) || 0.5,
+            gravity: this.toNumber(this.getItem("gravity")) / 100 || 0.5,
             bounciness: this.toNumber(this.getItem("bounciness")) || 0.75,
-            friction: this.toNumber(this.getItem("friction")) || 0.5
+            friction: this.toNumber(this.getItem("friction")) || 0.5,
+            radius: Math.round((this.toNumber(this.getItem("radius"))) * 40 / 10) || 15,
+            color: JSON.parse(this.getItem("color")) || { red: 223, green: 12, blue: 12 }
         }
     }
 
@@ -46,10 +48,10 @@ export default class Play extends Component {
         b.axisY += b.vy;
     }
 
-    drawBall = (x, y, radius, color) => {
-        this.context.fillStyle = color;
+    drawBall = (x, y, r, c) => {
+        this.context.fillStyle = c;
         this.context.beginPath();
-        this.context.arc(x, y, radius, 0, Math.PI * 2, true);
+        this.context.arc(x, y, r, 0, Math.PI * 2, true);
         this.context.closePath();
         this.context.fill();
     }
@@ -75,7 +77,7 @@ export default class Play extends Component {
 
     onCanvasClick = (e) => {
         const mouse = new Mouse(e, this.context),
-            ball = [new Ball(mouse, 15, "rgb(223,12,12)")],
+            ball = [new Ball(mouse, this.state.radius, `rgb(${this.state.color.red},${this.state.color.green},${this.state.color.blue})`)],
             balls = [...this.state.totalBalls, ...ball];
 
         this.setState({
@@ -94,6 +96,7 @@ export default class Play extends Component {
     }
 
     render = () => {
+        console.log(this.state.gravity);
         return (
             <div id="play-wrapper">
                 <Canvas mouseClick={this.onCanvasClick} />

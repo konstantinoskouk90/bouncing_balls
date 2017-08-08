@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import Ball from './Ball';
 import Mouse from './Mouse';
 import Canvas from './Canvas';
-import Settings from '../Settings/Settings';
+import Color from './Color';
+import Size from './Size';
+import Gravity from './Gravity';
+import Bounciness from './Bounciness';
+import Friction from './Friction';
+import defaultSettings from '../../data/defaultSettings';
 
 export default class Play extends Component {
 
@@ -12,11 +17,11 @@ export default class Play extends Component {
 
         this.state = {
             totalBalls: [],
-            gravity: this.toNumber(this.getItem("gravity")) / 100 || 0.5,
-            bounciness: this.toNumber(this.getItem("bounciness")) || 0.75,
-            friction: this.toNumber(this.getItem("friction")) || 0.5,
-            radius: Math.round((this.toNumber(this.getItem("radius"))) * 40 / 10) || 15,
-            color: JSON.parse(this.getItem("color")) || { red: 223, green: 12, blue: 12 }
+            color: defaultSettings.color,
+            size: defaultSettings.size,
+            gravity: defaultSettings.gravity,
+            bounciness: defaultSettings.bounciness,
+            friction: defaultSettings.friction
         }
     }
 
@@ -64,7 +69,6 @@ export default class Play extends Component {
             ball.axisY = 0 + ball.radius;
             ball.vy *= -this.state.bounciness;
         }
-
         if (ball.axisX >= this.canvas.width - ball.radius) {
             ball.vx *= -this.state.bounciness;
             ball.axisX = this.canvas.width - ball.radius;
@@ -76,7 +80,7 @@ export default class Play extends Component {
 
     onCanvasClick = (e) => {
         const mouse = new Mouse(e, this.canvas),
-            ball = [new Ball(mouse, this.state.radius, `rgb(${this.state.color.red},${this.state.color.green},${this.state.color.blue})`)],
+            ball = [new Ball(mouse, this.state.size * 4, `rgb(${this.state.color.red},${this.state.color.green},${this.state.color.blue})`)],
             balls = [...this.state.totalBalls, ...ball];
 
         this.setState({
@@ -84,21 +88,65 @@ export default class Play extends Component {
         });
     }
 
-    //HELPER FUNCTIONS
-
-    toNumber = (str) => {
-        return Number(str);
+    /**
+     * Update color.
+     * @ c
+     */
+    setColor = (c) => {
+        this.setState({
+            color: c
+        });
     }
 
-    getItem = (item) => {
-        return sessionStorage.getItem(item);
+    /**
+     * Update size.
+     * @ s
+     */
+    setSize = (s) => {
+        this.setState({
+            size: s
+        });
+    }
+
+    /**
+     * Update gravity.
+     * @ g
+     */
+    setGravity = (g) => {
+        this.setState({
+            gravity: g / 100
+        });
+    }
+
+    /**
+     * Update bounciness.
+     * @ b
+     */
+    setBounciness = (b) => {
+        this.setState({
+            bounciness: b / 100
+        });
+    }
+
+    /**
+     * Update friction.
+     * @ f
+     */
+    setFriction = (f) => {
+        this.setState({
+            friction: f / 100
+        });
     }
 
     render = () => {
         return (
             <div id="play-wrapper">
                 <Canvas mouseClick={this.onCanvasClick} />
-                <Settings />
+                <Color currentColor={this.state.color} updateColor={this.setColor} />
+                <Size currentSize={this.state.size} updateSize={this.setSize} />
+                <Gravity currentGravity={this.state.gravity} updateGravity={this.setGravity} />
+                <Bounciness currentBounciness={this.state.bounciness} updateBounciness={this.setBounciness} />
+                <Friction currentFriction={this.state.friction} updateFriction={this.setFriction} />
             </div>
         );
     }

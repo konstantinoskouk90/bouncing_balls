@@ -8,15 +8,15 @@ export default class Friction extends Component {
 
     render = () => {
         return (
-            <div className="settings-container">
+            <div id="friction-container">
                 <div className="title"> {this.props.title} </div>
                 <input
                     id="friction-slider"
                     type="range"
                     onChange={this.handleChange}
-                    value={this.props.curFriction * 100}
+                    value={this.props.currentFriction * 100}
                     min="1" max="100" />
-                <div id="percentage">{`${Math.round(this.props.curFriction * 100)}%`}</div> 
+                <div id="percentage">{`${Math.round(this.props.currentFriction * 100)}%`}</div> 
             </div>
         );
     }

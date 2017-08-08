@@ -41,7 +41,7 @@ a {
    text-decoration: none;
 }
 
-#canvas-container {
+#play-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -64,7 +64,7 @@ canvas {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	align-items: center;
+	align-items: left;
 	padding-top: 30px;
 }
 
@@ -260,7 +260,7 @@ video {
 }
 
 .color-slider {
-	width: 150px;
+	width: 180px;
 	height: auto;
 	margin-left: 25px;
 }
@@ -269,7 +269,7 @@ video {
 #size-slider,
 #bounciness-slider,
 #friction-slider {
-	width: 500px;
+	width: 270px;
 	height: auto;
 	margin-left: 30px;
 }
@@ -360,25 +360,25 @@ video {
 @media (min-width: 768px) {
 	.top-nav,
 	.main-header,
-	#canvas-container,
-	.settings-container {
+	#play-container,
+	#settings-container {
 		width: 80%;
 		height: 100%;
 		max-width: 1150px;
 		margin: 0 auto;
 	}
 	
-	#canvas-container,
+	#play-container,
 	canvas {
-		flex-direction: row;
-		justify-content: left;
-		align-items: left;
-	}
-
-		.settings-container {
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
+	}
+
+		#settings-container {
+		flex-direction: row;
+		justify-content: left;
+		align-items: left;
 		}
 		canvas {
 		width: 80%;
@@ -393,7 +393,7 @@ video {
 	.top-nav,
 	.main-header,
 	.main-nav,
-	#canvas-container,
+	#play-container,
 	.settings-container,
 	canvas {
 		display: flex;
@@ -422,4 +422,24 @@ video {
 		justify-content: flex-end;
 		align-items: left;
 	}
+}
+
+.notfound-wrap {
+		width: 50px;
+	height: auto;
+	font-size: 2em;
+	font-family: Sniglet;
+	font-weight: 400;
+	text-align: center;
+	margin-left: 30px;
+	display: inline-block;
+	display: flex;
+			flex-direction: row;
+		justify-content: center;
+		align-items: center;
+				width: 80%;
+		height: 100%;
+		max-width: 1150px;
+		margin: 0 auto;
+		color: rgb(223,12,12);
 }

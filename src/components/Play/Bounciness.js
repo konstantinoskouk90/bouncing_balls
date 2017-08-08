@@ -8,15 +8,15 @@ export default class Bounciness extends Component {
 
     render = () => {
         return (
-            <div className="settings-container">
+            <div id="bounciness-container">
                 <div className="title"> {this.props.title} </div>
                 <input
                     id="bounciness-slider"
                     type="range"
                     onChange={this.handleChange}
-                    value={this.props.curBounciness * 100}
+                    value={this.props.currentBounciness * 100}
                     min="1" max="100" />
-                <div id="percentage">{`${Math.round(this.props.curBounciness * 100)}%`}</div> 
+                <div id="percentage">{`${Math.round(this.props.currentBounciness * 100)}%`}</div> 
             </div>
         );
     }

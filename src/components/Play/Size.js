@@ -8,7 +8,7 @@ export default class Size extends Component {
 
     render = () => {
         return (
-            <div className="settings-container">
+            <div id="size-container">
                 <div className="title">{this.props.title}</div>
                 <input
                     id="size-slider"
@@ -16,7 +16,7 @@ export default class Size extends Component {
                     onChange={this.handleChange}
                     min="1" max="10" 
                     value={this.props.curSize} />
-                <div id="size-preview">{Math.round(this.props.curSize)}</div>
+                <div id="size-preview">{Math.round(this.props.currentSize)}</div>
             </div>
         );
     }

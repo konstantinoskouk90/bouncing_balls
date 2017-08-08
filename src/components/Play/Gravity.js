@@ -8,15 +8,15 @@ export default class Gravity extends Component {
 
     render = () => {
         return (
-            <div className="settings-container">
+            <div id="gravity-container">
                 <div className="title"> {this.props.title} </div>
                 <input
                     id="gravity-slider"
                     type="range"
                     onChange={this.handleChange}
-                    value={this.props.curGravity * 100}
+                    value={this.props.currentGravity * 100}
                     min="1" max="100" />
-                <div id="percentage">{`${Math.round(this.props.curGravity * 100)}%`}</div> 
+                <div id="percentage">{`${Math.round(this.props.currentGravity * 100)}%`}</div> 
             </div>
         );
     }

@@ -7,14 +7,19 @@ import Size from './Size';
 import Gravity from './Gravity';
 import Bounciness from './Bounciness';
 import Friction from './Friction';
+import Button from './Button';
 import defaultSettings from '../../data/defaultSettings';
 
+/** 
+ * Class representing 'Play' category. 
+ */
 export default class Play extends Component {
 
     constructor() {
 
         super();
 
+        //Set initial state to default settings on page load.
         this.state = {
             totalBalls: [],
             color: defaultSettings.color,
@@ -25,41 +30,62 @@ export default class Play extends Component {
         }
     }
 
+    /**
+     * Do after initial mounting.
+     */
     componentDidMount = () => {
 
+        //Canvas
         this.canvas = document.getElementsByTagName("canvas")[0];
-        this.context = this.canvas.getContext("2d");
+        //Context
+        this.ctx = this.canvas.getContext("2d");
+        //Width
         this.canvas.width = window.innerWidth * 0.45;
+        //Height
         this.canvas.height = window.innerHeight * 0.45;
 
+        //Start animation.
         this.updateCanvas();
     }
 
-    updateCanvas = () => {
-
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.state.totalBalls.map(ball => this.onMove(ball));
-        this.state.totalBalls.map(ball => this.drawBall(ball.axisX, ball.axisY, ball.radius, ball.color));
-        this.state.totalBalls.map(ball => this.onCollision(ball));
-
-        //Recursion
-        requestAnimationFrame(this.updateCanvas);
+    /**
+     * Update state on input change.
+     * Dynamically adapts depending on input.
+     * @key
+     * @value
+     */
+    inputChangeHandler = (key, value) => {
+        this.setState({
+            [key]: value
+        });
     }
 
-    onMove = (b) => {
-        b.axisX += b.vx;
-        b.vy += this.state.gravity;
-        b.axisY += b.vy;
+    /**
+     * Determine ball movement.
+     * @ball
+     */
+    onMove = (ball) => {
+        ball.axisX += ball.vx;
+        ball.vy += this.state.gravity;
+        ball.axisY += ball.vy;
     }
 
-    drawBall = (x, y, r, c) => {
-        this.context.fillStyle = c;
-        this.context.beginPath();
-        this.context.arc(x, y, r, 0, Math.PI * 2, true);
-        this.context.closePath();
-        this.context.fill();
+    /**
+     * Draw ball.
+     * @ball
+     */
+    onDraw = (ball) => {
+        this.ctx.fillStyle = ball.color;
+        this.ctx.beginPath();
+        this.ctx.arc(ball.axisX, ball.axisY, ball.radius, 0, Math.PI * 2, true);
+        this.ctx.closePath();
+        this.ctx.fill();
     }
 
+    /**
+     * Determine collision aftermath.
+     * @ball
+     */
     onCollision = (ball) => {
         if (ball.axisY >= this.canvas.height - ball.radius) {
             ball.vy *= -this.state.bounciness;
@@ -78,7 +104,16 @@ export default class Play extends Component {
         }
     }
 
+    /**
+     * Canvas mouse click.
+     * @e
+     */
     onCanvasClick = (e) => {
+        /*
+         * 1) Get mouse position.
+         * 2) Create ball.
+         * 3) Append to existing ball array.
+         */
         const mouse = new Mouse(e, this.canvas),
             ball = [new Ball(mouse, this.state.size * 4, `rgb(${this.state.color.red},${this.state.color.green},${this.state.color.blue})`)],
             balls = [...this.state.totalBalls, ...ball];
@@ -89,64 +124,59 @@ export default class Play extends Component {
     }
 
     /**
-     * Update color.
-     * @ c
+     * Reset to default settings.
+     * @e
      */
-    setColor = (c) => {
+    resetSettings = () => {
         this.setState({
-            color: c
+            color: defaultSettings.color,
+            size: defaultSettings.size,
+            gravity: defaultSettings.gravity,
+            bounciness: defaultSettings.bounciness,
+            friction: defaultSettings.friction
         });
     }
 
     /**
-     * Update size.
-     * @ s
+     * Constantly update canvas state.
      */
-    setSize = (s) => {
-        this.setState({
-            size: s
-        });
-    }
+    updateCanvas = () => {
 
-    /**
-     * Update gravity.
-     * @ g
-     */
-    setGravity = (g) => {
-        this.setState({
-            gravity: g / 100
-        });
-    }
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    /**
-     * Update bounciness.
-     * @ b
-     */
-    setBounciness = (b) => {
-        this.setState({
-            bounciness: b / 100
-        });
-    }
+        this.state.totalBalls.map(ball => this.onMove(ball));
+        this.state.totalBalls.map(ball => this.onDraw(ball));
+        this.state.totalBalls.map(ball => this.onCollision(ball));
 
-    /**
-     * Update friction.
-     * @ f
-     */
-    setFriction = (f) => {
-        this.setState({
-            friction: f / 100
-        });
+        //Recursion
+        requestAnimationFrame(this.updateCanvas);
     }
 
     render = () => {
         return (
             <div id="play-wrapper">
                 <Canvas mouseClick={this.onCanvasClick} />
-                <Color currentColor={this.state.color} updateColor={this.setColor} />
-                <Size currentSize={this.state.size} updateSize={this.setSize} />
-                <Gravity currentGravity={this.state.gravity} updateGravity={this.setGravity} />
-                <Bounciness currentBounciness={this.state.bounciness} updateBounciness={this.setBounciness} />
-                <Friction currentFriction={this.state.friction} updateFriction={this.setFriction} />
+                <Color
+                    currentColor={this.state.color}
+                    changeHandler={this.inputChangeHandler}
+                />
+                <Size
+                    currentSize={this.state.size}
+                    changeHandler={this.inputChangeHandler}
+                />
+                <Gravity
+                    currentGravity={this.state.gravity}
+                    changeHandler={this.inputChangeHandler}
+                />
+                <Bounciness
+                    currentBounciness={this.state.bounciness}
+                    changeHandler={this.inputChangeHandler}
+                />
+                <Friction
+                    currentFriction={this.state.friction}
+                    changeHandler={this.inputChangeHandler}
+                />
+                <Button resetState={this.resetSettings} />
             </div>
         );
     }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Color extends Component {
 
@@ -12,53 +13,48 @@ export default class Color extends Component {
     }
 
     handleChange = (e) => {
-
-        const id = e.target.getAttribute("id");
-        
+        //Store current RGB
         let color = this.props.currentColor;
-
-        if (id === "red") {
-            color.red = Number(e.target.value);
-        }
-
-        if (id === "green") {
-            color.green = Number(e.target.value);
-        }
-
-        if (id === "blue") {
-            color.blue = Number(e.target.value);
-        }
-
-        this.props.updateColor(color);
+        //Update current object color based on input change
+        color[e.target.id] = Number(e.target.value);
+        //Update parent state
+        this.props.changeHandler(e.target.class, color);
+        //Update preview color
         this.setPreviewColor(color);
     }
 
     render = () => {
         return (
             <div id="color-container">
-                <div className="title"> {this.props.title} </div>
-                <input
-                    className="color-slider"
-                    id="red"
-                    type="range"
-                    onChange={this.handleChange}
-                    min="0" max="255"
-                    value={this.props.currentColor.red} />
-                <input
-                    className="color-slider"
-                    id="green"
-                    type="range"
-                    onChange={this.handleChange}
-                    min="0" max="255"
-                    value={this.props.currentColor.green} />
-                <input
-                    className="color-slider"
-                    id="blue"
-                    type="range"
-                    onChange={this.handleChange}
-                    min="0" max="255"
-                    value={this.props.currentColor.blue} />
+                <div id="title-color"> {this.props.title} </div>
+                <div id="input-container">
+                    <input
+                        className="color"
+                        id="red"
+                        type="range"
+                        onChange={this.handleChange}
+                        min="0" max="255"
+                        value={this.props.currentColor.red}
+                    />
+                    <input
+                        className="color"
+                        id="green"
+                        type="range"
+                        onChange={this.handleChange}
+                        min="0" max="255"
+                        value={this.props.currentColor.green}
+                    />
+                    <input
+                        className="color"
+                        id="blue"
+                        type="range"
+                        onChange={this.handleChange}
+                        min="0" max="255"
+                        value={this.props.currentColor.blue}
+                    />
+                </div>
                 <div id="color-preview"></div>
+                <div id="color-text">RGB</div>
             </div>
         );
     }
@@ -66,5 +62,5 @@ export default class Color extends Component {
 
 Color.defaultProps = {
     //default properties
-    title: "Color"
+    title: "Ball Color"
 };

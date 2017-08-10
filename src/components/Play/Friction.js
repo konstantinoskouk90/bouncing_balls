@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class Friction extends Component {
+const propTypes = {
+  currentFriction: PropTypes.number.isRequired,
+  changeHandler: PropTypes.func.isRequired
+};
+
+const defaultProps = {
+  title: "Friction"
+};
+
+class Friction extends Component {
 
     handleChange = (e) => {
         this.props.changeHandler(e.target.id, Number(e.target.value));
@@ -14,17 +23,18 @@ export default class Friction extends Component {
                 <input
                     id="friction"
                     type="range"
+                    step="any"
                     onChange={this.handleChange}
-                    value={this.props.currentFriction * 100}
-                    min="1" max="100" 
+                    value={this.props.currentFriction}
+                    min="0.1" max="1" 
                 />
-                <div id="percentage">{`${Math.round(this.props.currentFriction * 100)}%`}</div> 
+                <div id="percentage">{`${this.props.currentFriction.toFixed(2)}`}</div> 
             </div>
         );
     }
 }
 
-Friction.defaultProps = {
-  //default properties
-  title: "Friction"
-};
+Friction.propTypes = propTypes;
+Friction.defaultProps = defaultProps;
+
+export default Friction;

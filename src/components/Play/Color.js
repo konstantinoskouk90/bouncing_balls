@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class Color extends Component {
+const propTypes = {
+  currentColor: PropTypes.object.isRequired,
+  changeHandler: PropTypes.func.isRequired
+};
+
+const defaultProps = {
+  title: "Ball Color"
+};
+
+class Color extends Component {
 
     componentDidMount = () => {
         this.preview = document.getElementById("color-preview");
@@ -60,7 +69,7 @@ export default class Color extends Component {
     }
 }
 
-Color.defaultProps = {
-    //default properties
-    title: "Ball Color"
-};
+Color.propTypes = propTypes;
+Color.defaultProps = defaultProps;
+
+export default Color;

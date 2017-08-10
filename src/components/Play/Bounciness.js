@@ -23,17 +23,18 @@ class Bounciness extends Component {
                 <input
                     id="bounciness"
                     type="range"
+                    step="any"
                     onChange={this.handleChange}
-                    value={this.props.currentBounciness * 100}
-                    min="1" max="100" 
+                    value={this.props.currentBounciness}
+                    min="0.1" max="1" 
                 />
-                <div id="percentage">{`${Math.round(this.props.currentBounciness * 100)}%`}</div> 
+                <div id="percentage">{`${this.props.currentBounciness.toFixed(2)}`}</div> 
             </div>
         );
     }
 }
 
-export default Bounciness;
-
 Bounciness.propTypes = propTypes;
 Bounciness.defaultProps = defaultProps;
+
+export default Bounciness;

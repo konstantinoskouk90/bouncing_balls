@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class Gravity extends Component {
+const propTypes = {
+  currentGravity: PropTypes.number.isRequired,
+  changeHandler: PropTypes.func.isRequired
+};
+
+const defaultProps = {
+  title: "Gravity"
+};
+
+class Gravity extends Component {
 
     handleChange = (e) => {
         this.props.changeHandler(e.target.id, Number(e.target.value));
@@ -14,17 +23,18 @@ export default class Gravity extends Component {
                 <input
                     id="gravity"
                     type="range"
+                    step="any"
                     onChange={this.handleChange}
-                    value={this.props.currentGravity * 100}
-                    min="1" max="100"
+                    value={this.props.currentGravity}
+                    min="0.1" max="1"
                 />
-                <div id="percentage">{`${Math.round(this.props.currentGravity * 100)}%`}</div> 
+                <div id="percentage">{`${this.props.currentGravity.toFixed(2)}`}</div> 
             </div>
         );
     }
 }
 
-Gravity.defaultProps = {
-  //default properties
-  title: "Gravity"
-};
+Gravity.propTypes = propTypes;
+Gravity.defaultProps = defaultProps;
+
+export default Gravity;

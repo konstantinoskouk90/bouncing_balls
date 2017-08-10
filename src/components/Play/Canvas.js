@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const propTypes = {
+    mouseClick: PropTypes.func.isRequired
+};
+
 const Canvas = props => (
     <div id="canvas-container">
-        <canvas onClick={ (e) => { props.mouseClick(e); } }></canvas>
+        <canvas onClick={(e) => { props.mouseClick(e); } }></canvas>
     </div>
 );
 
-Canvas.propTypes = {
-    mouseClick: PropTypes.func.isRequired
-};
+Canvas.propTypes = propTypes;
 
 export default Canvas;

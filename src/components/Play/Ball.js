@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Ball extends Component {
+class Ball extends Component {
 
     constructor(axis, radius, color) {
 
@@ -18,3 +18,5 @@ export default class Ball extends Component {
         return false;
     }
 }
+
+export default Ball;

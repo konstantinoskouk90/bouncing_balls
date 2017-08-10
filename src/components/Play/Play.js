@@ -9,8 +9,9 @@ import Bounciness from './Bounciness';
 import Friction from './Friction';
 import defaultSettings from '../../data/defaultSettings';
 
-/** 
- * Class representing 'Play' category
+/*
+ * The Play class creates the entire Play category which
+ * allows users to play the game and change the settings
  */
 class Play extends Component {
 
@@ -30,8 +31,8 @@ class Play extends Component {
   }
 
   /**
-   * componentDidMount() is invoked immediately after a
-   * component is mounted initializing the DOM's canvas.
+   * componentDidMount() is invoked immediately after a component 
+   * is mounted initializing the DOM's canvas node
    */
   componentDidMount = () => {
 
@@ -50,7 +51,7 @@ class Play extends Component {
 
   /**
    * inputChangeHandler() updates the state on change.
-   * It dynamically adapts depending on the input field
+   * Dynamically adapts depending on the input field
    */
   inputChangeHandler = (key, value) => {
     this.setState({
@@ -60,8 +61,8 @@ class Play extends Component {
 
   // onMove() determines the ball movement
   onMove = (ball) => {
-    ball.axisX += ball.vx;
     ball.vy += this.state.gravity;
+    ball.axisX += ball.vx;
     ball.axisY += ball.vy;
   }
 
@@ -76,20 +77,24 @@ class Play extends Component {
 
   // onCollision() determines the ball collision
   onCollision = (ball) => {
+
+    // X Axis
+    if (ball.axisX >= this.canvas.width - ball.radius) {
+      ball.axisX = this.canvas.width - ball.radius;
+      ball.vx *= -this.state.bounciness;
+    } else if (ball.axisX <= 0 + ball.radius) {
+      ball.axisX = 0 + ball.radius;
+      ball.vx *= -this.state.bounciness;
+    }
+
+    // Y Axis
     if (ball.axisY >= this.canvas.height - ball.radius) {
+      ball.axisY = this.canvas.height - ball.radius;
       ball.vy *= -this.state.bounciness;
       ball.vx *= this.state.friction;
-      ball.axisY = this.canvas.height - ball.radius;
     } else if (ball.axisY <= 0 + ball.radius) {
       ball.axisY = 0 + ball.radius;
       ball.vy *= -this.state.bounciness;
-    }
-    if (ball.axisX >= this.canvas.width - ball.radius) {
-      ball.vx *= -this.state.bounciness;
-      ball.axisX = this.canvas.width - ball.radius;
-    } else if (ball.axisX <= 0 + ball.radius) {
-      ball.vx *= -this.state.bounciness;
-      ball.axisX = 0 + ball.radius;
     }
   }
 
@@ -108,23 +113,7 @@ class Play extends Component {
     });
   }
 
-  /**
-   * Reset to default settings.
-   * @e
-   */
-  resetSettings = () => {
-    this.setState({
-      color: defaultSettings.color,
-      size: defaultSettings.size,
-      gravity: defaultSettings.gravity,
-      bounciness: defaultSettings.bounciness,
-      friction: defaultSettings.friction
-    });
-  }
-
-  /**
-   * Constantly update canvas state.
-   */
+  // updateCanvas() constantly updates the canvas via callbacks
   updateCanvas = () => {
 
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -133,10 +122,11 @@ class Play extends Component {
     this.state.totalBalls.map(ball => this.onDraw(ball));
     this.state.totalBalls.map(ball => this.onCollision(ball));
 
-    //Recursion
+    // Recursion
     requestAnimationFrame(this.updateCanvas);
   }
 
+  // render() updates the DOM on state change
   render = () => {
     return (
       <div id="play-wrapper">

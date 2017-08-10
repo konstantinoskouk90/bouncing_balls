@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// PropTypes
 const propTypes = {
   currentColor: PropTypes.object.isRequired,
   changeHandler: PropTypes.func.isRequired
 };
 
+// Default props
 const defaultProps = {
   title: "Ball Color"
 };
 
 class Color extends Component {
 
+    /**
+     * componentDidMount() is invoked immediately after the component 
+     * is mounted initializing the DOM's #color-preview node
+     */
     componentDidMount = () => {
         this.preview = document.getElementById("color-preview");
         this.setPreviewColor();
@@ -21,17 +27,22 @@ class Color extends Component {
         this.preview.style.backgroundColor = `rgb(${this.props.currentColor.red},${this.props.currentColor.green},${this.props.currentColor.blue})`;
     }
 
+    /*
+     * handleChange() calls the changeHandler() function which belongs to parent 
+     * component Play, via accessing props, and updates the state accordingly
+     */
     handleChange = (e) => {
-        //Store current RGB
+        // Store current RGB
         let color = this.props.currentColor;
-        //Update current object color based on input change
+        // Update current object color based on input change
         color[e.target.id] = Number(e.target.value);
-        //Update parent state
+        // Update parent state
         this.props.changeHandler(e.target.class, color);
-        //Update preview color
+        // Update preview color
         this.setPreviewColor(color);
     }
 
+    // render() updates the DOM on state change
     render = () => {
         return (
             <div id="color-container">

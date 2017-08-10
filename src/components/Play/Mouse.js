@@ -15,6 +15,7 @@ class Mouse extends Component {
         this.y = mouseY;
     }
 
+    // render() updates the DOM on state change
     render = () => {
         return false;
     }

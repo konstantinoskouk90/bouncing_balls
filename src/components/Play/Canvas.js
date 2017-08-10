@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// PropTypes
 const propTypes = {
     mouseClick: PropTypes.func.isRequired
 };

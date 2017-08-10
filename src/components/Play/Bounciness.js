@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// PropTypes
 const propTypes = {
   currentBounciness: PropTypes.number.isRequired,
   changeHandler: PropTypes.func.isRequired
 };
 
+// Default props
 const defaultProps = {
   title: "Bounciness"
 };
 
+// The Bounciness class represents the ball's bounciness levels
 class Bounciness extends Component {
 
+    /*
+     * handleChange() calls the changeHandler() function which belongs to parent 
+     * component Play, via accessing props, and updates the state accordingly
+     */
     handleChange = (e) => {
         this.props.changeHandler(e.target.id, Number(e.target.value));
     }
 
+    // render() updates the DOM on state change
     render = () => {
         return (
             <div id="bounciness-container">

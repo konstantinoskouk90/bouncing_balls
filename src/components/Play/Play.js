@@ -31,8 +31,8 @@ class Play extends Component {
   }
 
   /**
-   * componentDidMount() is invoked immediately after a component 
-   * is mounted initializing the DOM's canvas node
+   * componentDidMount() is invoked immediately after the 
+   * component is mounted initializing the DOM's canvas node
    */
   componentDidMount = () => {
 
@@ -41,12 +41,21 @@ class Play extends Component {
     // Context
     this.ctx = this.canvas.getContext("2d");
     // Width
-    this.canvas.width = window.innerWidth * 0.45;
+    this.canvas.width = window.innerWidth - window.innerWidth / 3.5;
     // Height
-    this.canvas.height = window.innerHeight * 0.45;
-
+    this.canvas.height = window.innerHeight / 2 + window.innerHeight / 10;
+    // Resize listener
+    window.addEventListener("resize", this.onResize);
     // Start animation
     this.updateCanvas();
+  }
+
+  /**
+   * componentWillUnmount() is invoked immediately before the component 
+   * is unmounted and destroyed to remove the canvas resize listener
+   */
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.onResize);
   }
 
   /**
@@ -57,6 +66,12 @@ class Play extends Component {
     this.setState({
       [key]: value
     });
+  }
+
+  // onResize() resizes the canvas when screen size change is detected
+  onResize = () => {
+    this.canvas.width = window.innerWidth - window.innerWidth / 3.5;
+    this.canvas.height = window.innerHeight / 2 + window.innerHeight / 10;
   }
 
   // onMove() determines the ball movement

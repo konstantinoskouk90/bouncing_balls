@@ -49,13 +49,17 @@ a {
 	padding-top: 25px;
 }
 
+#canvas-container {
+	margin-top: 25px;
+}
+
 canvas {	
 	display: flex;
 	flex-direction: row;
 	justify-content:  center;
 	align-items: center;
 	padding: 0;
-	margin: 0;
+	margin: 0 auto;
 	background-color: white;
 	border: 1px solid rgb(223,12,12);
 }
@@ -392,20 +396,20 @@ video {
 	height: auto;
 	text-align: left;
 	margin: 0 auto;
-		max-width: 85px;
-		margin: 0 auto;
+	max-width: 85px;
+	margin: 0 auto;
 }
 
 #title-size {
-		font-size: 1.25em;
+	font-size: 1.25em;
 	font-family: Sniglet;
 	font-weight: 400;
 	width: auto;
 	height: auto;
 	text-align: left;
 	margin: 0 auto;
-		max-width: 35px;
-		margin: 0 auto;
+	max-width: 35px;
+	margin: 0 auto;
 }
 
 /* ================================= 
@@ -459,18 +463,10 @@ video {
 		margin: 0 auto;
 	}
 
-	canvas {
-		width: 80%;
-		height: 100%;
-		max-width: 850px;
-		margin: 0 auto;
-	}
-	
 	#play-container,
 	#color-container,
 	#size-container,
-	#gravity-container,
-	canvas {
+	#gravity-container {
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
@@ -485,7 +481,6 @@ video {
 	.top-nav,
 	.main-header,
 	.main-nav,
-	canvas,
 	#play-container,
 	#color-container,
 	#input-container,

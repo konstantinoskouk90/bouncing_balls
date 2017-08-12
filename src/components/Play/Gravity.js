@@ -12,6 +12,7 @@ const defaultProps = {
   title: "Gravity"
 };
 
+// The Gravity class represents the gravity level
 class Gravity extends Component {
 
     /*
@@ -35,7 +36,7 @@ class Gravity extends Component {
                     value={this.props.currentGravity}
                     min="0.1" max="1"
                 />
-                <div id="percentage">{`${this.props.currentGravity.toFixed(2)}`}</div> 
+                <div className="percentage">{`${this.props.currentGravity.toFixed(2)}`}</div> 
             </div>
         );
     }

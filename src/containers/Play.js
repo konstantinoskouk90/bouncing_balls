@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Ball from './Ball';
-import Mouse from './Mouse';
-import Canvas from './Canvas';
-import Color from './Color';
-import Size from './Size';
-import Gravity from './Gravity';
-import Bounciness from './Bounciness';
-import Friction from './Friction';
-import defaultSettings from '../../data/defaultSettings';
+import Ball from '../components/Play/Ball';
+import Mouse from '../components/Play/Mouse';
+import Canvas from '../components/Play/Canvas';
+import Color from '../components/Play/Color';
+import Size from '../components/Play/Size';
+import Gravity from '../components/Play/Gravity';
+import Bounciness from '../components/Play/Bounciness';
+import Friction from '../components/Play/Friction';
+import defaultSettings from '../data/defaultSettings';
 
 /*
  * The Play class creates the entire Play category which
@@ -41,9 +41,9 @@ class Play extends Component {
     // Context
     this.ctx = this.canvas.getContext("2d");
     // Width
-    this.canvas.width = window.innerWidth - window.innerWidth / 3.5;
+    this.canvas.width = window.innerWidth - window.innerWidth / 2.9;
     // Height
-    this.canvas.height = window.innerHeight / 2 + window.innerHeight / 10;
+    this.canvas.height = window.innerHeight / 3 + window.innerHeight / 10;
     // Resize listener
     window.addEventListener("resize", this.onResize);
     // Start animation
@@ -70,8 +70,8 @@ class Play extends Component {
 
   // onResize() resizes the canvas when screen size change is detected
   onResize = () => {
-    this.canvas.width = window.innerWidth - window.innerWidth / 3.5;
-    this.canvas.height = window.innerHeight / 2 + window.innerHeight / 10;
+    this.canvas.width = window.innerWidth - window.innerWidth / 2.9;
+    this.canvas.height = window.innerHeight / 3 + window.innerHeight / 10;
   }
 
   // onMove() determines the ball movement
@@ -90,7 +90,10 @@ class Play extends Component {
     this.ctx.fill();
   }
 
-  // onCollision() determines the ball collision
+  /*
+   * onCollision() determines the ball's
+   * collision with the canvas border
+   */
   onCollision = (ball) => {
 
     // X Axis
@@ -128,7 +131,7 @@ class Play extends Component {
     });
   }
 
-  // updateCanvas() constantly updates the canvas via callbacks
+  // updateCanvas() constantly updates the canvas via a callback
   updateCanvas = () => {
 
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -137,7 +140,7 @@ class Play extends Component {
     this.state.totalBalls.map(ball => this.onDraw(ball));
     this.state.totalBalls.map(ball => this.onCollision(ball));
 
-    // Recursion
+    // Callback
     requestAnimationFrame(this.updateCanvas);
   }
 
@@ -146,26 +149,28 @@ class Play extends Component {
     return (
       <div id="play-wrapper">
         <Canvas mouseClick={this.onCanvasClick} />
-        <Color
-          currentColor={this.state.color}
-          changeHandler={this.inputChangeHandler}
-        />
-        <Size
-          currentSize={this.state.size}
-          changeHandler={this.inputChangeHandler}
-        />
-        <Gravity
-          currentGravity={this.state.gravity}
-          changeHandler={this.inputChangeHandler}
-        />
-        <Bounciness
-          currentBounciness={this.state.bounciness}
-          changeHandler={this.inputChangeHandler}
-        />
-        <Friction
-          currentFriction={this.state.friction}
-          changeHandler={this.inputChangeHandler}
-        />
+        <div id="settings-wrapper">
+          <Color 
+            currentColor={this.state.color}
+            changeHandler={this.inputChangeHandler}
+          />
+          <Size
+            currentSize={this.state.size}
+            changeHandler={this.inputChangeHandler}
+          />
+          <Gravity
+            currentGravity={this.state.gravity}
+            changeHandler={this.inputChangeHandler}
+          />
+          <Bounciness
+            currentBounciness={this.state.bounciness}
+            changeHandler={this.inputChangeHandler}
+          />
+          <Friction
+            currentFriction={this.state.friction}
+            changeHandler={this.inputChangeHandler}
+          />
+        </div>
       </div>
     );
   }

@@ -12,7 +12,7 @@ const defaultProps = {
   title: "Bounciness"
 };
 
-// The Bounciness class represents the ball's bounciness levels
+// The Bounciness class represents the bounciness level
 class Bounciness extends Component {
 
     /*
@@ -36,7 +36,7 @@ class Bounciness extends Component {
                     value={this.props.currentBounciness}
                     min="0.1" max="1" 
                 />
-                <div id="percentage">{`${this.props.currentBounciness.toFixed(2)}`}</div> 
+                <div className="percentage">{`${this.props.currentBounciness.toFixed(2)}`}</div> 
             </div>
         );
     }

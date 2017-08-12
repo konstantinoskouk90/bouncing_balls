@@ -9,35 +9,39 @@ const propTypes = {
 
 // Default Props
 const defaultProps = {
-  title: "Size"
+  title: "Ball Size"
 };
 
+// The Size class represents the ball's size
 class Size extends Component {
 
-    /*
-     * handleChange() calls the changeHandler() function which belongs to parent 
-     * component Play, via accessing props, and updates the state accordingly
-     */
-    handleChange = (e) => {
-        this.props.changeHandler(e.target.id, Number(e.target.value));
-    }
+  /*
+   * handleChange() calls the changeHandler() function which belongs to parent 
+   * component Play, via accessing props, and updates the state accordingly
+   */
+  handleChange = (e) => {
+    this.props.changeHandler(e.target.id, Number(e.target.value));
+  }
 
-    // render() updates the DOM on state change
-    render = () => {
-        return (
-            <div id="size-container">
-                <div className="title">{this.props.title}</div>
-                <input
-                    id="size"
-                    type="range"
-                    onChange={this.handleChange}
-                    min="1" max="30" 
-                    value={this.props.currentSize}
-                />
-                <div id="size-preview">{this.props.currentSize}</div>
-            </div>
-        );
-    }
+  // render() updates the DOM on state change
+  render = () => {
+    return (
+      <div id="size-container">
+        <div className="title">{this.props.title}</div>
+        <div id="input-container">
+          <input
+            id="size"
+            type="range"
+            step="any"
+            onChange={this.handleChange}
+            min="1" max="30"
+            value={this.props.currentSize}
+          />
+        </div>
+        <div id="size-preview">{this.props.currentSize.toFixed(1)}</div>
+      </div>
+    );
+  }
 }
 
 Size.propTypes = propTypes;

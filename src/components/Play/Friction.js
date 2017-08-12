@@ -12,6 +12,7 @@ const defaultProps = {
   title: "Friction"
 };
 
+// The Friction class represents the friction level
 class Friction extends Component {
 
     /*
@@ -35,7 +36,7 @@ class Friction extends Component {
                     value={this.props.currentFriction}
                     min="0.1" max="1" 
                 />
-                <div id="percentage">{`${this.props.currentFriction.toFixed(2)}`}</div> 
+                <div className="percentage">{`${this.props.currentFriction.toFixed(2)}`}</div> 
             </div>
         );
     }

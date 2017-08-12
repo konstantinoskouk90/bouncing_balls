@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+/*
+ * The Mouse class detects the x and y 
+ * coordinates of the user's mouse
+ */
 class Mouse extends Component {
 
     constructor(e, c) {

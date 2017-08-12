@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
-import Header from '../components/Header/Header';
-import Play from '../components/Play/Play';
-import About from '../components/About/About';
-import NotFound from '../components/NotFound/NotFound';
+import Header from './Header';
+import Play from './Play';
+import About from './About';
+import NotFound from './NotFound';
 
-/** Constant Representing App. */
+/*
+ * The App function represents the entire game 
+ * loading in components depending on the route
+ */
 const App = () => (
   <BrowserRouter>
     {/* Set Up Router */}

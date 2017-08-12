@@ -3,15 +3,17 @@ import PropTypes from 'prop-types';
 
 // PropTypes
 const propTypes = {
-  currentColor: PropTypes.object.isRequired,
-  changeHandler: PropTypes.func.isRequired
+    currentColor: PropTypes.object.isRequired,
+    changeHandler: PropTypes.func.isRequired
 };
 
 // Default props
 const defaultProps = {
-  title: "Ball Color"
+    settingsTitle: "Ball Color",
+    previewTitle: "RGB"
 };
 
+// The Color class represents the ball's RGB color
 class Color extends Component {
 
     /**
@@ -45,8 +47,8 @@ class Color extends Component {
     // render() updates the DOM on state change
     render = () => {
         return (
-            <div id="color-container">
-                <div id="title-color"> {this.props.title} </div>
+            <div id="color-container" className="settings-component">
+                <div className="title"> {this.props.settingsTitle} </div>
                 <div id="input-container">
                     <input
                         className="color"
@@ -73,8 +75,10 @@ class Color extends Component {
                         value={this.props.currentColor.blue}
                     />
                 </div>
-                <div id="color-preview"></div>
-                <div id="color-text">RGB</div>
+                <div id="color-details">
+                    <div id="color-preview"></div>
+                    <div id="color-text">{this.props.previewTitle}</div>
+                </div>
             </div>
         );
     }

@@ -1,0 +1,215 @@
+/* ================================= 
+   About
+==================================== */
+
+
+/* standard styling across all devices */
+
+#about-wrapper {
+    font-family: Sniglet;
+    font-weight: 400;
+}
+
+#about-wrapper #start-container,
+#about-wrapper #dataend-container,
+.dataset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#dataend-container #dataend-end {
+    color: rgb(200, 0, 0);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#dataend-container #dataend-end:hover {
+    color: rgb(223, 12, 12);
+}
+
+.question {
+    color: rgb(0, 0, 0);
+}
+
+.answer {
+    color: rgb(200, 0, 0);
+}
+
+
+/* media queries */
+
+
+/* smartphones, iPhone, portrait 480x320 phones (55%) */
+
+@media (min-width:320px) {
+    .dataset .answer {
+        font-size: 0.88em;
+    }
+    .dataset .question,
+    #dataend-container #dataend-start {
+        font-size: 0.6325em;
+    }
+    .dataset .question,
+    .dataset .answer,
+    #dataend-container #dataend-start {
+        margin-top: 11px;
+    }
+    #dataend-container #dataend-end {
+        font-size: 0.7975em;
+    }
+    #dataend-container #dataend-quote {
+        font-size: 0.55em;
+        margin-top: 5.5px;
+    }
+    #dataend-container #dataend-end,
+    #dataset-container {
+        margin-top: 22px;
+    }
+}
+
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide (65%) */
+
+@media (min-width:481px) {
+    .dataset .answer {
+        font-size: 1.04em;
+    }
+    .dataset .question,
+    #dataend-container #dataend-start {
+        font-size: 0.7475em;
+    }
+    .dataset .question,
+    .dataset .answer,
+    #dataend-container #dataend-start {
+        margin-top: 13px;
+    }
+    #dataend-container #dataend-end {
+        font-size: 0.9425em;
+    }
+    #dataend-container #dataend-quote {
+        font-size: 0.65em;
+        margin-top: 6.5x;
+    }
+    #dataend-container #dataend-end,
+    #dataset-container {
+        margin-top: 26px;
+    }
+}
+
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones (75%) */
+
+@media (min-width:641px) {
+    .dataset .answer {
+        font-size: 1.20em;
+    }
+    .dataset .question,
+    #dataend-container #dataend-start {
+        font-size: 0.8625em;
+    }
+    .dataset .question,
+    .dataset .answer,
+    #dataend-container #dataend-start {
+        margin-top: 15px;
+    }
+    #dataend-container #dataend-end {
+        font-size: 1.0875em;
+    }
+    #dataend-container #dataend-quote {
+        font-size: 0.75em;
+        margin-top: 7.5px;
+    }
+    #dataend-container #dataend-end,
+    #dataset-container {
+        margin-top: 30px;
+    }
+}
+
+
+/* tablet, landscape iPad, lo-res laptops ands desktops (85%) */
+
+@media (min-width:961px) {
+    .dataset .answer {
+        font-size: 1.36em;
+    }
+    .dataset .question,
+    #dataend-container #dataend-start {
+        font-size: 0.9775em;
+    }
+    .dataset .question,
+    .dataset .answer,
+    #dataend-container #dataend-start {
+        margin-top: 17px;
+    }
+    #dataend-container #dataend-end {
+        font-size: 1.2325em;
+    }
+    #dataend-container #dataend-quote {
+        font-size: 0.85em;
+        margin-top: 8.5px;
+    }
+    #dataend-container #dataend-end,
+    #dataset-container {
+        margin-top: 34px;
+    }
+}
+
+
+/* big landscape tablets, laptops, and desktops (90%) */
+
+@media (min-width:1025px) {
+    .dataset .answer {
+        font-size: 1.44em;
+    }
+    .dataset .question,
+    #dataend-container #dataend-start {
+        font-size: 1.035em;
+    }
+    .dataset .question,
+    .dataset .answer,
+    #dataend-container #dataend-start {
+        margin-top: 18px;
+    }
+    #dataend-container #dataend-end {
+        font-size: 1.305em;
+    }
+    #dataend-container #dataend-quote {
+        font-size: 0.9em;
+        margin-top: 9px;
+    }
+    #dataend-container #dataend-end,
+    #dataset-container {
+        margin-top: 36px;
+    }
+}
+
+
+/* hi-res laptops and desktops (100%) */
+
+@media (min-width:1281px) {
+    .dataset .answer {
+        font-size: 1.60em;
+    }
+    .dataset .question,
+    #dataend-container #dataend-start {
+        font-size: 1.15em;
+    }
+    .dataset .question,
+    .dataset .answer,
+    #dataend-container #dataend-start {
+        margin-top: 20px;
+    }
+    #dataend-container #dataend-end {
+        font-size: 1.45em;
+    }
+    #dataend-container #dataend-quote {
+        font-size: 1em;
+        margin-top: 10px;
+    }
+    #dataend-container #dataend-end,
+    #dataset-container {
+        margin-top: 40px;
+    }
+}

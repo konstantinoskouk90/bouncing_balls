@@ -1,0 +1,93 @@
+/* ================================= 
+   Header
+==================================== */
+
+.header-container {
+	border-bottom: 1px solid rgb(223,12,12);
+}
+
+.top-header {
+	background-color: rgb(16,167,210);
+	border-bottom: 1px solid rgb(223,12,12);
+}
+
+.main-header {
+	padding-top: 0.5em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+
+a {
+   text-decoration: none;
+}
+
+.top-nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+  padding-top: 2.5px;
+  font-size: .75em;
+  font-family: Sniglet;
+  font-weight: 400;
+}
+
+.top-nav a {
+  text-align: center;
+  display: block;
+  padding: 5px 12.5px;
+  color: rgb(4,0,6);
+  cursor: pointer;
+}
+
+.top-nav a:hover {
+	color: rgb(255,255,255);
+}
+
+.main-nav {
+  padding: 10px 15px;
+  margin-left: 5px;
+  font-family: Sniglet;
+  font-size: 0.9em;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav a {
+	text-align: center;
+	display: block;
+	padding: 7px 22.5px;
+	letter-spacing: 1px;
+}
+
+.main-nav a.active {
+  color: rgb(255,255,255);
+}
+
+.main-nav a:not(.active) {
+  color: rgb(4,0,6);
+}
+
+.main-nav a:not(.active):hover {
+  color: rgb(224,224,224);
+}
+
+.name {
+  font-size: 1em;
+  margin: 0;
+  font-family: Sniglet;
+  font-weight: 800;
+  text-align: center;
+  display: block;
+  padding: 5px 7.5px;
+  font-size: 2.25em;
+  color: rgb(223,12,12);
+  text-shadow: 3px 1px 3px rgb(0,0,0);
+  cursor: default;
+}

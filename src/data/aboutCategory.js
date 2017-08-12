@@ -9,7 +9,7 @@ const aboutCategory = {
       answer: "😟"
     },
     {
-      question: "Someone put pineapple on your pizza?",
+      question: "Someone putting pineapple on your pizza?",
       answer: "🤢"
     }
   ],

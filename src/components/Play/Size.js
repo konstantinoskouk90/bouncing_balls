@@ -26,7 +26,7 @@ class Size extends Component {
   // render() updates the DOM
   render = () => {
     return (
-      <div id="size-container">
+      <div className="container">
         <div className="title">{this.props.title}</div>
         <div id="input-container">
           <input

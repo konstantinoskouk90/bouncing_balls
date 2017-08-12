@@ -6,23 +6,23 @@ import React, { Component } from 'react';
  */
 class Mouse extends Component {
 
-    constructor(e, c) {
+  constructor(e, c) {
 
-        super();
+    super();
 
-        const rect = c.getBoundingClientRect(),
-            root = document.documentElement,
-            mouseX = e.clientX - rect.left - root.scrollLeft,
-            mouseY = e.clientY - rect.top - root.scrollTop;
+    const rect = c.getBoundingClientRect(),
+      root = document.documentElement,
+      mouseX = e.clientX - rect.left - root.scrollLeft,
+      mouseY = e.clientY - rect.top - root.scrollTop;
 
-        this.x = mouseX;
-        this.y = mouseY;
-    }
+    this.x = mouseX;
+    this.y = mouseY;
+  }
 
-    // render() updates the DOM
-    render = () => {
-        return false;
-    }
+  // render() updates the DOM
+  render = () => {
+    return false;
+  }
 }
 
 export default Mouse;

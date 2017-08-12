@@ -41,7 +41,7 @@ class Play extends Component {
     // Context
     this.ctx = this.canvas.getContext("2d");
     // Width
-    this.canvas.width = window.innerWidth - window.innerWidth / 2.9;
+    this.canvas.width = window.innerWidth - window.innerWidth / 2.85;
     // Height
     this.canvas.height = window.innerHeight / 3 + window.innerHeight / 10;
     // Resize listener
@@ -70,7 +70,7 @@ class Play extends Component {
 
   // onResize() resizes the canvas when screen size change is detected
   onResize = () => {
-    this.canvas.width = window.innerWidth - window.innerWidth / 2.9;
+    this.canvas.width = window.innerWidth - window.innerWidth / 2.85;
     this.canvas.height = window.innerHeight / 3 + window.innerHeight / 10;
   }
 
@@ -119,7 +119,7 @@ class Play extends Component {
   /**
    * onCanvasClick() determines the user's mouse position
    * and draws a new ball on the canvas by appending it
-   * to the existing ball array it then updates the state
+   * to the existing ball array, then updates the state
    */
   onCanvasClick = (e) => {
     const mouse = new Mouse(e, this.canvas),

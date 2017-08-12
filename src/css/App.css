@@ -1,54 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Sniglet:400,800');
 
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
 /* ================================= 
   Base Element Styles
 ==================================== */
@@ -382,4 +333,61 @@ input {
 
 #color-details * {
   display: inline-block;
+}
+
+#about-wrapper {
+  font-size: 1.15em;
+	font-family: Sniglet;
+  font-weight: 400;
+}
+
+#about-wrapper #start-container,
+#about-wrapper #dataend-container,
+.dataset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#dataend-container {
+  margin-top: 10px;
+}
+
+#dataend-container #dataend-start-text {
+  margin-top: 10px;
+}
+
+#dataend-container #dataend-end-text {
+  margin-top: 40px;
+  color: rgb(200,0,0);
+  font-size: 1.45em;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+#dataend-container #dataend-end-text:hover {
+  color: rgb(223,12,12);
+}
+
+#dataend-quote-text {
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+#dataset-container {
+  margin-top: 40px;
+}
+
+.dataset * {
+  margin-top: 10px;
+}
+
+.question {
+  color: rgb(0,0,0);
+}
+
+.answer {
+  font-size: 1.60em;
+  color: rgb(200,0,0);
 }

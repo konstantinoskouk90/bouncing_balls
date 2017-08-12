@@ -144,7 +144,7 @@ class Play extends Component {
     requestAnimationFrame(this.updateCanvas);
   }
 
-  // render() updates the DOM on state change
+  // render() updates the DOM
   render = () => {
     return (
       <div id="play-wrapper">

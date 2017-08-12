@@ -44,7 +44,7 @@ class Color extends Component {
         this.setPreviewColor(color);
     }
 
-    // render() updates the DOM on state change
+    // render() updates the DOM
     render = () => {
         return (
             <div id="color-container" className="settings-component">

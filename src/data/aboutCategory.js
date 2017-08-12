@@ -1,5 +1,4 @@
 const aboutCategory = {
-
   dataset: [
     {
       question: "Feeling angry?",
@@ -14,7 +13,6 @@ const aboutCategory = {
       answer: "🤢"
     }
   ],
-  
   dataend: {
     start: "When life gets just a little bit harder, all you have to do is...",
     end: "BOUNCE",

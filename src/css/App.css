@@ -354,11 +354,11 @@ input {
   margin-top: 10px;
 }
 
-#dataend-container #dataend-start-text {
+#dataend-container #dataend-start {
   margin-top: 10px;
 }
 
-#dataend-container #dataend-end-text {
+#dataend-container #dataend-end {
   margin-top: 40px;
   color: rgb(200,0,0);
   font-size: 1.45em;
@@ -366,11 +366,11 @@ input {
   cursor: pointer;
 }
 
-#dataend-container #dataend-end-text:hover {
+#dataend-container #dataend-end:hover {
   color: rgb(223,12,12);
 }
 
-#dataend-quote-text {
+#dataend-quote {
   font-size: 1em;
   margin-top: 10px;
 }
@@ -390,4 +390,20 @@ input {
 .answer {
   font-size: 1.60em;
   color: rgb(200,0,0);
+}
+
+#image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+}
+
+#image-container img {
+  width: 45%;
+  height: 45%;
+  border-radius: 50%;
 }

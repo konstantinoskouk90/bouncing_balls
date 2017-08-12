@@ -23,7 +23,7 @@ class Size extends Component {
     this.props.changeHandler(e.target.id, Number(e.target.value));
   }
 
-  // render() updates the DOM on state change
+  // render() updates the DOM
   render = () => {
     return (
       <div id="size-container">

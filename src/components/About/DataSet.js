@@ -1,6 +1,9 @@
 import React from 'react';
 
-/** Constant representing kill list. */
+/*
+ * The DataSet function represents the 
+ * About category's questions and answers
+ */
 const DataSet = props => (
     <div className="dataset">
       <div className="dataset-question">

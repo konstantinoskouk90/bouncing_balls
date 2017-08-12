@@ -48,7 +48,13 @@ class Color extends Component {
   render = () => {
     return (
       <div className="container" id="color-settings">
-        <div className="title"> {this.props.settingsTitle} </div>
+        <div id="color-details">
+          <div className="title">{this.props.settingsTitle}</div>
+          <div id="color-details-right">
+            <div id="color-preview"></div>
+            <div id="color-text">{this.props.previewTitle}</div>
+          </div>
+        </div>
         <div id="input-container">
           <input
             className="color"
@@ -74,10 +80,6 @@ class Color extends Component {
             min="0" max="255"
             value={this.props.currentColor.blue}
           />
-        </div>
-        <div id="color-details">
-          <div id="color-preview"></div>
-          <div id="color-text">{this.props.previewTitle}</div>
         </div>
       </div>
     );

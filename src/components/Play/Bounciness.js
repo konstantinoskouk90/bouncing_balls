@@ -27,7 +27,10 @@ class Bounciness extends Component {
   render = () => {
     return (
       <div className="container">
-        <div className="title">{this.props.title}</div>
+        <div id="bounciness-details">
+          <div className="title">{this.props.title}</div>
+          <div className="percentage">{`${this.props.currentBounciness.toFixed(2)}`}</div>
+        </div>
         <input
           id="bounciness"
           type="range"
@@ -36,7 +39,6 @@ class Bounciness extends Component {
           value={this.props.currentBounciness}
           min="0.1" max="1"
         />
-        <div className="percentage">{`${this.props.currentBounciness.toFixed(2)}`}</div>
       </div>
     );
   }

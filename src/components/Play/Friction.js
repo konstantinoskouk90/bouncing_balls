@@ -27,7 +27,10 @@ class Friction extends Component {
   render = () => {
     return (
       <div className="container">
-        <div className="title"> {this.props.title} </div>
+        <div id="friction-details">
+          <div className="title">{this.props.title}</div>
+          <div className="percentage">{`${this.props.currentFriction.toFixed(2)}`}</div>
+        </div>
         <input
           id="friction"
           type="range"
@@ -36,7 +39,6 @@ class Friction extends Component {
           value={this.props.currentFriction}
           min="0.1" max="1"
         />
-        <div className="percentage">{`${this.props.currentFriction.toFixed(2)}`}</div>
       </div>
     );
   }

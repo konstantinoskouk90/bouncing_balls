@@ -27,7 +27,10 @@ class Gravity extends Component {
   render = () => {
     return (
       <div className="container">
-        <div className="title"> {this.props.title} </div>
+        <div id="gravity-details">
+          <div className="title">{this.props.title}</div>
+          <div className="percentage">{`${this.props.currentGravity.toFixed(2)}`}</div>
+        </div>
         <input
           id="gravity"
           type="range"
@@ -36,7 +39,6 @@ class Gravity extends Component {
           value={this.props.currentGravity}
           min="0.1" max="1"
         />
-        <div className="percentage">{`${this.props.currentGravity.toFixed(2)}`}</div>
       </div>
     );
   }

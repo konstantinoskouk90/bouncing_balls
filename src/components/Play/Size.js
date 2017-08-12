@@ -27,18 +27,18 @@ class Size extends Component {
   render = () => {
     return (
       <div className="container">
-        <div className="title">{this.props.title}</div>
-        <div id="input-container">
-          <input
-            id="size"
-            type="range"
-            step="any"
-            onChange={this.handleChange}
-            min="1" max="30"
-            value={this.props.currentSize}
-          />
+        <div id="size-details">
+          <div className="title">{this.props.title}</div>
+          <div className="percentage">{this.props.currentSize.toFixed(1)}</div>
         </div>
-        <div id="size-preview">{this.props.currentSize.toFixed(1)}</div>
+        <input
+          id="size"
+          type="range"
+          step="any"
+          onChange={this.handleChange}
+          min="1" max="30"
+          value={this.props.currentSize}
+        />
       </div>
     );
   }

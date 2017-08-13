@@ -4,9 +4,9 @@
 <h2>How to run</h2>
 
 <ul>
-	<li>Download</li>
+	<li>Clone repository</li>
 	<li>Redirect to folder</li>
 	<li>npm install -g serve</li>
 	<li>serve -s build</li>
-	<li>Have fun!</li>li>
+	<li>Enjoy!</li>
 </ul>

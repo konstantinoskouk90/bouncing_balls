@@ -8,6 +8,7 @@ import aboutCategory from '../data/aboutCategory';
  */
 class About extends Component {
 
+  // playGame() redirects the users to the Play category
   playGame = () => {
     this.props.history.push("/play");
   }

@@ -3,7 +3,7 @@
 ==================================== */
 
 
-/* standard styling across all devices */
+/* standard styling across all devices - start */
 
 #about-wrapper {
     font-family: Sniglet;
@@ -36,6 +36,8 @@
 .answer {
     color: rgb(200, 0, 0);
 }
+
+/* standard styling across all devices - end */
 
 
 /* media queries */

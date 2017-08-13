@@ -2,6 +2,8 @@
    NotFound
 ==================================== */
 
+/* standard styling across all devices - start */
+
 #image-container {
   display: flex;
   flex-direction: row;
@@ -17,3 +19,5 @@
   height: 45%;
   border-radius: 50%;
 }
+
+/* standard styling across all devices - end */

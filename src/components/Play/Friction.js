@@ -31,14 +31,16 @@ class Friction extends Component {
           <div className="title">{this.props.title}</div>
           <div className="percentage">{`${this.props.currentFriction.toFixed(2)}`}</div>
         </div>
-        <input
-          id="friction"
-          type="range"
-          step="any"
-          onChange={this.handleChange}
-          value={this.props.currentFriction}
-          min="0.1" max="1"
-        />
+        <div className="input-container">
+          <input
+            id="friction"
+            type="range"
+            step="any"
+            onChange={this.handleChange}
+            value={this.props.currentFriction}
+            min="0.1" max="1"
+          />
+        </div>
       </div>
     );
   }

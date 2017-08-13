@@ -31,14 +31,16 @@ class Gravity extends Component {
           <div className="title">{this.props.title}</div>
           <div className="percentage">{`${this.props.currentGravity.toFixed(2)}`}</div>
         </div>
-        <input
-          id="gravity"
-          type="range"
-          step="any"
-          onChange={this.handleChange}
-          value={this.props.currentGravity}
-          min="0.1" max="1"
-        />
+        <div className="input-container">
+          <input
+            id="gravity"
+            type="range"
+            step="any"
+            onChange={this.handleChange}
+            value={this.props.currentGravity}
+            min="0.1" max="1"
+          />
+        </div>
       </div>
     );
   }

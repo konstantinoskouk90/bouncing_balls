@@ -31,14 +31,16 @@ class Bounciness extends Component {
           <div className="title">{this.props.title}</div>
           <div className="percentage">{`${this.props.currentBounciness.toFixed(2)}`}</div>
         </div>
-        <input
-          id="bounciness"
-          type="range"
-          step="any"
-          onChange={this.handleChange}
-          value={this.props.currentBounciness}
-          min="0.1" max="1"
-        />
+        <div className="input-container">
+          <input
+            id="bounciness"
+            type="range"
+            step="any"
+            onChange={this.handleChange}
+            value={this.props.currentBounciness}
+            min="0.1" max="1"
+          />
+        </div>
       </div>
     );
   }

@@ -2,6 +2,9 @@
    App
 ==================================== */
 
+
+/* standard styling across all devices - start */
+
 @import url('https://fonts.googleapis.com/css?family=Sniglet:400,800');
 
 * {
@@ -18,3 +21,5 @@ body{
 body {
 	background-color: rgb(26,187,230);
 }
+
+/* standard styling across all devices - end */

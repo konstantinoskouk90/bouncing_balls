@@ -25,6 +25,11 @@ class Color extends Component {
     this.setPreviewColor();
   }
 
+  /**
+   * setPreviewColor() is called both when the component 
+   * is loaded in as well as when the state is updated
+   * changing the ball color accordingly
+   */
   setPreviewColor = () => {
     this.preview.style.backgroundColor = `rgb(${this.props.currentColor.red},${this.props.currentColor.green},${this.props.currentColor.blue})`;
   }
@@ -55,7 +60,7 @@ class Color extends Component {
             <div id="color-text">{this.props.previewTitle}</div>
           </div>
         </div>
-        <div id="input-container">
+        <div id="inputs-container">
           <input
             className="color"
             id="red"

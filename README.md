@@ -1,6 +1,6 @@
 <h1>#bouncing_balls</h1>
 
-<h4>JavaScript app built using React.js.</h4>
+<h4>JavaScript app built using React.js</h4>
 
 <h2>Features</h2>
 
@@ -13,12 +13,12 @@
 
 <h2>Installation - How-To</h2>
 
-<p>Node Package Manager is recommended, though not mandatory to run app.</p>
+<p>Node Package Manager is recommended, though not mandatory to run the app.</p>
 <ul>
-	<li>Clone repository</li>
-	<li>Redirect to folder</li>
-	<li>npm install -g serve (if already not installed)</li>
-	<li>serve -s build</li>
+	<li>Clone repository.</li>
+	<li>Redirect to folder.</li>
+	<li>npm install -g serve (if already not installed).</li>
+	<li>serve -s build.</li>
 	<li>Enjoy!</li>
 </ul>
 
@@ -41,9 +41,10 @@
 <h2>TODO - Extend functionality and scale app</h2>
 
 <ul>
-	<li>Add Themes</li>
-	<li>Make balls collide with each other</li>
-	<li>Implement Redux to manage state</li>
+	<li>Add Themes.</li>
+	<li>Make balls collide with each other.</li>
+	<li>Implement Redux to manage state.</li>
+	<li>Replace plain CSS with SASS.</li>
 </ul>
 
 <h2>Author & Contact</h2>

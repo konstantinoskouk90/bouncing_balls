@@ -16,7 +16,11 @@ export default function Settings(state = initialSettings, action) {
     switch (action.type) {
         case SettingsActionTypes.CHANGE_COLOR:
             return {
-                color: action.color,
+                color: {
+                    red: action.color.red,
+                    green: action.color.green,
+                    blue: action.color.blue,
+                },
                 size: state.size,
                 gravity: state.gravity,
                 bounciness: state.bounciness,

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // PropTypes
 const propTypes = {
   currentGravity: PropTypes.number.isRequired,
-  changeHandler: PropTypes.func.isRequired
+  changeGravity: PropTypes.func.isRequired
 };
 
 // Default props
@@ -15,12 +15,12 @@ const defaultProps = {
 // The Gravity class represents the gravity level
 class Gravity extends Component {
 
-  /*
-   * handleChange() calls the changeHandler() function which belongs to parent 
+  /**
+   * handleChange() calls the changeGravity() function which belongs to parent 
    * component Play, via accessing props, and updates the state accordingly
    */
   handleChange = (e) => {
-    this.props.changeHandler(e.target.id, Number(e.target.value));
+    this.props.changeGravity(Number(e.target.value));
   }
 
   // render() updates the DOM

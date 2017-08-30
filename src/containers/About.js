@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import DataSet from '../components/About/DataSet';
 import aboutCategory from '../data/aboutCategory';
 
-/*
+/**
  * The About function represents
  * the game's top and main menus
  */
@@ -18,7 +18,7 @@ class About extends Component {
     return (
       <div id="about-wrapper">
         <div id="dataset-container">
-          {/* 
+          {/** 
             * Loop through questions and answers
             * array of objects to create components
             */}
@@ -32,7 +32,7 @@ class About extends Component {
             );
           })}
         </div>
-        {/* 
+        {/** 
           * Concluding About category text 
           * with redirect to Play category
           */}

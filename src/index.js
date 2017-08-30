@@ -1,13 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import './css/Reset.css';
 import './css/App.css';
 import './css/Header.css';
 import './css/Play.css';
 import './css/About.css';
 import './css/NotFound.css';
+import Settings from './reducers/settings';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = createStore(
+	Settings,
+	window.devToolsExtension && window.devToolsExtension()
+);
+
+render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
+);
+
 registerServiceWorker();

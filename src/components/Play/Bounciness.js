@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // PropTypes
 const propTypes = {
   currentBounciness: PropTypes.number.isRequired,
-  changeHandler: PropTypes.func.isRequired
+  changeBounciness: PropTypes.func.isRequired
 };
 
 // Default props
@@ -15,12 +15,12 @@ const defaultProps = {
 // The Bounciness class represents the bounciness level
 class Bounciness extends Component {
 
-  /*
-   * handleChange() calls the changeHandler() function which belongs to parent 
+  /**
+   * handleChange() calls the changeBounciness() function which belongs to parent 
    * component Play, via accessing props, and updates the state accordingly
    */
   handleChange = (e) => {
-    this.props.changeHandler(e.target.id, Number(e.target.value));
+    this.props.changeBounciness(Number(e.target.value));
   }
 
   // render() updates the DOM

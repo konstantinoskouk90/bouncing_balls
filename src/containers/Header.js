@@ -8,7 +8,7 @@ const defaultProps = {
   title: "BOUNCE"
 };
 
-/*
+/**
  * The Header function represents
  * the game's top and main menus
  */

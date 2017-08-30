@@ -6,7 +6,7 @@ const propTypes = {
   topLinks: PropTypes.object.isRequired
 };
 
-/*
+/**
  * The Top function represents
  * the game's top navigation menu
  */

@@ -7,7 +7,7 @@ const propTypes = {
   mainTitle: PropTypes.string.isRequired
 };
 
-/*
+/**
  * The Main function represents
  * the game's main navigation menu
  */

@@ -5,7 +5,7 @@ import Play from './Play';
 import About from './About';
 import NotFound from './NotFound';
 
-/*
+/**
  * The App function represents the entire game 
  * loading in components depending on the route
  */

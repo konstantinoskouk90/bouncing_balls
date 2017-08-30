@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as Settings from '../actions/settings';
 import Ball from '../components/Play/Ball';
 import Mouse from '../components/Play/Mouse';
 import Canvas from '../components/Play/Canvas';
@@ -7,9 +11,17 @@ import Size from '../components/Play/Size';
 import Gravity from '../components/Play/Gravity';
 import Bounciness from '../components/Play/Bounciness';
 import Friction from '../components/Play/Friction';
-import defaultSettings from '../data/defaultSettings';
 
-/*
+// PropTypes
+const propTypes = {
+  color: PropTypes.object.isRequired,
+  size: PropTypes.number.isRequired,
+  gravity: PropTypes.number.isRequired,
+  bounciness: PropTypes.number.isRequired,
+  friction: PropTypes.number.isRequired,
+};
+
+/**
  * The Play class creates the entire Play category which
  * allows users to play the game and change the settings
  */
@@ -19,14 +31,9 @@ class Play extends Component {
 
     super();
 
-    // Set initial state to default settings
+    // initial ball array state
     this.state = {
-      totalBalls: [],
-      color: defaultSettings.color,
-      size: defaultSettings.size,
-      gravity: defaultSettings.gravity,
-      bounciness: defaultSettings.bounciness,
-      friction: defaultSettings.friction
+      totalBalls: []
     }
   }
 
@@ -35,7 +42,6 @@ class Play extends Component {
    * component is mounted initializing the DOM's canvas node
    */
   componentDidMount = () => {
-
     // Canvas
     this.canvas = document.getElementsByTagName("canvas")[0];
     // Context
@@ -45,7 +51,7 @@ class Play extends Component {
     // Height
     this.canvas.height = window.innerHeight / 3 + window.innerHeight / 10;
     // Resize listener
-    window.addEventListener("resize", this.onResize);
+    window.addEventListener("resize", this.resizeCanvas);
     // Start animation
     this.updateCanvas();
   }
@@ -55,34 +61,48 @@ class Play extends Component {
    * is unmounted and destroyed to remove the canvas resize listener
    */
   componentWillUnmount = () => {
-    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener("resize", this.resizeCanvas);
   }
 
   /**
-   * inputChangeHandler() updates the state on change.
-   * Dynamically adapts depending on the input field
+   * onAppendBall() updates the state by appending 
+   * a new ball to the existing ball array
    */
-  inputChangeHandler = (key, value) => {
+  onAppendBall = (ball) => {
+
+    const balls = this.state.totalBalls;
+
     this.setState({
-      [key]: value
+      totalBalls: [...balls, ...ball]
     });
   }
 
-  // onResize() resizes the canvas when screen size change is detected
-  onResize = () => {
+  /**
+   * onCanvasClick() determines the user's mouse 
+   * position and draws a new ball on the canvas
+   */
+  onCanvasClick = (e) => {
+    const mouse = new Mouse(e, this.canvas),
+      ball = [new Ball(mouse, this.props.size, `rgb(${this.props.color.red},${this.props.color.green},${this.props.color.blue})`)];
+
+    this.onAppendBall(ball);
+  }
+
+  // resizeCanvas() resizes the canvas when screen size change is detected
+  resizeCanvas = () => {
     this.canvas.width = window.innerWidth - window.innerWidth / 2.85;
     this.canvas.height = window.innerHeight / 3 + window.innerHeight / 10;
   }
 
-  // onMove() determines the ball movement
-  onMove = (ball) => {
-    ball.vy += this.state.gravity;
+  // moveBall() determines the ball movement
+  moveBall = (ball) => {
+    ball.vy += this.props.gravity;
     ball.axisX += ball.vx;
     ball.axisY += ball.vy;
   }
 
-  // onDraw() draws the ball on the canvas
-  onDraw = (ball) => {
+  // drawBall() draws the ball on the canvas
+  drawBall = (ball) => {
     this.ctx.fillStyle = ball.color;
     this.ctx.beginPath();
     this.ctx.arc(ball.axisX, ball.axisY, ball.radius, 0, Math.PI * 2, true);
@@ -90,45 +110,28 @@ class Play extends Component {
     this.ctx.fill();
   }
 
-  /*
-   * onCollision() determines the ball's
+  /**
+   * collideBall() determines the ball's
    * collision with the canvas border
    */
-  onCollision = (ball) => {
-
+  collideBall = (ball) => {
     // X Axis
     if (ball.axisX >= this.canvas.width - ball.radius) {
       ball.axisX = this.canvas.width - ball.radius;
-      ball.vx *= -this.state.bounciness;
+      ball.vx *= -this.props.bounciness;
     } else if (ball.axisX <= 0 + ball.radius) {
       ball.axisX = 0 + ball.radius;
-      ball.vx *= -this.state.bounciness;
+      ball.vx *= -this.props.bounciness;
     }
-
     // Y Axis
     if (ball.axisY >= this.canvas.height - ball.radius) {
       ball.axisY = this.canvas.height - ball.radius;
-      ball.vy *= -this.state.bounciness;
-      ball.vx *= this.state.friction;
+      ball.vy *= -this.props.bounciness;
+      ball.vx *= this.props.friction;
     } else if (ball.axisY <= 0 + ball.radius) {
       ball.axisY = 0 + ball.radius;
-      ball.vy *= -this.state.bounciness;
+      ball.vy *= -this.props.bounciness;
     }
-  }
-
-  /**
-   * onCanvasClick() determines the user's mouse position
-   * and draws a new ball on the canvas by appending it
-   * to the existing ball array, then updates the state
-   */
-  onCanvasClick = (e) => {
-    const mouse = new Mouse(e, this.canvas),
-      ball = [new Ball(mouse, this.state.size, `rgb(${this.state.color.red},${this.state.color.green},${this.state.color.blue})`)],
-      balls = [...this.state.totalBalls, ...ball];
-
-    this.setState({
-      totalBalls: balls
-    });
   }
 
   // updateCanvas() constantly updates the canvas via a callback
@@ -136,9 +139,9 @@ class Play extends Component {
 
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    this.state.totalBalls.map(ball => this.onMove(ball));
-    this.state.totalBalls.map(ball => this.onDraw(ball));
-    this.state.totalBalls.map(ball => this.onCollision(ball));
+    this.state.totalBalls.map(ball => this.moveBall(ball));
+    this.state.totalBalls.map(ball => this.drawBall(ball));
+    this.state.totalBalls.map(ball => this.collideBall(ball));
 
     // Callback
     requestAnimationFrame(this.updateCanvas);
@@ -146,29 +149,37 @@ class Play extends Component {
 
   // render() updates the DOM
   render = () => {
+
+    const { dispatch, color, size, gravity, bounciness, friction } = this.props;
+    const changeColor = bindActionCreators(Settings.changeColor, dispatch);
+    const changeSize = bindActionCreators(Settings.changeSize, dispatch);
+    const changeGravity = bindActionCreators(Settings.changeGravity, dispatch);
+    const changeBounciness = bindActionCreators(Settings.changeBounciness, dispatch);
+    const changeFriction = bindActionCreators(Settings.changeFriction, dispatch);
+
     return (
       <div id="play-wrapper">
         <Canvas mouseClick={this.onCanvasClick} />
         <div id="settings-wrapper">
-          <Color 
-            currentColor={this.state.color}
-            changeHandler={this.inputChangeHandler}
+          <Color
+            currentColor={color}
+            changeColor={changeColor}
           />
           <Size
-            currentSize={this.state.size}
-            changeHandler={this.inputChangeHandler}
+            currentSize={size}
+            changeSize={changeSize}
           />
           <Gravity
-            currentGravity={this.state.gravity}
-            changeHandler={this.inputChangeHandler}
+            currentGravity={gravity}
+            changeGravity={changeGravity}
           />
           <Bounciness
-            currentBounciness={this.state.bounciness}
-            changeHandler={this.inputChangeHandler}
+            currentBounciness={bounciness}
+            changeBounciness={changeBounciness}
           />
           <Friction
-            currentFriction={this.state.friction}
-            changeHandler={this.inputChangeHandler}
+            currentFriction={friction}
+            changeFriction={changeFriction}
           />
         </div>
       </div>
@@ -176,4 +187,16 @@ class Play extends Component {
   }
 }
 
-export default Play;
+const mapStateToProps = state => (
+  {
+    color: state.color,
+    size: state.size,
+    gravity: state.gravity,
+    bounciness: state.bounciness,
+    friction: state.friction
+  }
+);
+
+Play.propTypes = propTypes;
+
+export default connect(mapStateToProps)(Play);

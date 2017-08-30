@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // PropTypes
 const propTypes = {
   currentColor: PropTypes.object.isRequired,
-  changeHandler: PropTypes.func.isRequired
+  changeColor: PropTypes.func.isRequired
 };
 
 // Default props
@@ -34,8 +34,8 @@ class Color extends Component {
     this.preview.style.backgroundColor = `rgb(${this.props.currentColor.red},${this.props.currentColor.green},${this.props.currentColor.blue})`;
   }
 
-  /*
-   * handleChange() calls the changeHandler() function which belongs to parent 
+  /**
+   * handleChange() calls the changeColor() function which belongs to parent 
    * component Play, via accessing props, and updates the state accordingly
    */
   handleChange = (e) => {
@@ -44,9 +44,9 @@ class Color extends Component {
     // Update current object color based on input change
     color[e.target.id] = Number(e.target.value);
     // Update parent state
-    this.props.changeHandler(e.target.class, color);
+    this.props.changeColor(color);
     // Update preview color
-    this.setPreviewColor(color);
+    this.setPreviewColor();
   }
 
   // render() updates the DOM

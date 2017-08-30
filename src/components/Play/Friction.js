@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // PropTypes
 const propTypes = {
   currentFriction: PropTypes.number.isRequired,
-  changeHandler: PropTypes.func.isRequired
+  changeFriction: PropTypes.func.isRequired
 };
 
 // Default props
@@ -15,12 +15,12 @@ const defaultProps = {
 // The Friction class represents the friction level
 class Friction extends Component {
 
-  /*
-   * handleChange() calls the changeHandler() function which belongs to parent 
+  /**
+   * handleChange() calls the changeFriction() function which belongs to parent 
    * component Play, via accessing props, and updates the state accordingly
    */
   handleChange = (e) => {
-    this.props.changeHandler(e.target.id, Number(e.target.value));
+    this.props.changeFriction(Number(e.target.value));
   }
 
   // render() updates the DOM

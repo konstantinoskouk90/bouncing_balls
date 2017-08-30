@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // PropTypes
 const propTypes = {
   currentSize: PropTypes.number.isRequired,
-  changeHandler: PropTypes.func.isRequired
+  changeSize: PropTypes.func.isRequired
 };
 
 // Default Props
@@ -15,12 +15,12 @@ const defaultProps = {
 // The Size class represents the ball's size
 class Size extends Component {
 
-  /*
-   * handleChange() calls the changeHandler() function which belongs to parent 
+  /**
+   * handleChange() calls the changeSize() function which belongs to parent 
    * component Play, via accessing props, and updates the state accordingly
    */
   handleChange = (e) => {
-    this.props.changeHandler(e.target.id, Number(e.target.value));
+    this.props.changeSize(Number(e.target.value));
   }
 
   // render() updates the DOM

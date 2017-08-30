@@ -1,6 +1,6 @@
 import React from 'react';
 
-/*
+/**
  * The DataSet function represents the 
  * About category's questions and answers
  */

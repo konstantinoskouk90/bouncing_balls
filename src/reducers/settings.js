@@ -1,6 +1,7 @@
 import * as SettingsActionTypes from '../actiontypes/settings';
 
-const initialSettings = {
+//Initial settings state
+const initialState = {
     color: {
         red: 223,
         green: 12,
@@ -12,7 +13,11 @@ const initialSettings = {
     friction: 0.60
 }
 
-export default function Settings(state = initialSettings, action) {
+/**
+ * Settings(state = initialState, action) is a pure 
+ * function that updates the application's settings
+ */
+export default function Settings(state = initialState, action) {
     switch (action.type) {
         case SettingsActionTypes.CHANGE_COLOR:
             return {

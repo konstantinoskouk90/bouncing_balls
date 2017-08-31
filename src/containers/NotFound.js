@@ -9,7 +9,7 @@ import notFoundMP3 from '../assets/audio/notFoundMP3.mp3';
 const NotFound = () => (
   <div id="notfound-wrapper">
     <div id="image-container">
-      <img src={notFoundIMG} />
+      <img src={notFoundIMG} alt="404 - Page Not Found" />
       <audio src={notFoundMP3} autoPlay="true"/>
     </div>
   </div>

@@ -139,9 +139,11 @@ class Play extends Component {
 
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    this.state.totalBalls.map(ball => this.moveBall(ball));
-    this.state.totalBalls.map(ball => this.drawBall(ball));
-    this.state.totalBalls.map(ball => this.collideBall(ball));
+    const totalBalls = this.state.totalBalls;
+
+    totalBalls.map(ball => this.moveBall(ball));
+    totalBalls.map(ball => this.drawBall(ball));
+    totalBalls.map(ball => this.collideBall(ball));
 
     // Callback
     requestAnimationFrame(this.updateCanvas);
@@ -150,12 +152,12 @@ class Play extends Component {
   // render() updates the DOM
   render = () => {
 
-    const { dispatch, color, size, gravity, bounciness, friction } = this.props;
-    const changeColor = bindActionCreators(Settings.changeColor, dispatch);
-    const changeSize = bindActionCreators(Settings.changeSize, dispatch);
-    const changeGravity = bindActionCreators(Settings.changeGravity, dispatch);
-    const changeBounciness = bindActionCreators(Settings.changeBounciness, dispatch);
-    const changeFriction = bindActionCreators(Settings.changeFriction, dispatch);
+    const { dispatch, color, size, gravity, bounciness, friction } = this.props,
+      changeColor = bindActionCreators(Settings.changeColor, dispatch),
+      changeSize = bindActionCreators(Settings.changeSize, dispatch),
+      changeGravity = bindActionCreators(Settings.changeGravity, dispatch),
+      changeBounciness = bindActionCreators(Settings.changeBounciness, dispatch),
+      changeFriction = bindActionCreators(Settings.changeFriction, dispatch);
 
     return (
       <div id="play-wrapper">
@@ -187,6 +189,7 @@ class Play extends Component {
   }
 }
 
+// mapStateToProps(state) is a helper function to access state properties 
 const mapStateToProps = state => (
   {
     color: state.color,
@@ -199,4 +202,8 @@ const mapStateToProps = state => (
 
 Play.propTypes = propTypes;
 
+/**
+ * connect() takes one arguments: mapStateToProps and returns a function 
+ * that can be used to connect the Redux store with a component
+ */
 export default connect(mapStateToProps)(Play);

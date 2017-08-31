@@ -1,3 +1,8 @@
+/**
+ * The settings.js file contains Actions which are payloads of 
+ * information that send data from the application to the store
+ */
+
 import * as SettingsActionTypes from '../actiontypes/settings';
 
 export const changeColor = color => {

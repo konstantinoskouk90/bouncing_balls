@@ -1,6 +1,6 @@
 <h1>#bouncing_balls</h1>
 
-<h4>JavaScript app built using React.js</h4>
+<h4>JavaScript app built using React.js and Redux</h4>
 
 <h2>Features</h2>
 

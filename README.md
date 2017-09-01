@@ -49,5 +49,5 @@
 
 <h2>Author & Contact</h2>
 
-<p>Created by: <i>Kostantinos Koukourakis</i></p>
+<p>Created by: <i>Konstantinos Koukourakis</i></p>
 <p><a href="mailto:konstantinoskouk90@gmail.com" target="_top">konstantinoskouk90@gmail.com</a></p>

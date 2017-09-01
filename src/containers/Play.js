@@ -152,12 +152,19 @@ class Play extends Component {
   // render() updates the DOM
   render = () => {
 
-    const { dispatch, color, size, gravity, bounciness, friction } = this.props,
-      changeColor = bindActionCreators(Settings.changeColor, dispatch),
-      changeSize = bindActionCreators(Settings.changeSize, dispatch),
-      changeGravity = bindActionCreators(Settings.changeGravity, dispatch),
-      changeBounciness = bindActionCreators(Settings.changeBounciness, dispatch),
-      changeFriction = bindActionCreators(Settings.changeFriction, dispatch);
+    // Destructuring
+    const {
+      color,
+      size,
+      gravity,
+      bounciness,
+      friction,
+      changeColor,
+      changeSize,
+      changeGravity,
+      changeBounciness,
+      changeFriction
+    } = this.props;
 
     return (
       <div id="play-wrapper">
@@ -200,10 +207,21 @@ const mapStateToProps = state => (
   }
 );
 
+// mapDispatchToProps(dispatch) is a helper function to fire action events
+const mapDispatchToProps = dispatch => (
+  {
+    changeColor: bindActionCreators(Settings.changeColor, dispatch),
+    changeSize: bindActionCreators(Settings.changeSize, dispatch),
+    changeGravity: bindActionCreators(Settings.changeGravity, dispatch),
+    changeBounciness: bindActionCreators(Settings.changeBounciness, dispatch),
+    changeFriction: bindActionCreators(Settings.changeFriction, dispatch)
+  }
+);
+
 Play.propTypes = propTypes;
 
 /**
- * connect() takes one arguments: mapStateToProps and returns a function 
- * that can be used to connect the Redux store with a component
+ * connect() takes two arguments: mapStateToProps, mapDispatchToProps 
+ * and connects the Redux store with the container via props
  */
-export default connect(mapStateToProps)(Play);
+export default connect(mapStateToProps, mapDispatchToProps)(Play);

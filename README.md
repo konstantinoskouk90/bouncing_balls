@@ -43,7 +43,6 @@
 <ul>
 	<li>Add Themes.</li>
 	<li>Make balls collide with each other.</li>
-	<li>Implement Redux to manage state.</li>
 	<li>Replace plain CSS with SASS.</li>
 </ul>
 

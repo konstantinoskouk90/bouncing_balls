@@ -1,0 +1,21 @@
+/* Utilities.Functions Styles -------------------- */
+
+@function get90Per($value) {
+    @return ($value * 100) / 90;
+}
+
+@function get85Per($value) {
+    @return ($value * 100) / 85;
+}
+
+@function get75Per($value) {
+    @return ($value * 100) / 75;   
+}
+
+@function get65Per($value) {
+    @return ($value * 100) / 65;
+}
+
+@function get55Per($value) {
+    @return ($value * 100) / 55;
+}

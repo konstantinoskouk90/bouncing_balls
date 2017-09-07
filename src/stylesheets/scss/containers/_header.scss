@@ -1,0 +1,286 @@
+/* ================================= 
+   Header
+==================================== */
+
+
+/* standard styling across all devices - start */
+
+.top-header {
+	background-color: rgb(16,167,210);
+}
+
+.top-nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+  font-family: Sniglet;
+  font-weight: 400;
+}
+
+.top-nav a {
+  text-align: center;
+  display: block;
+  color: rgb(4,0,6);
+  cursor: pointer;
+}
+
+.top-nav a:hover {
+	color: rgb(255,255,255);
+}
+
+.main-nav {
+  font-family: Sniglet;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav a {
+	text-align: center;
+	display: block;
+}
+
+.main-nav a.active {
+  color: rgb(255,255,255);
+}
+
+.main-nav a:not(.active) {
+  color: rgb(4,0,6);
+}
+
+.main-nav a:not(.active):hover {
+  color: rgb(224,224,224);
+}
+
+.name {
+  margin: 0;
+  font-family: Sniglet;
+  font-weight: 800;
+  text-align: center;
+  display: block;
+  color: rgb(223,12,12);
+  cursor: default;
+}
+
+/* standard styling across all devices - end */
+
+
+/* media queries */
+
+
+/* smartphones, iPhone, portrait 480x320 phones (55%) */
+
+@media (min-width:320px) {
+  .header-container {
+    border-bottom: 0.55px solid rgb(223,12,12);
+  }  
+  .top-header {
+    border-bottom: 0.55px solid rgb(223,12,12);
+  }
+  .main-header {
+    padding-top: 0.275em;
+  }
+  .top-nav {
+    padding-top: 1.375px;
+    font-size: .4125em;
+  }
+  .top-nav a {
+    padding: 2.75px 6.875px;
+  }
+  .main-nav {
+    padding: 5.5px 8.25px;
+    margin-left: 2.75px;
+    font-size: .495em;
+  }
+  .main-nav a {
+    padding: 3.85px 12.375px;
+    letter-spacing: 0.55px;
+  }
+  .name {
+    font-size: 0.55em;
+    padding: 2.75px 4.125px;
+    font-size: 1.2375em;
+    text-shadow: 1.65px 0.55px 1.65px rgb(0,0,0);
+  }
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide (65%) */
+
+@media (min-width:481px) {
+  .header-container {
+    border-bottom: 0.65px solid rgb(223,12,12);
+  }  
+  .top-header {
+    border-bottom: 0.65px solid rgb(223,12,12);
+  }
+  .main-header {
+    padding-top: 0.325em;
+  }
+  .top-nav {
+    padding-top: 1.625px;
+    font-size: .4875em;
+  }
+  .top-nav a {
+    padding: 3.25px 8.125px;
+  }
+  .main-nav {
+    padding: 6.5px 9.75px;
+    margin-left: 3.25px;
+    font-size: 0.585em;
+  }
+  .main-nav a {
+    padding: 4.55px 14.625px;
+    letter-spacing: 0.65px;
+  }
+  .name {
+    font-size: 0.65em;
+    padding: 3.25px 4.875px;
+    font-size: 1.4625em;
+    text-shadow: 1.95px 0.65px 1.95px rgb(0,0,0);
+  }
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones (75%) */
+
+@media (min-width:641px) {
+  .header-container {
+    border-bottom: 0.75px solid rgb(223,12,12);
+  }  
+  .top-header {
+    border-bottom: 0.75px solid rgb(223,12,12);
+  }
+  .main-header {
+    padding-top: 0.375em;
+  }
+  .top-nav {
+    padding-top: 1.875px;
+    font-size: .5625em;
+  }
+  .top-nav a {
+    padding: 3.75px 9.375px;
+  }
+  .main-nav {
+    padding: 7.5px 11.25px;
+    margin-left: 3.75px;
+    font-size: .675em;
+  }
+  .main-nav a {
+    padding: 5.25px 16.875px;
+    letter-spacing: 0.75px;
+  }
+  .name {
+    font-size: 0.75em;
+    padding: 3.75px 5.625px;
+    font-size: 1.6875em;
+    text-shadow: 2.25px 0.75px 2.25px rgb(0,0,0);
+  }
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops (85%) */
+
+@media (min-width:961px) {
+  .header-container {
+    border-bottom: 0.85px solid rgb(223,12,12);
+  }  
+  .top-header {
+    border-bottom: 0.85px solid rgb(223,12,12);
+  }
+  .main-header {
+    padding-top: 0.425em;
+  }
+  .top-nav {
+    padding-top: 2.125px;
+    font-size: .6375em;
+  }
+  .top-nav a {
+    padding: 4.25px 10.625px;
+  }
+  .main-nav {
+    padding: 8.5px 12.75px;
+    margin-left: 4.25px;
+    font-size: .765em;
+  }
+  .main-nav a {
+    padding: 5.95px 19.125px;
+    letter-spacing: 0.85px;
+  }
+  .name {
+    font-size: 0.85em;
+    padding: 4.25px 6.375px;
+    font-size: 1.9125em;
+    text-shadow: 2.55px 0.85px 2.55px rgb(0,0,0);
+  }
+}
+
+/* big landscape tablets, laptops, and desktops (90%) */
+
+@media (min-width:1025px) {
+  .header-container {
+    border-bottom: 0.9px solid rgb(223,12,12);
+  }  
+  .top-header {
+    border-bottom: 0.9px solid rgb(223,12,12);
+  }
+  .main-header {
+    padding-top: 0.45em;
+  }
+  .top-nav {
+    padding-top: 2.25px;
+    font-size: .675em;
+  }
+  .top-nav a {
+    padding: 4.5px 11.25px;
+  }
+  .main-nav {
+    padding: 9px 13.5px;
+    margin-left: 4.5px;
+    font-size: 0.81em;
+  }
+  .main-nav a {
+    padding: 6.3px 20.25px;
+    letter-spacing: 0.9px;
+  }
+  .name {
+    font-size: 0.9em;
+    padding: 4.5px 6.75px;
+    font-size: 2.025em;
+    text-shadow: 2.7px 0.9px 2.7px rgb(0,0,0);
+  }
+}
+
+/* hi-res laptops and desktops (100%) */
+
+@media (min-width:1281px) {
+  .header-container {
+    border-bottom: 1px solid rgb(223,12,12);
+  }  
+  .top-header {
+    border-bottom: 1px solid rgb(223,12,12);
+  }
+  .main-header {
+    padding-top: 0.5em;
+  }
+  .top-nav {
+    padding-top: 2.5px;
+    font-size: .75em;
+  }
+  .top-nav a {
+    padding: 5px 12.5px;
+  }
+  .main-nav {
+    padding: 10px 15px;
+    margin-left: 5px;
+    font-size: 0.9em;
+  }
+  .main-nav a {
+    padding: 7px 22.5px;
+    letter-spacing: 1px;
+  }
+  .name {
+    font-size: 1em;
+    padding: 5px 7.5px;
+    font-size: 2.25em;
+    text-shadow: 3px 1px 3px rgb(0,0,0);
+  }
+}

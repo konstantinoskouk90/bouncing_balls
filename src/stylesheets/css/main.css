@@ -1,4 +1,6 @@
+/* Utilities.Variables Styles -------------------- */
 @import url("https://fonts.googleapis.com/css?family=Sniglet:400,800");
+/* Utilities.Functions Styles -------------------- */
 /* Base Styles -------------------- */
 * {
   box-sizing: border-box; }
@@ -11,6 +13,15 @@ body {
 
 body {
   background-color: #1abbe6; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none; }
+
+a {
+  text-decoration: none; }
 
 /* ================================= 
    http://meyerweb.com/eric/tools/css/reset/
@@ -60,178 +71,417 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* Container.Base - Styles -------------------- */
+/* Container.About - Styles -------------------- */
 #about-wrapper {
   font-family: "Sniglet", serif;
   font-weight: 400; }
 
-#about-wrapper #start-container,
-#about-wrapper #dataend-container,
+#start-container,
+#dataend-container,
 .dataset {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
 
+.dataset .answer {
+  color: #c80000; }
+  @media (min-width: 320px) {
+    .dataset .answer {
+      font-size: 2.9090909091em; } }
+  @media (min-width: 481px) {
+    .dataset .answer {
+      font-size: 2.4615384615em; } }
+  @media (min-width: 641px) {
+    .dataset .answer {
+      font-size: 2.1333333333em; } }
+  @media (min-width: 961px) {
+    .dataset .answer {
+      font-size: 1.8823529412em; } }
+  @media (min-width: 1025px) {
+    .dataset .answer {
+      font-size: 1.7777777778em; } }
+  @media (min-width: 1281px) {
+    .dataset .answer {
+      font-size: 1.60em; } }
+.dataset .question {
+  color: black; }
+
+@media (min-width: 320px) {
+  .question,
+  #dataend-start {
+    font-size: 2.0909090909em; } }
+@media (min-width: 481px) {
+  .question,
+  #dataend-start {
+    font-size: 1.7692307692em; } }
+@media (min-width: 641px) {
+  .question,
+  #dataend-start {
+    font-size: 1.5333333333em; } }
+@media (min-width: 961px) {
+  .question,
+  #dataend-start {
+    font-size: 1.3529411765em; } }
+@media (min-width: 1025px) {
+  .question,
+  #dataend-start {
+    font-size: 1.2777777778em; } }
+@media (min-width: 1281px) {
+  .question,
+  #dataend-start {
+    font-size: 1.15em; } }
+
+@media (min-width: 320px) {
+  .question,
+  .answer,
+  #dataend-start {
+    margin-top: 36.3636363636px; } }
+@media (min-width: 481px) {
+  .question,
+  .answer,
+  #dataend-start {
+    margin-top: 30.7692307692px; } }
+@media (min-width: 641px) {
+  .question,
+  .answer,
+  #dataend-start {
+    margin-top: 26.6666666667px; } }
+@media (min-width: 961px) {
+  .question,
+  .answer,
+  #dataend-start {
+    margin-top: 23.5294117647px; } }
+@media (min-width: 1025px) {
+  .question,
+  .answer,
+  #dataend-start {
+    margin-top: 22.2222222222px; } }
+@media (min-width: 1281px) {
+  .question,
+  .answer,
+  #dataend-start {
+    margin-top: 20px; } }
+
 #dataend-container #dataend-end {
   color: #c80000;
   font-weight: 400;
   cursor: pointer; }
-
+  @media (min-width: 320px) {
+    #dataend-container #dataend-end {
+      font-size: 2.6363636364em; } }
+  @media (min-width: 481px) {
+    #dataend-container #dataend-end {
+      font-size: 2.2307692308em; } }
+  @media (min-width: 641px) {
+    #dataend-container #dataend-end {
+      font-size: 1.9333333333em; } }
+  @media (min-width: 961px) {
+    #dataend-container #dataend-end {
+      font-size: 1.7058823529em; } }
+  @media (min-width: 1025px) {
+    #dataend-container #dataend-end {
+      font-size: 1.6111111111em; } }
+  @media (min-width: 1281px) {
+    #dataend-container #dataend-end {
+      font-size: 1.45em; } }
 #dataend-container #dataend-end:hover {
   color: #df0c0c; }
+@media (min-width: 320px) {
+  #dataend-container #dataend-quote {
+    font-size: 1.8181818182em;
+    margin-top: 18.1818181818px; } }
+@media (min-width: 481px) {
+  #dataend-container #dataend-quote {
+    font-size: 1.5384615385em;
+    margin-top: 15.3846153846px; } }
+@media (min-width: 641px) {
+  #dataend-container #dataend-quote {
+    font-size: 1.3333333333em;
+    margin-top: 13.3333333333px; } }
+@media (min-width: 961px) {
+  #dataend-container #dataend-quote {
+    font-size: 1.1764705882em;
+    margin-top: 11.7647058824px; } }
+@media (min-width: 1025px) {
+  #dataend-container #dataend-quote {
+    font-size: 1.1111111111em;
+    margin-top: 11.1111111111px; } }
+@media (min-width: 1281px) {
+  #dataend-container #dataend-quote {
+    font-size: 1em;
+    margin-top: 10px; } }
 
-.question {
-  color: black; }
+@media (min-width: 320px) {
+  #dataend-end,
+  #dataset-container {
+    margin-top: 72.7272727273px; } }
+@media (min-width: 481px) {
+  #dataend-end,
+  #dataset-container {
+    margin-top: 61.5384615385px; } }
+@media (min-width: 641px) {
+  #dataend-end,
+  #dataset-container {
+    margin-top: 53.3333333333px; } }
+@media (min-width: 961px) {
+  #dataend-end,
+  #dataset-container {
+    margin-top: 47.0588235294px; } }
+@media (min-width: 1025px) {
+  #dataend-end,
+  #dataset-container {
+    margin-top: 44.4444444444px; } }
+@media (min-width: 1281px) {
+  #dataend-end,
+  #dataset-container {
+    margin-top: 40px; } }
 
-.answer {
-  color: #c80000; }
+/* ================================= 
+   Header
+==================================== */
+/* standard styling across all devices - start */
+.top-header {
+  background-color: #10a7d2; }
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: Sniglet;
+  font-weight: 400; }
+
+.top-nav a {
+  text-align: center;
+  display: block;
+  color: #040006;
+  cursor: pointer; }
+
+.top-nav a:hover {
+  color: white; }
+
+.main-nav {
+  font-family: Sniglet;
+  font-weight: 400;
+  display: flex;
+  justify-content: center; }
+
+.main-nav a {
+  text-align: center;
+  display: block; }
+
+.main-nav a.active {
+  color: white; }
+
+.main-nav a:not(.active) {
+  color: #040006; }
+
+.main-nav a:not(.active):hover {
+  color: #e0e0e0; }
+
+.name {
+  margin: 0;
+  font-family: Sniglet;
+  font-weight: 800;
+  text-align: center;
+  display: block;
+  color: #df0c0c;
+  cursor: default; }
 
 /* standard styling across all devices - end */
 /* media queries */
 /* smartphones, iPhone, portrait 480x320 phones (55%) */
 @media (min-width: 320px) {
-  .dataset .answer {
-    font-size: 0.88em; }
+  .header-container {
+    border-bottom: 0.55px solid #df0c0c; }
 
-  .dataset .question,
-  #dataend-container #dataend-start {
-    font-size: 0.6325em; }
+  .top-header {
+    border-bottom: 0.55px solid #df0c0c; }
 
-  .dataset .question,
-  .dataset .answer,
-  #dataend-container #dataend-start {
-    margin-top: 11px; }
+  .main-header {
+    padding-top: 0.275em; }
 
-  #dataend-container #dataend-end {
-    font-size: 0.7975em; }
+  .top-nav {
+    padding-top: 1.375px;
+    font-size: .4125em; }
 
-  #dataend-container #dataend-quote {
+  .top-nav a {
+    padding: 2.75px 6.875px; }
+
+  .main-nav {
+    padding: 5.5px 8.25px;
+    margin-left: 2.75px;
+    font-size: .495em; }
+
+  .main-nav a {
+    padding: 3.85px 12.375px;
+    letter-spacing: 0.55px; }
+
+  .name {
     font-size: 0.55em;
-    margin-top: 5.5px; }
-
-  #dataend-container #dataend-end,
-  #dataset-container {
-    margin-top: 22px; } }
+    padding: 2.75px 4.125px;
+    font-size: 1.2375em;
+    text-shadow: 1.65px 0.55px 1.65px black; } }
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide (65%) */
 @media (min-width: 481px) {
-  .dataset .answer {
-    font-size: 1.04em; }
+  .header-container {
+    border-bottom: 0.65px solid #df0c0c; }
 
-  .dataset .question,
-  #dataend-container #dataend-start {
-    font-size: 0.7475em; }
+  .top-header {
+    border-bottom: 0.65px solid #df0c0c; }
 
-  .dataset .question,
-  .dataset .answer,
-  #dataend-container #dataend-start {
-    margin-top: 13px; }
+  .main-header {
+    padding-top: 0.325em; }
 
-  #dataend-container #dataend-end {
-    font-size: 0.9425em; }
+  .top-nav {
+    padding-top: 1.625px;
+    font-size: .4875em; }
 
-  #dataend-container #dataend-quote {
+  .top-nav a {
+    padding: 3.25px 8.125px; }
+
+  .main-nav {
+    padding: 6.5px 9.75px;
+    margin-left: 3.25px;
+    font-size: 0.585em; }
+
+  .main-nav a {
+    padding: 4.55px 14.625px;
+    letter-spacing: 0.65px; }
+
+  .name {
     font-size: 0.65em;
-    margin-top: 6.5x; }
-
-  #dataend-container #dataend-end,
-  #dataset-container {
-    margin-top: 26px; } }
+    padding: 3.25px 4.875px;
+    font-size: 1.4625em;
+    text-shadow: 1.95px 0.65px 1.95px black; } }
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones (75%) */
 @media (min-width: 641px) {
-  .dataset .answer {
-    font-size: 1.20em; }
+  .header-container {
+    border-bottom: 0.75px solid #df0c0c; }
 
-  .dataset .question,
-  #dataend-container #dataend-start {
-    font-size: 0.8625em; }
+  .top-header {
+    border-bottom: 0.75px solid #df0c0c; }
 
-  .dataset .question,
-  .dataset .answer,
-  #dataend-container #dataend-start {
-    margin-top: 15px; }
+  .main-header {
+    padding-top: 0.375em; }
 
-  #dataend-container #dataend-end {
-    font-size: 1.0875em; }
+  .top-nav {
+    padding-top: 1.875px;
+    font-size: .5625em; }
 
-  #dataend-container #dataend-quote {
+  .top-nav a {
+    padding: 3.75px 9.375px; }
+
+  .main-nav {
+    padding: 7.5px 11.25px;
+    margin-left: 3.75px;
+    font-size: .675em; }
+
+  .main-nav a {
+    padding: 5.25px 16.875px;
+    letter-spacing: 0.75px; }
+
+  .name {
     font-size: 0.75em;
-    margin-top: 7.5px; }
-
-  #dataend-container #dataend-end,
-  #dataset-container {
-    margin-top: 30px; } }
+    padding: 3.75px 5.625px;
+    font-size: 1.6875em;
+    text-shadow: 2.25px 0.75px 2.25px black; } }
 /* tablet, landscape iPad, lo-res laptops ands desktops (85%) */
 @media (min-width: 961px) {
-  .dataset .answer {
-    font-size: 1.36em; }
+  .header-container {
+    border-bottom: 0.85px solid #df0c0c; }
 
-  .dataset .question,
-  #dataend-container #dataend-start {
-    font-size: 0.9775em; }
+  .top-header {
+    border-bottom: 0.85px solid #df0c0c; }
 
-  .dataset .question,
-  .dataset .answer,
-  #dataend-container #dataend-start {
-    margin-top: 17px; }
+  .main-header {
+    padding-top: 0.425em; }
 
-  #dataend-container #dataend-end {
-    font-size: 1.2325em; }
+  .top-nav {
+    padding-top: 2.125px;
+    font-size: .6375em; }
 
-  #dataend-container #dataend-quote {
+  .top-nav a {
+    padding: 4.25px 10.625px; }
+
+  .main-nav {
+    padding: 8.5px 12.75px;
+    margin-left: 4.25px;
+    font-size: .765em; }
+
+  .main-nav a {
+    padding: 5.95px 19.125px;
+    letter-spacing: 0.85px; }
+
+  .name {
     font-size: 0.85em;
-    margin-top: 8.5px; }
-
-  #dataend-container #dataend-end,
-  #dataset-container {
-    margin-top: 34px; } }
+    padding: 4.25px 6.375px;
+    font-size: 1.9125em;
+    text-shadow: 2.55px 0.85px 2.55px black; } }
 /* big landscape tablets, laptops, and desktops (90%) */
 @media (min-width: 1025px) {
-  .dataset .answer {
-    font-size: 1.44em; }
+  .header-container {
+    border-bottom: 0.9px solid #df0c0c; }
 
-  .dataset .question,
-  #dataend-container #dataend-start {
-    font-size: 1.035em; }
+  .top-header {
+    border-bottom: 0.9px solid #df0c0c; }
 
-  .dataset .question,
-  .dataset .answer,
-  #dataend-container #dataend-start {
-    margin-top: 18px; }
+  .main-header {
+    padding-top: 0.45em; }
 
-  #dataend-container #dataend-end {
-    font-size: 1.305em; }
+  .top-nav {
+    padding-top: 2.25px;
+    font-size: .675em; }
 
-  #dataend-container #dataend-quote {
+  .top-nav a {
+    padding: 4.5px 11.25px; }
+
+  .main-nav {
+    padding: 9px 13.5px;
+    margin-left: 4.5px;
+    font-size: 0.81em; }
+
+  .main-nav a {
+    padding: 6.3px 20.25px;
+    letter-spacing: 0.9px; }
+
+  .name {
     font-size: 0.9em;
-    margin-top: 9px; }
-
-  #dataend-container #dataend-end,
-  #dataset-container {
-    margin-top: 36px; } }
+    padding: 4.5px 6.75px;
+    font-size: 2.025em;
+    text-shadow: 2.7px 0.9px 2.7px black; } }
 /* hi-res laptops and desktops (100%) */
 @media (min-width: 1281px) {
-  .dataset .answer {
-    font-size: 1.60em; }
+  .header-container {
+    border-bottom: 1px solid #df0c0c; }
 
-  .dataset .question,
-  #dataend-container #dataend-start {
-    font-size: 1.15em; }
+  .top-header {
+    border-bottom: 1px solid #df0c0c; }
 
-  .dataset .question,
-  .dataset .answer,
-  #dataend-container #dataend-start {
-    margin-top: 20px; }
+  .main-header {
+    padding-top: 0.5em; }
 
-  #dataend-container #dataend-end {
-    font-size: 1.45em; }
+  .top-nav {
+    padding-top: 2.5px;
+    font-size: .75em; }
 
-  #dataend-container #dataend-quote {
+  .top-nav a {
+    padding: 5px 12.5px; }
+
+  .main-nav {
+    padding: 10px 15px;
+    margin-left: 5px;
+    font-size: 0.9em; }
+
+  .main-nav a {
+    padding: 7px 22.5px;
+    letter-spacing: 1px; }
+
+  .name {
     font-size: 1em;
-    margin-top: 10px; }
-
-  #dataend-container #dataend-end,
-  #dataset-container {
-    margin-top: 40px; } }
+    padding: 5px 7.5px;
+    font-size: 2.25em;
+    text-shadow: 3px 1px 3px black; } }
 
 /*# sourceMappingURL=main.css.map */

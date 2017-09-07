@@ -1,12 +1,12 @@
-/* Container.Base - Styles -------------------- */
+/* Container.About - Styles -------------------- */
 
 #about-wrapper {
     font-family: $font-stack-primary;
     font-weight: $weight-s;
 }
 
-#about-wrapper #start-container,
-#about-wrapper #dataend-container,
+#start-container,
+#dataend-container,
 .dataset {
     display: flex;
     flex-direction: column;
@@ -14,199 +14,151 @@
     align-items: center;
 }
 
-#dataend-container #dataend-end {
-    color: $color-secondary;
-    font-weight: $weight-s;
-    cursor: pointer;
-}
-
-#dataend-container #dataend-end:hover {
-    color: $color-primary;
-}
-
-.question {
-    color: $black;
-}
-
-.answer {
-    color: $color-secondary;
-}
-
-/* standard styling across all devices - end */
-
-
-/* media queries */
-
-
-/* smartphones, iPhone, portrait 480x320 phones (55%) */
-
-@media (min-width: $break-xs) {
-    .dataset .answer {
-        font-size: 0.88em;
+.dataset {
+    .answer {
+        color: $color-secondary;
+        @media (min-width: $break-xs) {
+            font-size: get55Per(1.60em);
+        }
+        @media (min-width: $break-s) {
+            font-size: get65Per(1.60em);
+        }
+        @media (min-width: $break-m) {
+            font-size: get75Per(1.60em);
+        }
+        @media (min-width: $break-l) {
+            font-size: get85Per(1.60em);
+        }
+        @media (min-width: $break-xl) {
+            font-size: get90Per(1.60em);
+        }
+        @media (min-width: $break-xxl) {
+            font-size: 1.60em;
+        }
     }
-    .dataset .question,
-    #dataend-container #dataend-start {
-        font-size: 0.6325em;
-    }
-    .dataset .question,
-    .dataset .answer,
-    #dataend-container #dataend-start {
-        margin-top: 11px;
-    }
-    #dataend-container #dataend-end {
-        font-size: 0.7975em;
-    }
-    #dataend-container #dataend-quote {
-        font-size: 0.55em;
-        margin-top: 5.5px;
-    }
-    #dataend-container #dataend-end,
-    #dataset-container {
-        margin-top: 22px;
+    .question {
+        color: $black;
     }
 }
 
-
-/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide (65%) */
-
-@media (min-width: $break-s) {
-    .dataset .answer {
-        font-size: 1.04em;
+.question,
+#dataend-start {
+    @media (min-width: $break-xs) {
+        font-size: get55Per(1.15em);
     }
-    .dataset .question,
-    #dataend-container #dataend-start {
-        font-size: 0.7475em;
+    @media (min-width: $break-s) {
+        font-size: get65Per(1.15em);
     }
-    .dataset .question,
-    .dataset .answer,
-    #dataend-container #dataend-start {
-        margin-top: 13px;
+    @media (min-width: $break-m) {
+        font-size: get75Per(1.15em);
     }
-    #dataend-container #dataend-end {
-        font-size: 0.9425em;
+    @media (min-width: $break-l) {
+        font-size: get85Per(1.15em);
     }
-    #dataend-container #dataend-quote {
-        font-size: 0.65em;
-        margin-top: 6.5x;
+    @media (min-width: $break-xl) {
+        font-size: get90Per(1.15em);
     }
-    #dataend-container #dataend-end,
-    #dataset-container {
-        margin-top: 26px;
-    }
-}
-
-
-/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones (75%) */
-
-@media (min-width: $break-m) {
-    .dataset .answer {
-        font-size: 1.20em;
-    }
-    .dataset .question,
-    #dataend-container #dataend-start {
-        font-size: 0.8625em;
-    }
-    .dataset .question,
-    .dataset .answer,
-    #dataend-container #dataend-start {
-        margin-top: 15px;
-    }
-    #dataend-container #dataend-end {
-        font-size: 1.0875em;
-    }
-    #dataend-container #dataend-quote {
-        font-size: 0.75em;
-        margin-top: 7.5px;
-    }
-    #dataend-container #dataend-end,
-    #dataset-container {
-        margin-top: 30px;
-    }
-}
-
-
-/* tablet, landscape iPad, lo-res laptops ands desktops (85%) */
-
-@media (min-width: $break-l) {
-    .dataset .answer {
-        font-size: 1.36em;
-    }
-    .dataset .question,
-    #dataend-container #dataend-start {
-        font-size: 0.9775em;
-    }
-    .dataset .question,
-    .dataset .answer,
-    #dataend-container #dataend-start {
-        margin-top: 17px;
-    }
-    #dataend-container #dataend-end {
-        font-size: 1.2325em;
-    }
-    #dataend-container #dataend-quote {
-        font-size: 0.85em;
-        margin-top: 8.5px;
-    }
-    #dataend-container #dataend-end,
-    #dataset-container {
-        margin-top: 34px;
-    }
-}
-
-
-/* big landscape tablets, laptops, and desktops (90%) */
-
-@media (min-width: $break-xl) {
-    .dataset .answer {
-        font-size: 1.44em;
-    }
-    .dataset .question,
-    #dataend-container #dataend-start {
-        font-size: 1.035em;
-    }
-    .dataset .question,
-    .dataset .answer,
-    #dataend-container #dataend-start {
-        margin-top: 18px;
-    }
-    #dataend-container #dataend-end {
-        font-size: 1.305em;
-    }
-    #dataend-container #dataend-quote {
-        font-size: 0.9em;
-        margin-top: 9px;
-    }
-    #dataend-container #dataend-end,
-    #dataset-container {
-        margin-top: 36px;
-    }
-}
-
-
-/* hi-res laptops and desktops (100%) */
-
-@media (min-width: $break-xxl) {
-    .dataset .answer {
-        font-size: 1.60em;
-    }
-    .dataset .question,
-    #dataend-container #dataend-start {
+    @media (min-width: $break-xxl) {
         font-size: 1.15em;
     }
-    .dataset .question,
-    .dataset .answer,
-    #dataend-container #dataend-start {
+}
+
+.question,
+.answer,
+#dataend-start {
+    @media (min-width: $break-xs) {
+        margin-top: get55Per(20px);
+    }
+    @media (min-width: $break-s) {
+        margin-top: get65Per(20px);
+    }
+    @media (min-width: $break-m) {
+        margin-top: get75Per(20px);
+    }
+    @media (min-width: $break-l) {
+        margin-top: get85Per(20px);
+    }
+    @media (min-width: $break-xl) {
+        margin-top: get90Per(20px);
+    }
+    @media (min-width: $break-xxl) {
         margin-top: 20px;
     }
-    #dataend-container #dataend-end {
-        font-size: 1.45em;
+}
+
+#dataend-container {
+    #dataend-end {
+        color: $color-secondary;
+        font-weight: $weight-s;
+        cursor: pointer;
+        @media (min-width: $break-xs) {
+            font-size: get55Per(1.45em);
+        }
+        @media (min-width: $break-s) {
+            font-size: get65Per(1.45em);
+        }
+        @media (min-width: $break-m) {
+            font-size: get75Per(1.45em);
+        }
+        @media (min-width: $break-l) {
+            font-size: get85Per(1.45em);
+        }
+        @media (min-width: $break-xl) {
+            font-size: get90Per(1.45em);
+        }
+        @media (min-width: $break-xxl) {
+            font-size: 1.45em;
+        }
     }
-    #dataend-container #dataend-quote {
-        font-size: 1em;
-        margin-top: 10px;
+    #dataend-end:hover {
+        color: $color-primary;
     }
-    #dataend-container #dataend-end,
-    #dataset-container {
+    #dataend-quote {
+        @media (min-width: $break-xs) {
+            font-size: get55Per(1em);
+            margin-top: get55Per(10px);
+        }
+        @media (min-width: $break-s) {
+            font-size: get65Per(1em);
+            margin-top: get65Per(10px);
+        }
+        @media (min-width: $break-m) {
+            font-size: get75Per(1em);
+            margin-top: get75Per(10px);
+        }
+        @media (min-width: $break-l) {
+            font-size: get85Per(1em);
+            margin-top: get85Per(10px);
+        }
+        @media (min-width: $break-xl) {
+            font-size: get90Per(1em);
+            margin-top: get90Per(10px);
+        }
+        @media (min-width: $break-xxl) {
+            font-size: 1em;
+            margin-top: 10px;
+        }
+    }
+}
+
+#dataend-end,
+#dataset-container {
+    @media (min-width: $break-xs) {
+        margin-top: get55Per(40px);
+    }
+    @media (min-width: $break-s) {
+        margin-top: get65Per(40px);
+    }
+    @media (min-width: $break-m) {
+        margin-top: get75Per(40px);
+    }
+    @media (min-width: $break-l) {
+        margin-top: get85Per(40px);
+    }
+    @media (min-width: $break-xl) {
+        margin-top: get90Per(40px);
+    }
+    @media (min-width: $break-xxl) {
         margin-top: 40px;
     }
 }

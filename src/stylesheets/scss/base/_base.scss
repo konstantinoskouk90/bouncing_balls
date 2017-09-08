@@ -41,33 +41,21 @@ canvas {
     margin: 0 auto;
     background-color: $white;
 	@media (min-width:$break-xs) {
-		border-left: get55Per(1px) solid $color-primary;
-		border-right: get55Per(1px) solid $color-primary;
-		border-bottom: get55Per(1px) solid $color-primary;
+		@include canvasBorder(get55Per(1px));
 	}
 	@media (min-width:$break-s) {
-		border-left: get65Per(1px) solid $color-primary;
-		border-right: get65Per(1px) solid $color-primary;
-		border-bottom: get65Per(1px) solid $color-primary;
+		@include canvasBorder(get65Per(1px));
 	}
 	@media (min-width:$break-m) {
-		border-left: get75Per(1px) solid $color-primary;
-		border-right: get75Per(1px) solid $color-primary;
-		border-bottom: get75Per(1px) solid $color-primary;
+		@include canvasBorder(get75Per(1px));
 	}
 	@media (min-width:$break-l) {
-		border-left: get85Per(1px) solid $color-primary;
-		border-right: get85Per(1px) solid $color-primary;
-		border-bottom: get85Per(1px) solid $color-primary;
+		@include canvasBorder(get85Per(1px));
 	}
 	@media (min-width:$break-xl) {
-		border-left: get90Per(1px) solid $color-primary;
-		border-right: get90Per(1px) solid $color-primary;
-		border-bottom: get90Per(1px) solid $color-primary;
+		@include canvasBorder(get90Per(1px));
 	}
 	@media (min-width:$break-xxl) {
-		border-left: 1px solid $color-primary;
-		border-right: 1px solid $color-primary;
-		border-bottom: 1px solid $color-primary;
+		@include canvasBorder(1px);
 	}
 }

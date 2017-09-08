@@ -1,0 +1,10 @@
+// ================================= 
+//   MIXINS
+// =================================
+
+// Standard canvas border
+@mixin canvasBorder($w) {
+    border-left: $w solid $color-primary;
+    border-right: $w solid $color-primary;
+    border-bottom: $w solid $color-primary;
+}

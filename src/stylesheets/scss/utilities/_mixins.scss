@@ -2,9 +2,21 @@
 //   MIXINS
 // =================================
 
-// Standard canvas border
-@mixin canvasBorder($w) {
-    border-left: $w solid $color-primary;
-    border-right: $w solid $color-primary;
-    border-bottom: $w solid $color-primary;
+// Reusable canvas border
+@mixin canvasBorder($width) {
+    border-left: $width solid $color-primary;
+    border-right: $width solid $color-primary;
+    border-bottom: $width solid $color-primary;
+}
+
+// Create a flex container
+@mixin flexProps(
+    $disp: flex, 
+    $dir: null, 
+    $just: null, 
+    $align: null) {
+    display: $disp;
+	flex-direction: $dir;
+	justify-content: $just;
+	align-items: $align;
 }

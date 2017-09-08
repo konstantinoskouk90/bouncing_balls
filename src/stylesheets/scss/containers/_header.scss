@@ -67,10 +67,7 @@
 }
 
 .top-nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-items: center;
+  @include flexProps($dir: row, $just: flex-end, $align: center);
   font-family: $font-stack-primary;
   font-weight: $weight-s;
   @media (min-width:$break-xs) {
@@ -129,8 +126,7 @@
 .main-nav {
   font-family: $font-stack-primary;
   font-weight: $weight-s;
-  display: flex;
-  justify-content: center;
+  @include flexProps($just: center);
   @media (min-width:$break-xs) {
     padding: get55Per(10px) get55Per(15px);
     margin-left: get55Per(5px);

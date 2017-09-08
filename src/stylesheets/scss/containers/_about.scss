@@ -1,4 +1,6 @@
-/* Container.About - Styles -------------------- */
+// ================================= 
+//   ABOUT
+// =================================
 
 #about-wrapper {
     font-family: $font-stack-primary;
@@ -109,9 +111,9 @@
         @media (min-width: $break-xxl) {
             font-size: 1.45em;
         }
-    }
-    #dataend-end:hover {
-        color: $color-primary;
+        &:hover {
+            color: $color-primary;
+        }
     }
     #dataend-quote {
         @media (min-width: $break-xs) {

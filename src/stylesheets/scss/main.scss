@@ -1,3 +1,10 @@
-@import 'utilities/index';
-@import 'base/index';
-@import 'containers/index';
+@import 'utilities/functions';
+@import 'utilities/variables';
+
+@import 'base/reset';
+@import 'base/base';
+
+@import 'containers/about';
+@import 'containers/header';
+@import 'containers/notfound';
+@import 'containers/play';

@@ -3,9 +3,8 @@
 // =================================
 
 #image-container {
+  @include dimensions($w: 100%, $h: auto);
   @include flexProps($dir: row, $just: center, $align: center);
-  width: 100%;
-  height: auto;
   @include mediaQ(
     margin-top, 
     get55Per(40px), 
@@ -16,8 +15,7 @@
     get100Per(40px)
   );
   img {
-    width: 45%;
-    height: 45%;
+    @include dimensions($w: 45%, $h: 45%);
     border-radius: 50%;
   }
 }

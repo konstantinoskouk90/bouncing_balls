@@ -500,12 +500,12 @@ canvas {
       text-shadow: 3px 1px 3px black; } }
 
 #image-container {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: auto; }
+  align-items: center; }
   @media (min-width: 320px) {
     #image-container {
       margin-top: 22px; } }

@@ -16,24 +16,15 @@
 .dataset {
   .answer {
     color: $color-secondary;
-    @media (min-width: $break-xs) {
-      font-size: get55Per(1.60em);
-    }
-    @media (min-width: $break-s) {
-      font-size: get65Per(1.60em);
-    }
-    @media (min-width: $break-m) {
-      font-size: get75Per(1.60em);
-    }
-    @media (min-width: $break-l) {
-      font-size: get85Per(1.60em);
-    }
-    @media (min-width: $break-xl) {
-      font-size: get90Per(1.60em);
-    }
-    @media (min-width: $break-xxl) {
-      font-size: 1.60em;
-    }
+    @include mediaQ(
+      font-size, 
+      get55Per(1.60em), 
+      get65Per(1.60em), 
+      get75Per(1.60em), 
+      get85Per(1.60em), 
+      get90Per(1.60em), 
+      get100Per(1.60em)
+    );
   }
   .question {
     color: $black;
@@ -42,47 +33,29 @@
 
 .question,
 #dataend-start {
-  @media (min-width: $break-xs) {
-    font-size: get55Per(1.15em);
-  }
-  @media (min-width: $break-s) {
-    font-size: get65Per(1.15em);
-  }
-  @media (min-width: $break-m) {
-    font-size: get75Per(1.15em);
-  }
-  @media (min-width: $break-l) {
-    font-size: get85Per(1.15em);
-  }
-  @media (min-width: $break-xl) {
-    font-size: get90Per(1.15em);
-  }
-  @media (min-width: $break-xxl) {
-    font-size: 1.15em;
-  }
+  @include mediaQ(
+    font-size, 
+    get55Per(1.15em),
+    get65Per(1.15em), 
+    get75Per(1.15em), 
+    get85Per(1.15em), 
+    get90Per(1.15em), 
+    get100Per(1.15em)
+  );
 }
 
 .question,
 .answer,
 #dataend-start {
-  @media (min-width: $break-xs) {
-    margin-top: get55Per(20px);
-  }
-  @media (min-width: $break-s) {
-    margin-top: get65Per(20px);
-  }
-  @media (min-width: $break-m) {
-    margin-top: get75Per(20px);
-  }
-  @media (min-width: $break-l) {
-    margin-top: get85Per(20px);
-  }
-  @media (min-width: $break-xl) {
-    margin-top: get90Per(20px);
-  }
-  @media (min-width: $break-xxl) {
-    margin-top: 20px;
-  }
+  @include mediaQ(
+    margin-top, 
+    get55Per(20px),
+    get65Per(20px), 
+    get75Per(20px), 
+    get85Per(20px), 
+    get90Per(20px), 
+    get100Per(20px)
+  );
 }
 
 #dataend-container {
@@ -90,50 +63,41 @@
     color: $color-secondary;
     font-weight: $weight-s;
     cursor: pointer;
-    @media (min-width: $break-xs) {
-      font-size: get55Per(1.45em);
-    }
-    @media (min-width: $break-s) {
-      font-size: get65Per(1.45em);
-    }
-    @media (min-width: $break-m) {
-      font-size: get75Per(1.45em);
-    }
-    @media (min-width: $break-l) {
-      font-size: get85Per(1.45em);
-    }
-    @media (min-width: $break-xl) {
-      font-size: get90Per(1.45em);
-    }
-    @media (min-width: $break-xxl) {
-      font-size: 1.45em;
-    }
+    @include mediaQ(
+      font-size, 
+      get55Per(1.45em),
+      get65Per(1.45em), 
+      get75Per(1.45em), 
+      get85Per(1.45em), 
+      get90Per(1.45em), 
+      get100Per(1.45em)
+    );
     &:hover {
       color: $color-primary;
     }
   }
   #dataend-quote {
-    @media (min-width: $break-xs) {
+    @include mediaQs('xs') {
       font-size: get55Per(1em);
       margin-top: get55Per(10px);
     }
-    @media (min-width: $break-s) {
+    @include mediaQs('s') {
       font-size: get65Per(1em);
       margin-top: get65Per(10px);
     }
-    @media (min-width: $break-m) {
+    @include mediaQs('m') {
       font-size: get75Per(1em);
       margin-top: get75Per(10px);
     }
-    @media (min-width: $break-l) {
+    @include mediaQs('l') {
       font-size: get85Per(1em);
       margin-top: get85Per(10px);
     }
-    @media (min-width: $break-xl) {
+    @include mediaQs('xl') {
       font-size: get90Per(1em);
       margin-top: get90Per(10px);
     }
-    @media (min-width: $break-xxl) {
+    @include mediaQs('xxl') {
       font-size: 1em;
       margin-top: 10px;
     }
@@ -142,22 +106,13 @@
 
 #dataend-end,
 #dataset-container {
-  @media (min-width: $break-xs) {
-    margin-top: get55Per(40px);
-  }
-  @media (min-width: $break-s) {
-    margin-top: get65Per(40px);
-  }
-  @media (min-width: $break-m) {
-    margin-top: get75Per(40px);
-  }
-  @media (min-width: $break-l) {
-    margin-top: get85Per(40px);
-  }
-  @media (min-width: $break-xl) {
-    margin-top: get90Per(40px);
-  }
-  @media (min-width: $break-xxl) {
-    margin-top: 40px;
-  }
+  @include mediaQ(
+    margin-top, 
+    get55Per(40px),
+    get65Per(40px),
+    get75Per(40px), 
+    get85Per(40px), 
+    get90Per(40px), 
+    get100Per(40px)
+  );
 }

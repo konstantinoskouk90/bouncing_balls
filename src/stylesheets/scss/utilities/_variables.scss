@@ -24,10 +24,12 @@ $weight-l: 600;
 $weight-xl: 700;
 $weight-xxl: 800;
 
-// Breakpoint
-$break-xs: 320px;
-$break-s: 481px;
-$break-m: 641px;
-$break-l: 961px;
-$break-xl: 1025px;
-$break-xxl: 1281px;
+// Breakpoint map
+$breakpoints: (
+  'xs': 320px,
+  's': 481px,
+  'm': 641px,
+  'l': 961px,
+  'xl': 1025px,
+  'xxl': 1281px
+);

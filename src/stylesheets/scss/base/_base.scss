@@ -33,26 +33,26 @@ input {
 }
 
 canvas {
+  padding: 0;
+  margin: 0 auto;
+  background-color: $white;
 	@include flexProps($dir: row, $just: center, $align: center);
-    padding: 0;
-    margin: 0 auto;
-    background-color: $white;
-	@media (min-width:$break-xs) {
+	@include mediaQs('xs') {
 		@include canvasBorder(get55Per(1px));
 	}
-	@media (min-width:$break-s) {
+	@include mediaQs('s') {
 		@include canvasBorder(get65Per(1px));
 	}
-	@media (min-width:$break-m) {
+	@include mediaQs('m') {
 		@include canvasBorder(get75Per(1px));
 	}
-	@media (min-width:$break-l) {
+	@include mediaQs('l') {
 		@include canvasBorder(get85Per(1px));
 	}
-	@media (min-width:$break-xl) {
+	@include mediaQs('xl') {
 		@include canvasBorder(get90Per(1px));
 	}
-	@media (min-width:$break-xxl) {
+	@include mediaQs('xxl') {
 		@include canvasBorder(1px);
 	}
 }

@@ -21,3 +21,7 @@
 @function get90Per($value) {
     @return ($value * 90) / 100;
 }
+
+@function get100Per($value) {
+    @return $value;
+}

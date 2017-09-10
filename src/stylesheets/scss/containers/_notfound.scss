@@ -6,24 +6,15 @@
   @include flexProps($dir: row, $just: center, $align: center);
   width: 100%;
   height: auto;
-  @media (min-width:$break-xs) {
-    margin-top: get55Per(40px);
-	}
-	@media (min-width:$break-s) {
-    margin-top: get65Per(40px);
-	}
-	@media (min-width:$break-m) {
-    margin-top: get75Per(40px);
-	}
-	@media (min-width:$break-l) {
-    margin-top: get85Per(40px);
-	}
-	@media (min-width:$break-xl) {
-    margin-top: get90Per(40px);
-	}
-	@media (min-width:$break-xxl) {
-    margin-top: 40px;
-	}
+  @include mediaQ(
+    margin-top, 
+    get55Per(40px), 
+    get65Per(40px), 
+    get75Per(40px), 
+    get85Per(40px), 
+    get90Per(40px), 
+    get100Per(40px)
+  );
   img {
     width: 45%;
     height: 45%;

@@ -17,8 +17,8 @@
 <ul>
 	<li>Clone repository.</li>
 	<li>Redirect to folder.</li>
-	<li>Run npm install -g serve in the terminal (if already not installed).</li>
-	<li>Run serve -s build in the terminal.</li>
+	<li>Run npm install.</li>
+	<li>Run npm start.</li>
 	<li>Enjoy!</li>
 </ul>
 

@@ -17,8 +17,8 @@
 <ul>
 	<li>Clone repository.</li>
 	<li>Redirect to folder.</li>
-	<li>Run npm install -g serve in the terminal (if already not installed).</li>
-	<li>Run serve -s build in the terminal.</li>
+	<li>Run npm install.</li>
+	<li>Run npm start.</li>
 	<li>Enjoy!</li>
 </ul>
 
@@ -43,7 +43,6 @@
 <ul>
 	<li>Add Themes.</li>
 	<li>Make balls collide with each other.</li>
-	<li>Replace plain CSS with SASS.</li>
 </ul>
 
 <h2>Author & Contact</h2>

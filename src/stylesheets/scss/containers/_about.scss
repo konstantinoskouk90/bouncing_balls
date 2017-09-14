@@ -1,0 +1,118 @@
+// ================================= 
+//   ABOUT
+// =================================
+
+#about-wrapper {
+  font-family: $font-stack-primary;
+  font-weight: $weight-s;
+}
+
+#start-container,
+#dataend-container,
+.dataset {
+  @include flexProps($dir: column, $just: center, $align: center);
+}
+
+.dataset {
+  .answer {
+    color: $color-secondary;
+    @include mediaQ(
+      font-size, 
+      get55Per(1.60em), 
+      get65Per(1.60em), 
+      get75Per(1.60em), 
+      get85Per(1.60em), 
+      get90Per(1.60em), 
+      get100Per(1.60em)
+    );
+  }
+  .question {
+    color: $black;
+  }
+}
+
+.question,
+#dataend-start {
+  @include mediaQ(
+    font-size, 
+    get55Per(1.15em),
+    get65Per(1.15em), 
+    get75Per(1.15em), 
+    get85Per(1.15em), 
+    get90Per(1.15em), 
+    get100Per(1.15em)
+  );
+}
+
+.question,
+.answer,
+#dataend-start {
+  @include mediaQ(
+    margin-top, 
+    get55Per(20px),
+    get65Per(20px), 
+    get75Per(20px), 
+    get85Per(20px), 
+    get90Per(20px), 
+    get100Per(20px)
+  );
+}
+
+#dataend-container {
+  #dataend-end {
+    color: $color-secondary;
+    font-weight: $weight-s;
+    cursor: pointer;
+    @include mediaQ(
+      font-size, 
+      get55Per(1.45em),
+      get65Per(1.45em), 
+      get75Per(1.45em), 
+      get85Per(1.45em), 
+      get90Per(1.45em), 
+      get100Per(1.45em)
+    );
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  #dataend-quote {
+    @include mediaQs('xs') {
+      font-size: get55Per(1em);
+      margin-top: get55Per(10px);
+    }
+    @include mediaQs('s') {
+      font-size: get65Per(1em);
+      margin-top: get65Per(10px);
+    }
+    @include mediaQs('m') {
+      font-size: get75Per(1em);
+      margin-top: get75Per(10px);
+    }
+    @include mediaQs('l') {
+      font-size: get85Per(1em);
+      margin-top: get85Per(10px);
+    }
+    @include mediaQs('xl') {
+      font-size: get90Per(1em);
+      margin-top: get90Per(10px);
+    }
+    @include mediaQs('xxl') {
+      font-size: 1em;
+      margin-top: 10px;
+    }
+  }
+}
+
+#dataend-end,
+#dataset-container {
+  @include mediaQ(
+    margin-top, 
+    get55Per(40px),
+    get65Per(40px),
+    get75Per(40px), 
+    get85Per(40px), 
+    get90Per(40px), 
+    get100Per(40px)
+  );
+}

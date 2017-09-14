@@ -1,0 +1,21 @@
+// ================================= 
+//   NOT FOUND
+// =================================
+
+#image-container {
+  @include dimensions($w: 100%, $h: auto);
+  @include flexProps($dir: row, $just: center, $align: center);
+  @include mediaQ(
+    margin-top, 
+    get55Per(40px), 
+    get65Per(40px), 
+    get75Per(40px), 
+    get85Per(40px), 
+    get90Per(40px), 
+    get100Per(40px)
+  );
+  img {
+    @include dimensions($w: 45%, $h: 45%);
+    border-radius: 50%;
+  }
+}

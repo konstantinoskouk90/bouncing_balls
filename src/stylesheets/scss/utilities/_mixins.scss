@@ -1,0 +1,57 @@
+// ================================= 
+//   MIXINS
+// =================================
+
+// Set element dimensions
+@mixin dimensions(
+  $w: null, 
+  $h: null) {
+  width: $w;
+  height: $h
+}
+
+// Create canvas border
+@mixin canvasBorder($width) {
+  border-left: $width solid $color-primary;
+  border-right: $width solid $color-primary;
+  border-bottom: $width solid $color-primary;
+}
+
+// Create a flex container
+@mixin flexProps(
+  $disp: flex, 
+  $dir: null,
+  $just: null, 
+  $align: null) {
+  display: $disp;
+	flex-direction: $dir;
+	justify-content: $just;
+	align-items: $align;
+}
+
+// Create media queries for single attribute
+@mixin mediaQ($side, $xs, $s, $m, $l, $xl, $xxl) {
+  
+  $percentages: ('320px': $xs, '481px': $s, '641px': $m, '961px': $l, '1025px': $xl, '1281px': $xxl);
+  
+  @each $size, $percentage in $percentages {
+    
+    @media (min-width: $size) {
+      #{$side}: $percentage;
+    }
+  }
+}
+
+// Create media queries for multiple attributes
+@mixin mediaQs($break) {
+  
+  $value: map-get($breakpoints, $break);
+  
+  @if $value == null {
+    @error "`#{$break}` is not a valid breakpoint name!";
+  } 
+  
+  @media (min-width: $value) {
+    @content;
+  }
+}

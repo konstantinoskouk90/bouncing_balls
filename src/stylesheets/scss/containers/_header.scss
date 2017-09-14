@@ -1,0 +1,216 @@
+// ================================= 
+//   HEADER
+// =================================
+
+.header-container {
+  @include mediaQ(
+    border-bottom, 
+    get55Per(1px) solid $color-primary,
+    get65Per(1px) solid $color-primary, 
+    get75Per(1px) solid $color-primary, 
+    get85Per(1px) solid $color-primary, 
+    get90Per(1px) solid $color-primary, 
+    get100Per(1px) solid $color-primary
+  );
+}
+
+.top-header {
+  background-color: rgb(16,167,210);
+  @include mediaQ(
+    border-bottom, 
+    get55Per(1px) solid $color-primary,
+    get65Per(1px) solid $color-primary, 
+    get75Per(1px) solid $color-primary, 
+    get85Per(1px) solid $color-primary, 
+    get90Per(1px) solid $color-primary, 
+    get100Per(1px) solid $color-primary
+  );
+}
+
+.main-header {
+  @include mediaQ(
+    padding-top, 
+    get55Per(0.5em),
+    get65Per(0.5em), 
+    get75Per(0.5em), 
+    get85Per(0.5em), 
+    get90Per(0.5em), 
+    get100Per(0.5em)
+  );
+}
+
+.top-nav {
+  @include flexProps($dir: row, $just: flex-end, $align: center);
+  font-family: $font-stack-primary;
+  font-weight: $weight-s;
+  @include mediaQs('xs') {
+    padding-top: get55Per(2.5px);
+    font-size: get55Per(0.75em);
+  }
+  @include mediaQs('s') {
+    padding-top: get65Per(2.5px);
+    font-size: get65Per(0.75em);
+  }
+  @include mediaQs('m') {
+    padding-top: get75Per(2.5px);
+    font-size: get75Per(0.75em);
+  }
+  @include mediaQs('l') {
+    padding-top: get85Per(2.5px);
+    font-size: get85Per(0.75em);
+  }
+  @include mediaQs('xl') {
+    padding-top: get90Per(2.5px);
+    font-size: get90Per(0.75em);
+  }
+  @include mediaQs('xxl') {
+    padding-top: 2.5px;
+    font-size: 0.75em;
+  }
+  a {
+    text-align: center;
+    display: block;
+    color: rgb(4,0,6);
+    cursor: pointer;
+    @include mediaQs('xs') {
+      padding: get55Per(5px) get55Per(12.5px);
+    }
+    @include mediaQs('s') {
+      padding: get65Per(5px) get65Per(12.5px);
+    }
+    @include mediaQs('m') {
+      padding: get75Per(5px) get75Per(12.5px);
+    }
+    @include mediaQs('l') {
+      padding: get85Per(5px) get85Per(12.5px);
+    }
+    @include mediaQs('xl') {
+      padding: get90Per(5px) get90Per(12.5px);
+    }
+    @include mediaQs('xxl') {
+      padding: 5px 12.5px;
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.main-nav {
+  font-family: $font-stack-primary;
+  font-weight: $weight-s;
+  @include flexProps($just: center);
+  @include mediaQs('xs') {
+    padding: get55Per(10px) get55Per(15px);
+    margin-left: get55Per(5px);
+    font-size: get55Per(0.9em);
+  }
+  @include mediaQs('s') {
+    padding: get65Per(10px) get65Per(15px);
+    margin-left: get65Per(5px);
+    font-size: get65Per(0.9em);
+  }
+  @include mediaQs('m') {
+    padding: get75Per(10px) get75Per(15px);
+    margin-left: get75Per(5px);
+    font-size: get75Per(0.9em);
+  }
+  @include mediaQs('l') {
+    padding: get85Per(10px) get85Per(15px);
+    margin-left: get85Per(5px);
+    font-size: get85Per(0.9em);
+  }
+  @include mediaQs('xl') {
+    padding: get90Per(10px) get90Per(15px);
+    margin-left: get90Per(5px);
+    font-size: get90Per(0.9em);
+  }
+  @include mediaQs('xxl') {
+    padding: 10px 15px;
+    margin-left: 5px;
+    font-size: 0.9em;
+  }
+  a {
+    text-align: center;
+    display: block;
+    @include mediaQs('xs') {
+      padding: get55Per(7px) get55Per(22.5px);
+      letter-spacing: get55Per(1px);
+    }
+    @include mediaQs('s') {
+      padding: get65Per(7px) get65Per(22.5px);
+      letter-spacing: get65Per(1px);
+    }
+    @include mediaQs('m') {
+      padding: get75Per(7px) get75Per(22.5px);
+      letter-spacing: get75Per(1px);
+    }
+    @include mediaQs('l') {
+      padding: get85Per(7px) get85Per(22.5px);
+      letter-spacing: get85Per(1px);
+    }
+    @include mediaQs('xl') {
+      padding: get90Per(7px) get90Per(22.5px);
+      letter-spacing: get90Per(1px);
+    }
+    @include mediaQs('xxl') {
+      padding: 7px 22.5px;
+      letter-spacing: 1px;
+    }
+    &.active {
+      color: $white;
+    }
+    &:not(.active) {
+      color: rgb(4,0,6);
+      &:hover {
+        color: rgb(224,224,224);
+      }
+    }
+  }
+}
+
+.name {
+  margin: 0;
+  text-align: center;
+  display: block;
+  cursor: default;
+  font-family: $font-stack-primary;
+  font-weight: $weight-xxl;
+  color: $color-primary;
+  @include mediaQs('xs') {
+    font-size: get55Per(1em);
+    padding: get55Per(5px) get55Per(7.5px);
+    font-size: get55Per(2.25em);
+    text-shadow: get55Per(3px) get55Per(1px) get55Per(3px) $black;
+  }
+  @include mediaQs('s') {
+    font-size: get65Per(1em);
+    padding: get65Per(5px) get65Per(7.5px);
+    font-size: get65Per(2.25em);
+    text-shadow: get65Per(3px) get65Per(1px) get65Per(3px) $black;
+  }
+  @include mediaQs('m') {
+    font-size: get75Per(1em);
+    padding: get75Per(5px) get75Per(7.5px);
+    font-size: get75Per(2.25em);
+    text-shadow: get75Per(3px) get75Per(1px) get75Per(3px) $black;
+  }
+  @include mediaQs('l') {
+    font-size: get85Per(1em);
+    padding: get85Per(5px) get85Per(7.5px);
+    font-size: get85Per(2.25em);
+    text-shadow: get85Per(3px) get85Per(1px) get85Per(3px) $black;
+  }
+  @include mediaQs('xl') {
+    font-size: get90Per(1em);
+    padding: get90Per(5px) get90Per(7.5px);
+    font-size: get90Per(2.25em);
+    text-shadow: get90Per(3px) get90Per(1px) get90Per(3px) $black;
+  }
+  @include mediaQs('xxl') {
+    font-size: 1em;
+    padding: 5px 7.5px;
+    font-size: 2.25em;
+    text-shadow: 3px 1px 3px $black;
+  }
+}

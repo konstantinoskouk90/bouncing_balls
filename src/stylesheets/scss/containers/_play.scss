@@ -368,7 +368,26 @@ input[type=range] {
     }
 }
 
-/* standard styling across all devices - start */
+#color-settings {
+  width: 100%;
+  margin: 0 auto;
+  #color-details { 
+    * {
+      @include flexProps($dir: row, $just: space-between, $align: center);
+    }
+    #color-details-right {
+      @include mediaQ(
+        width, 
+        get100Per(15%),
+        get100Per(13.5%),
+        get100Per(11.5%),
+        get100Per(10%),
+        get100Per(9%),
+        get100Per(8%)
+      );
+    }
+  }
+}
 
 .percentage {
     width: 12%;
@@ -377,8 +396,8 @@ input[type=range] {
 
 .percentage,
 #color-text {
-    font-family: Sniglet;
-    font-weight: 400;
+    font-family: $font-stack-primary;
+    font-weight: $weight-s;
     text-align: right;
 }
 
@@ -389,19 +408,19 @@ input[type=range] {
 }
 
 .title {
-    font-family: Sniglet;
-    font-weight: 400;
+    font-family: $font-stack-primary;
+    font-weight: $weight-s;
     width: 25%;
 }
 
-#color-settings {
-    width: 100%;
+#settings-wrapper > div {
+    width: 65%;
     margin: 0 auto;
 }
 
-#settings-wrapper>div {
-    width: 65%;
-    margin: 0 auto;
+.input-container,
+#inputs-container {
+  display: flex;
 }
 
 #inputs-container,
@@ -410,11 +429,6 @@ input[type=range] {
 #friction,
 #gravity {
   width: 100%;
-}
-
-.input-container,
-#inputs-container {
-  display: flex;
 }
 
 #color-details,
@@ -429,20 +443,7 @@ input[type=range] {
     align-items: center;
 }
 
-#color-details * {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* standard styling across all devices - end */
-
-
-/* media queries */
-
-
-/* smartphones, iPhone, portrait 480x320 phones (55%) */
-
+// Global Media Queries
 @media (min-width:320px) {
     .color {
         width: calc(100% / 3 - 18.7px);
@@ -477,13 +478,7 @@ input[type=range] {
     #gravity {
         margin-top: 3.3px;
     }
-    #color-details-right {
-        width: 15%;
-    }
 }
-
-
-/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide (65%) */
 
 @media (min-width:481px) {
     .color {
@@ -519,13 +514,7 @@ input[type=range] {
     #gravity {
         margin-top: 3.9px;
     }
-    #color-details-right {
-        width: 13.5%;
-    }
 }
-
-
-/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones (75%) */
 
 @media (min-width:641px) {
     .color {
@@ -561,13 +550,7 @@ input[type=range] {
     #gravity {
         margin-top: 4.5px;
     }
-    #color-details-right {
-        width: 11.5%;
-    }
 }
-
-
-/* tablet, landscape iPad, lo-res laptops ands desktops (85%) */
 
 @media (min-width:961px) {
     #green,
@@ -603,13 +586,7 @@ input[type=range] {
     #gravity {
         margin-top: 5.1px;
     }
-    #color-details-right {
-        width: 10%;
-    }
 }
-
-
-/* big landscape tablets, laptops, and desktops (90%) */
 
 @media (min-width:1025px) {
     .color {
@@ -645,12 +622,7 @@ input[type=range] {
     #gravity {
         margin-top: 5.4px;
     }
-    #color-details-right {
-        width: 9%;
-    }
 }
-
-/* hi-res laptops and desktops (100%) */
 
 @media (min-width:1281px) {
     .color {
@@ -685,8 +657,5 @@ input[type=range] {
     #friction,
     #gravity {
         margin-top: 6px;
-    }
-    #color-details-right {
-        width: 8%;
     }
 }

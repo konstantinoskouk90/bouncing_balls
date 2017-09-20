@@ -852,14 +852,40 @@ input[type=range] {
   input[type=range] #blue::-ms-thumb {
     background-color: blue; }
 
-/* standard styling across all devices - start */
+#color-settings {
+  width: 100%;
+  margin: 0 auto; }
+  #color-settings #color-details * {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+  @media (min-width: 320px) {
+    #color-settings #color-details #color-details-right {
+      width: 15%; } }
+  @media (min-width: 481px) {
+    #color-settings #color-details #color-details-right {
+      width: 13.5%; } }
+  @media (min-width: 641px) {
+    #color-settings #color-details #color-details-right {
+      width: 11.5%; } }
+  @media (min-width: 961px) {
+    #color-settings #color-details #color-details-right {
+      width: 10%; } }
+  @media (min-width: 1025px) {
+    #color-settings #color-details #color-details-right {
+      width: 9%; } }
+  @media (min-width: 1281px) {
+    #color-settings #color-details #color-details-right {
+      width: 8%; } }
+
 .percentage {
   width: 12%;
   height: auto; }
 
 .percentage,
 #color-text {
-  font-family: Sniglet;
+  font-family: "Sniglet", serif;
   font-weight: 400;
   text-align: right; }
 
@@ -869,17 +895,17 @@ input[type=range] {
   vertical-align: middle; }
 
 .title {
-  font-family: Sniglet;
+  font-family: "Sniglet", serif;
   font-weight: 400;
   width: 25%; }
-
-#color-settings {
-  width: 100%;
-  margin: 0 auto; }
 
 #settings-wrapper > div {
   width: 65%;
   margin: 0 auto; }
+
+.input-container,
+#inputs-container {
+  display: flex; }
 
 #inputs-container,
 #size,
@@ -887,10 +913,6 @@ input[type=range] {
 #friction,
 #gravity {
   width: 100%; }
-
-.input-container,
-#inputs-container {
-  display: flex; }
 
 #color-details,
 #size-details,
@@ -903,14 +925,6 @@ input[type=range] {
   justify-content: space-between;
   align-items: center; }
 
-#color-details * {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-
-/* standard styling across all devices - end */
-/* media queries */
-/* smartphones, iPhone, portrait 480x320 phones (55%) */
 @media (min-width: 320px) {
   .color {
     width: calc(100% / 3 - 18.7px); }
@@ -943,11 +957,7 @@ input[type=range] {
   #bounciness,
   #friction,
   #gravity {
-    margin-top: 3.3px; }
-
-  #color-details-right {
-    width: 15%; } }
-/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide (65%) */
+    margin-top: 3.3px; } }
 @media (min-width: 481px) {
   .color {
     width: calc(100% / 3 - 22.1px); }
@@ -980,11 +990,7 @@ input[type=range] {
   #bounciness,
   #friction,
   #gravity {
-    margin-top: 3.9px; }
-
-  #color-details-right {
-    width: 13.5%; } }
-/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones (75%) */
+    margin-top: 3.9px; } }
 @media (min-width: 641px) {
   .color {
     width: calc(100% / 3 - 25.5px); }
@@ -1017,11 +1023,7 @@ input[type=range] {
   #bounciness,
   #friction,
   #gravity {
-    margin-top: 4.5px; }
-
-  #color-details-right {
-    width: 11.5%; } }
-/* tablet, landscape iPad, lo-res laptops ands desktops (85%) */
+    margin-top: 4.5px; } }
 @media (min-width: 961px) {
   #green,
   #blue {
@@ -1054,11 +1056,7 @@ input[type=range] {
   #bounciness,
   #friction,
   #gravity {
-    margin-top: 5.1px; }
-
-  #color-details-right {
-    width: 10%; } }
-/* big landscape tablets, laptops, and desktops (90%) */
+    margin-top: 5.1px; } }
 @media (min-width: 1025px) {
   .color {
     width: calc(100% / 3 - 30.6px); }
@@ -1091,11 +1089,7 @@ input[type=range] {
   #bounciness,
   #friction,
   #gravity {
-    margin-top: 5.4px; }
-
-  #color-details-right {
-    width: 9%; } }
-/* hi-res laptops and desktops (100%) */
+    margin-top: 5.4px; } }
 @media (min-width: 1281px) {
   .color {
     width: calc(100% / 3 - 34px); }
@@ -1128,9 +1122,6 @@ input[type=range] {
   #bounciness,
   #friction,
   #gravity {
-    margin-top: 6px; }
-
-  #color-details-right {
-    width: 8%; } }
+    margin-top: 6px; } }
 
 /*# sourceMappingURL=main.css.map */

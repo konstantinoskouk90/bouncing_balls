@@ -529,93 +529,67 @@ canvas {
     height: 45%;
     border-radius: 50%; }
 
-/* slider - start */
 input[type=range] {
   -webkit-appearance: none; }
+  input[type=range]:focus {
+    outline: none; }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+      background-color: #367ebd; }
+    input[type=range]:focus::-ms-fill-upper {
+      background: #367ebd; }
+    input[type=range]:focus::-ms-fill-lower {
+      background: #3071a9; }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    cursor: pointer;
+    background: #3071a9;
+    border: 0.2px solid #010101; }
+  input[type=range]::-webkit-slider-thumb {
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none; }
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    cursor: pointer;
+    background: #3071a9;
+    border: 0.2px solid #010101; }
+  input[type=range]::-moz-range-thumb {
+    border: 1px solid #000000;
+    cursor: pointer; }
+  input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent; }
+  input[type=range]::-ms-thumb {
+    cursor: pointer; }
+  input[type=range]::-ms-fill-lower {
+    background: #2a6495;
+    border: 0.2px solid #010101; }
+  input[type=range]::-ms-fill-upper {
+    background: #3071a9;
+    border: 0.2px solid #010101; }
+  input[type=range] #red::-webkit-slider-thumb {
+    background-color: red; }
+  input[type=range] #red::-moz-range-thumb {
+    background-color: red; }
+  input[type=range] #red::-ms-thumb {
+    background-color: red; }
+  input[type=range] #green::-webkit-slider-thumb {
+    background-color: green; }
+  input[type=range] #green::-moz-range-thumb {
+    background-color: green; }
+  input[type=range] #green::-ms-thumb {
+    background-color: green; }
+  input[type=range] #blue::-webkit-slider-thumb {
+    background-color: blue; }
+  input[type=range] #blue::-moz-range-thumb {
+    background-color: blue; }
+  input[type=range] #blue::-ms-thumb {
+    background-color: blue; }
 
-input[type=range]:focus {
-  outline: none; }
-
-/* browser prefixes */
-/* chrome and safari */
-input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  cursor: pointer;
-  background: #3071a9;
-  border: 0.2px solid #010101; }
-
-input[type=range]::-webkit-slider-thumb {
-  background: #ffffff;
-  cursor: pointer;
-  -webkit-appearance: none; }
-
-input[type=range]#red::-webkit-slider-thumb {
-  background-color: red; }
-
-input[type=range]#green::-webkit-slider-thumb {
-  background-color: green; }
-
-input[type=range]#blue::-webkit-slider-thumb {
-  background-color: blue; }
-
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background-color: #367ebd; }
-
-/* firefox */
-input[type=range]::-moz-range-track {
-  width: 100%;
-  cursor: pointer;
-  background: #3071a9;
-  border: 0.2px solid #010101; }
-
-input[type=range]::-moz-range-thumb {
-  border: 1px solid #000000;
-  cursor: pointer; }
-
-input[type=range]#red::-moz-range-thumb {
-  background-color: red; }
-
-input[type=range]#green::-moz-range-thumb {
-  background-color: green; }
-
-input[type=range]#blue::-moz-range-thumb {
-  background-color: blue; }
-
-/* internet explorer */
-input[type=range]::-ms-track {
-  width: 100%;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent; }
-
-input[type=range]::-ms-thumb {
-  cursor: pointer; }
-
-input[type=range]#red::-ms-thumb {
-  background-color: red; }
-
-input[type=range]#green::-ms-thumb {
-  background-color: green; }
-
-input[type=range]#blue::-ms-thumb {
-  background-color: blue; }
-
-input[type=range]::-ms-fill-lower {
-  background: #2a6495;
-  border: 0.2px solid #010101; }
-
-input[type=range]::-ms-fill-upper {
-  background: #3071a9;
-  border: 0.2px solid #010101; }
-
-input[type=range]:focus::-ms-fill-lower {
-  background: #3071a9; }
-
-input[type=range]:focus::-ms-fill-upper {
-  background: #367ebd; }
-
-/* slider - end */
+/* standard styling across all devices - start */
 .percentage {
   width: 12%;
   height: auto; }

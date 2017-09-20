@@ -24,11 +24,89 @@ input[type=range] {
         cursor: pointer;
         background: #3071a9;
         border: 0.2px solid #010101;
+        @include mediaQs('xs') {
+            height: get55Per(8.4px);
+            border-radius: get55Per(1.3px);
+            box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
+        }
+        @include mediaQs('s') {
+            height: get65Per(8.4px);
+            border-radius: get65Per(1.3px);
+            box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
+        }
+        @include mediaQs('m') {
+            height: get75Per(8.4px);
+            border-radius: get75Per(1.3px);
+            box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
+        }
+        @include mediaQs('l') {
+            height: get85Per(8.4px);
+            border-radius: get85Per(1.3px);
+            box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
+        }
+        @include mediaQs('xl') {
+            height: get90Per(8.4px);
+            border-radius: get90Per(1.3px);
+            box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
+        }
+        @include mediaQs('xxl') {
+            height: get100Per(8.4px);
+            border-radius: get100Per(1.3px);
+            box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
+        }
     }
     &::-webkit-slider-thumb {
         background: #ffffff;
         cursor: pointer;
         -webkit-appearance: none;
+        @include mediaQs('xs') {
+            height: get55Per(26px);
+            width: get55Per(16px);
+            border-radius: get55Per(3px);
+            margin-top: get55Per(-10px);
+            border: get55Per(1px) solid #000000;
+            box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
+        }
+        @include mediaQs('s') {
+            height: get65Per(26px);
+            width: get65Per(16px);
+            border-radius: get65Per(3px);
+            margin-top: get65Per(-10px);
+            border: get65Per(1px) solid #000000;
+            box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
+        }
+        @include mediaQs('m') {
+            height: get75Per(26px);
+            width: get75Per(16px);
+            border-radius: get75Per(3px);
+            margin-top: get75Per(-10px);
+            border: get75Per(1px) solid #000000;
+            box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
+        }
+        @include mediaQs('l') {
+            height: get85Per(26px);
+            width: get85Per(16px);
+            border-radius: get85Per(3px);
+            margin-top: get85Per(-10px);
+            border: get85Per(1px) solid #000000;
+            box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
+        }
+        @include mediaQs('xl') {
+            height: get90Per(26px);
+            width: get90Per(16px);
+            border-radius: get90Per(3px);
+            margin-top: get90Per(-10px);
+            border: get90Per(1px) solid #000000;
+            box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
+        }
+        @include mediaQs('xxl') {
+            height: get100Per(26px);
+            width: get100Per(16px);
+            border-radius: get100Per(3px);
+            margin-top: get100Per(-10px);
+            border: get100Per(1px) solid #000000;
+            box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
+        }
     }
     // Firefox
     &::-moz-range-track {
@@ -180,19 +258,6 @@ input[type=range] {
 /* smartphones, iPhone, portrait 480x320 phones (55%) */
 
 @media (min-width:320px) {
-    input[type=range]::-webkit-slider-runnable-track {
-        height: 4.62px;
-        border-radius: 0.715px;
-        box-shadow: 0.55px 0.55px 0.55px #000000, 0px 0px 0.55px #0d0d0d;
-    }
-    input[type=range]::-webkit-slider-thumb {
-        height: 14.3px;
-        width: 8.8px;
-        border: 0.55px solid #000000;
-        border-radius: 1.65px;
-        margin-top: -5.5px;
-        box-shadow: 0.55px 0.55px 0.55px #000000, 0px 0px 0.55px #0d0d0d;
-    }
     input[type=range]::-moz-range-track {
         height: 4.62px;
         border-radius: 0.715px;
@@ -265,19 +330,6 @@ input[type=range] {
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide (65%) */
 
 @media (min-width:481px) {
-    input[type=range]::-webkit-slider-runnable-track {
-        height: 5.46px;
-        border-radius: 0.845px;
-        box-shadow: 0.65px 0.65px 0.65px #000000, 0px 0px 0.65px #0d0d0d;
-    }
-    input[type=range]::-webkit-slider-thumb {
-        height: 16.9px;
-        width: 10.4px;
-        border-radius: 1.95px;
-        margin-top: -6.5px;
-        border: 0.65px solid #000000;
-        box-shadow: 0.65px 0.65px 0.65px #000000, 0px 0px 0.65px #0d0d0d;
-    }
     input[type=range]::-moz-range-track {
         height: 5.46px;
         border-radius: 0.845px;
@@ -350,19 +402,6 @@ input[type=range] {
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones (75%) */
 
 @media (min-width:641px) {
-    input[type=range]::-webkit-slider-runnable-track {
-        height: 6.3px;
-        border-radius: 0.975px;
-        box-shadow: 0.75px 0.75px 0.75px #000000, 0px 0px 0.75px #0d0d0d;
-    }
-    input[type=range]::-webkit-slider-thumb {
-        height: 19.5px;
-        width: 12px;
-        border: 0.75px solid #000000;
-        border-radius: 2.25px;
-        margin-top: -7.5px;
-        box-shadow: 0.75px 0.75px 0.75px #000000, 0px 0px 0.75px #0d0d0d;
-    }
     input[type=range]::-moz-range-track {
         height: 6.3px;
         border-radius: 0.975px;
@@ -435,19 +474,6 @@ input[type=range] {
 /* tablet, landscape iPad, lo-res laptops ands desktops (85%) */
 
 @media (min-width:961px) {
-    input[type=range]::-webkit-slider-runnable-track {
-        height: 7.14px;
-        border-radius: 1.105px;
-        box-shadow: 0.85px 0.85px 0.85px #000000, 0px 0px 0.85px #0d0d0d;
-    }
-    input[type=range]::-webkit-slider-thumb {
-        height: 22.1px;
-        width: 13.6px;
-        border-radius: 2.55px;
-        margin-top: -8.5px;
-        border: 0.85px solid #000000;
-        box-shadow: 0.85px 0.85px 0.85px #000000, 0px 0px 0.85px #0d0d0d;
-    }
     input[type=range]::-moz-range-track {
         height: 7.14px;
         border-radius: 1.105px;
@@ -520,19 +546,6 @@ input[type=range] {
 /* big landscape tablets, laptops, and desktops (90%) */
 
 @media (min-width:1025px) {
-    input[type=range]::-webkit-slider-runnable-track {
-        height: 7.56px;
-        border-radius: 1.3px;
-        box-shadow: 0.9px 0.9px 0.9px #000000, 0px 0px 0.9px #0d0d0d;
-    }
-    input[type=range]::-webkit-slider-thumb {
-        height: 23.4px;
-        width: 14.4px;
-        border: 0.9px solid #000000;
-        border-radius: 2.7px;
-        margin-top: -9px;
-        box-shadow: 0.9px 0.9px 0.9px #000000, 0px 0px 0.9px #0d0d0d;
-    }
     input[type=range]::-moz-range-track {
         height: 7.56px;
         border-radius: 1.17px;
@@ -605,19 +618,6 @@ input[type=range] {
 /* hi-res laptops and desktops (100%) */
 
 @media (min-width:1281px) {
-    input[type=range]::-webkit-slider-runnable-track {
-        height: 8.4px;
-        border-radius: 1.3px;
-        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    }
-    input[type=range]::-webkit-slider-thumb {
-        height: 26px;
-        width: 16px;
-        border-radius: 3px;
-        margin-top: -10px;
-        border: 1px solid #000000;
-        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    }
     input[type=range]::-moz-range-track {
         height: 8.4px;
         border-radius: 1.3px;

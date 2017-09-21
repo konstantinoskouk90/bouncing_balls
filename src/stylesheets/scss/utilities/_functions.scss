@@ -3,25 +3,25 @@
 // =================================
 
 @function get55Per($value) {
-    @return ($value * 55) / 100;
+  @return ($value * 55) / 100;
 }
 
 @function get65Per($value) {
-    @return ($value * 65) / 100;
+  @return ($value * 65) / 100;
 }
 
 @function get75Per($value) {
-    @return ($value * 75) / 100;
+  @return ($value * 75) / 100;
 }
 
 @function get85Per($value) {
-    @return ($value * 85) / 100;
+  @return ($value * 85) / 100;
 }
 
 @function get90Per($value) {
-    @return ($value * 90) / 100;
+  @return ($value * 90) / 100;
 }
 
 @function get100Per($value) {
-    @return $value;
+  @return $value;
 }

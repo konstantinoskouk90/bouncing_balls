@@ -3,369 +3,369 @@
 // =================================
 
 input[type=range] {
-    -webkit-appearance: none;
-    &:focus {
-        outline: none;
-        // Chrome & Safari
-        &::-webkit-slider-runnable-track {
-            background-color: #367ebd;
-        }
-        // Internet Explorer
-        &::-ms-fill-upper {
-            background: #367ebd;
-        }
-        &::-ms-fill-lower {
-            background: #3071a9;
-        }
-    }
+  -webkit-appearance: none;
+  &:focus {
+    outline: none;
     // Chrome & Safari
     &::-webkit-slider-runnable-track {
-        width: 100%;
-        cursor: pointer;
-        background: #3071a9;
-        border: 0.2px solid #010101;
-        @include mediaQs('xs') {
-            height: get55Per(8.4px);
-            border-radius: get55Per(1.3px);
-            box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
-        }
-        @include mediaQs('s') {
-            height: get65Per(8.4px);
-            border-radius: get65Per(1.3px);
-            box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
-        }
-        @include mediaQs('m') {
-            height: get75Per(8.4px);
-            border-radius: get75Per(1.3px);
-            box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
-        }
-        @include mediaQs('l') {
-            height: get85Per(8.4px);
-            border-radius: get85Per(1.3px);
-            box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
-        }
-        @include mediaQs('xl') {
-            height: get90Per(8.4px);
-            border-radius: get90Per(1.3px);
-            box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
-        }
-        @include mediaQs('xxl') {
-            height: get100Per(8.4px);
-            border-radius: get100Per(1.3px);
-            box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
-        }
-    }
-    &::-webkit-slider-thumb {
-        background: #ffffff;
-        cursor: pointer;
-        -webkit-appearance: none;
-        @include mediaQs('xs') {
-            height: get55Per(26px);
-            width: get55Per(16px);
-            border-radius: get55Per(3px);
-            margin-top: get55Per(-10px);
-            border: get55Per(1px) solid #000000;
-            box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
-        }
-        @include mediaQs('s') {
-            height: get65Per(26px);
-            width: get65Per(16px);
-            border-radius: get65Per(3px);
-            margin-top: get65Per(-10px);
-            border: get65Per(1px) solid #000000;
-            box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
-        }
-        @include mediaQs('m') {
-            height: get75Per(26px);
-            width: get75Per(16px);
-            border-radius: get75Per(3px);
-            margin-top: get75Per(-10px);
-            border: get75Per(1px) solid #000000;
-            box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
-        }
-        @include mediaQs('l') {
-            height: get85Per(26px);
-            width: get85Per(16px);
-            border-radius: get85Per(3px);
-            margin-top: get85Per(-10px);
-            border: get85Per(1px) solid #000000;
-            box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
-        }
-        @include mediaQs('xl') {
-            height: get90Per(26px);
-            width: get90Per(16px);
-            border-radius: get90Per(3px);
-            margin-top: get90Per(-10px);
-            border: get90Per(1px) solid #000000;
-            box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
-        }
-        @include mediaQs('xxl') {
-            height: get100Per(26px);
-            width: get100Per(16px);
-            border-radius: get100Per(3px);
-            margin-top: get100Per(-10px);
-            border: get100Per(1px) solid #000000;
-            box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
-        }
-    }
-    // Firefox
-    &::-moz-range-track {
-        @include mediaQs('xs') {
-            height: get55Per(8.4px);
-            border-radius: get55Per(1.3px);
-            box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
-        }
-        @include mediaQs('s') {
-            height: get65Per(8.4px);
-            border-radius: get65Per(1.3px);
-            box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
-        }
-        @include mediaQs('m') {
-            height: get75Per(8.4px);
-            border-radius: get75Per(1.3px);
-            box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
-        }
-        @include mediaQs('l') {
-            height: get85Per(8.4px);
-            border-radius: get85Per(1.3px);
-            box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
-        }
-        @include mediaQs('xl') {
-            height: get90Per(8.4px);
-            border-radius: get90Per(1.3px);
-            box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
-        }
-        @include mediaQs('xxl') {
-            height: get100Per(8.4px);
-            border-radius: get100Per(1.3px);
-            box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
-        }
-    }
-    &::-moz-range-thumb {
-        border: 1px solid #000000;
-        cursor: pointer;
-        @include mediaQs('xs') {
-            height: get55Per(26px);
-            width: get55Per(16px);
-            border-radius: get55Per(3px);
-            box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
-        }
-        @include mediaQs('s') {
-            height: get65Per(26px);
-            width: get65Per(16px);
-            border-radius: get65Per(3px);
-            box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
-        }
-        @include mediaQs('m') {
-            height: get75Per(26px);
-            width: get75Per(16px);
-            border-radius: get75Per(3px);
-            box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
-        }
-        @include mediaQs('l') {
-            height: get85Per(26px);
-            width: get85Per(16px);
-            border-radius: get85Per(3px);
-            box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
-        }
-        @include mediaQs('xl') {
-            height: get90Per(26px);
-            width: get90Per(16px);
-            border-radius: get90Per(3px);
-            box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
-        }
-        @include mediaQs('xxl') {
-            height: get100Per(26px);
-            width: get100Per(16px);
-            border-radius: get100Per(3px);
-            box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
-        }
+      background-color: #367ebd;
     }
     // Internet Explorer
-    &::-ms-track {
-        width: 100%;
-        cursor: pointer;
-        background: transparent;
-        border-color: transparent;
-        color: transparent;
-        @include mediaQs('xs') {
-            height: get55Per(8.4px);
-            border-width: get55Per(16px) get55Per(0);
-        }
-        @include mediaQs('s') {
-            height: get65Per(8.4px);
-            border-width: get65Per(16px) get65Per(0);
-        }
-        @include mediaQs('m') {
-            height: get75Per(8.4px);
-            border-width: get75Per(16px) get75Per(0);
-        }
-        @include mediaQs('l') {
-            height: get85Per(8.4px);
-            border-width: get85Per(16px) get85Per(0);
-        }
-        @include mediaQs('xl') {
-            height: get90Per(8.4px);
-            border-width: get90Per(16px) get90Per(0);
-        }
-        @include mediaQs('xxl') {
-            height: get100Per(8.4px);
-            border-width: get100Per(16px) get100Per(0);
-        }
-    }
-    &::-ms-thumb {
-        cursor: pointer;
-        @include mediaQs('xs') {
-            height: get55Per(26px);
-            width: get55Per(16px);
-            border: get55Per(1px) solid #000000;
-            box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
-            border-radius: get55Per(3px);
-        }
-        @include mediaQs('s') {
-            height: get65Per(26px);
-            width: get65Per(16px);
-            border: get65Per(1px) solid #000000;
-            box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
-            border-radius: get65Per(3px);
-        }
-        @include mediaQs('m') {
-            height: get75Per(26px);
-            width: get75Per(16px);
-            border: get75Per(1px) solid #000000;
-            box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
-            border-radius: get75Per(3px);
-        }
-        @include mediaQs('l') {
-            height: get85Per(26px);
-            width: get85Per(16px);
-            border: get85Per(1px) solid #000000;
-            box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
-            border-radius: get85Per(3px);
-        }
-        @include mediaQs('xl') {
-            height: get90Per(26px);
-            width: get90Per(16px);
-            border: get90Per(1px) solid #000000;
-            box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
-            border-radius: get90Per(3px);
-        }
-        @include mediaQs('xxl') {
-            height: get100Per(26px);
-            width: get100Per(16px);
-            border: get100Per(1px) solid #000000;
-            box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
-            border-radius: get100Per(3px);
-        }
-    }
     &::-ms-fill-upper {
-        background: #3071a9;
-        @include mediaQs('xs') {
-            box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
-            border: get55Per(0.2px) solid #010101;
-            border-radius: get55Per(2.6px);
-        }
-        @include mediaQs('s') {
-            box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
-            border: get65Per(0.2px) solid #010101;
-            border-radius: get65Per(2.6px);
-        }
-        @include mediaQs('m') {
-            box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
-            border: get75Per(0.2px) solid #010101;
-            border-radius: get75Per(2.6px);
-        }
-        @include mediaQs('l') {
-            box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
-            border: get85Per(0.2px) solid #010101;
-            border-radius: get85Per(2.6px);
-        }
-        @include mediaQs('xl') {
-            box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
-            border: get90Per(0.2px) solid #010101;
-            border-radius: get90Per(2.6px);
-        }
-        @include mediaQs('xxl') {
-            box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
-            border: get100Per(0.2px) solid #010101;
-            border-radius: get100Per(2.6px);
-        }
+      background: #367ebd;
     }
     &::-ms-fill-lower {
-        background: #2a6495;
-        @include mediaQs('xs') {
-            box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
-            border: get55Per(0.2px) solid #010101;
-            border-radius: get55Per(2.6px);
-        }
-        @include mediaQs('s') {
-            box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
-            border: get65Per(0.2px) solid #010101;
-            border-radius: get65Per(2.6px);
-        }
-        @include mediaQs('m') {
-            box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
-            border: get75Per(0.2px) solid #010101;
-            border-radius: get75Per(2.6px);
-        }
-        @include mediaQs('l') {
-            box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
-            border: get85Per(0.2px) solid #010101;
-            border-radius: get85Per(2.6px);
-        }
-        @include mediaQs('xl') {
-            box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
-            border: get90Per(0.2px) solid #010101;
-            border-radius: get90Per(2.6px);
-        }
-        @include mediaQs('xxl') {
-            box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
-            border: get100Per(0.2px) solid #010101;
-            border-radius: get100Per(2.6px);
-        }
+      background: #3071a9;
     }
-    #red {
-        // Chrome & Safari
-        &::-webkit-slider-thumb {
-            background-color: red;
-        }
-        // Firefox
-        &::-moz-range-thumb {
-            background-color: red;
-        }
-        // Internet Explorer
-        &::-ms-thumb {
-            background-color: red;
-        }
+  }
+  // Chrome & Safari
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    cursor: pointer;
+    background: #3071a9;
+    border: 0.2px solid #010101;
+    @include mediaQs('xs') {
+      height: get55Per(8.4px);
+      border-radius: get55Per(1.3px);
+      box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
     }
-    #green {
-        // Chrome & Safari
-        &::-webkit-slider-thumb {
-            background-color: green;
-        }
-        // Firefox
-        &::-moz-range-thumb {
-            background-color: green;
-        }
-        // Internet Explorer
-        &::-ms-thumb {
-            background-color: green;
-        }
+    @include mediaQs('s') {
+      height: get65Per(8.4px);
+      border-radius: get65Per(1.3px);
+      box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
     }
-    #blue {
-        // Chrome & Safari
-        &::-webkit-slider-thumb {
-            background-color: blue;
-        }
-        // Firefox
-        &::-moz-range-thumb {
-            background-color: blue;
-        }
-        // Internet Explorer
-        &::-ms-thumb {
-            background-color: blue;
-        }
+    @include mediaQs('m') {
+      height: get75Per(8.4px);
+      border-radius: get75Per(1.3px);
+      box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
     }
+    @include mediaQs('l') {
+      height: get85Per(8.4px);
+      border-radius: get85Per(1.3px);
+      box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
+    }
+    @include mediaQs('xl') {
+      height: get90Per(8.4px);
+      border-radius: get90Per(1.3px);
+      box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
+    }
+    @include mediaQs('xxl') {
+      height: get100Per(8.4px);
+      border-radius: get100Per(1.3px);
+      box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
+    }
+  }
+  &::-webkit-slider-thumb {
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    @include mediaQs('xs') {
+      height: get55Per(26px);
+      width: get55Per(16px);
+      border-radius: get55Per(3px);
+      margin-top: get55Per(-10px);
+      border: get55Per(1px) solid #000000;
+      box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
+    }
+    @include mediaQs('s') {
+      height: get65Per(26px);
+      width: get65Per(16px);
+      border-radius: get65Per(3px);
+      margin-top: get65Per(-10px);
+      border: get65Per(1px) solid #000000;
+      box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
+    }
+    @include mediaQs('m') {
+      height: get75Per(26px);
+      width: get75Per(16px);
+      border-radius: get75Per(3px);
+      margin-top: get75Per(-10px);
+      border: get75Per(1px) solid #000000;
+      box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
+    }
+    @include mediaQs('l') {
+      height: get85Per(26px);
+      width: get85Per(16px);
+      border-radius: get85Per(3px);
+      margin-top: get85Per(-10px);
+      border: get85Per(1px) solid #000000;
+      box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
+    }
+    @include mediaQs('xl') {
+      height: get90Per(26px);
+      width: get90Per(16px);
+      border-radius: get90Per(3px);
+      margin-top: get90Per(-10px);
+      border: get90Per(1px) solid #000000;
+      box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
+    }
+    @include mediaQs('xxl') {
+      height: get100Per(26px);
+      width: get100Per(16px);
+      border-radius: get100Per(3px);
+      margin-top: get100Per(-10px);
+      border: get100Per(1px) solid #000000;
+      box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
+    }
+  }
+  // Firefox
+  &::-moz-range-track {
+    @include mediaQs('xs') {
+      height: get55Per(8.4px);
+      border-radius: get55Per(1.3px);
+      box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
+    }
+    @include mediaQs('s') {
+      height: get65Per(8.4px);
+      border-radius: get65Per(1.3px);
+      box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
+    }
+    @include mediaQs('m') {
+      height: get75Per(8.4px);
+      border-radius: get75Per(1.3px);
+      box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
+    }
+    @include mediaQs('l') {
+      height: get85Per(8.4px);
+      border-radius: get85Per(1.3px);
+      box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
+    }
+    @include mediaQs('xl') {
+      height: get90Per(8.4px);
+      border-radius: get90Per(1.3px);
+      box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
+    }
+    @include mediaQs('xxl') {
+      height: get100Per(8.4px);
+      border-radius: get100Per(1.3px);
+      box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
+    }
+  }
+  &::-moz-range-thumb {
+    border: 1px solid #000000;
+    cursor: pointer;
+    @include mediaQs('xs') {
+      height: get55Per(26px);
+      width: get55Per(16px);
+      border-radius: get55Per(3px);
+      box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
+    }
+    @include mediaQs('s') {
+      height: get65Per(26px);
+      width: get65Per(16px);
+      border-radius: get65Per(3px);
+      box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
+    }
+    @include mediaQs('m') {
+      height: get75Per(26px);
+      width: get75Per(16px);
+      border-radius: get75Per(3px);
+      box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
+    }
+    @include mediaQs('l') {
+      height: get85Per(26px);
+      width: get85Per(16px);
+      border-radius: get85Per(3px);
+      box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
+    }
+    @include mediaQs('xl') {
+      height: get90Per(26px);
+      width: get90Per(16px);
+      border-radius: get90Per(3px);
+      box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
+    }
+    @include mediaQs('xxl') {
+      height: get100Per(26px);
+      width: get100Per(16px);
+      border-radius: get100Per(3px);
+      box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
+    }
+  }
+  // Internet Explorer
+  &::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    @include mediaQs('xs') {
+      height: get55Per(8.4px);
+      border-width: get55Per(16px) get55Per(0);
+    }
+    @include mediaQs('s') {
+      height: get65Per(8.4px);
+      border-width: get65Per(16px) get65Per(0);
+    }
+    @include mediaQs('m') {
+      height: get75Per(8.4px);
+      border-width: get75Per(16px) get75Per(0);
+    }
+    @include mediaQs('l') {
+      height: get85Per(8.4px);
+      border-width: get85Per(16px) get85Per(0);
+    }
+    @include mediaQs('xl') {
+      height: get90Per(8.4px);
+      border-width: get90Per(16px) get90Per(0);
+    }
+    @include mediaQs('xxl') {
+      height: get100Per(8.4px);
+      border-width: get100Per(16px) get100Per(0);
+    }
+  }
+  &::-ms-thumb {
+    cursor: pointer;
+    @include mediaQs('xs') {
+      height: get55Per(26px);
+      width: get55Per(16px);
+      border: get55Per(1px) solid #000000;
+      box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
+      border-radius: get55Per(3px);
+    }
+    @include mediaQs('s') {
+      height: get65Per(26px);
+      width: get65Per(16px);
+      border: get65Per(1px) solid #000000;
+      box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
+      border-radius: get65Per(3px);
+    }
+    @include mediaQs('m') {
+      height: get75Per(26px);
+      width: get75Per(16px);
+      border: get75Per(1px) solid #000000;
+      box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
+      border-radius: get75Per(3px);
+    }
+    @include mediaQs('l') {
+      height: get85Per(26px);
+      width: get85Per(16px);
+      border: get85Per(1px) solid #000000;
+      box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
+      border-radius: get85Per(3px);
+    }
+    @include mediaQs('xl') {
+      height: get90Per(26px);
+      width: get90Per(16px);
+      border: get90Per(1px) solid #000000;
+      box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
+      border-radius: get90Per(3px);
+    }
+    @include mediaQs('xxl') {
+      height: get100Per(26px);
+      width: get100Per(16px);
+      border: get100Per(1px) solid #000000;
+      box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
+      border-radius: get100Per(3px);
+    }
+  }
+  &::-ms-fill-upper {
+    background: #3071a9;
+    @include mediaQs('xs') {
+      box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
+      border: get55Per(0.2px) solid #010101;
+      border-radius: get55Per(2.6px);
+    }
+    @include mediaQs('s') {
+      box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
+      border: get65Per(0.2px) solid #010101;
+      border-radius: get65Per(2.6px);
+    }
+    @include mediaQs('m') {
+      box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
+      border: get75Per(0.2px) solid #010101;
+      border-radius: get75Per(2.6px);
+    }
+    @include mediaQs('l') {
+      box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
+      border: get85Per(0.2px) solid #010101;
+      border-radius: get85Per(2.6px);
+    }
+    @include mediaQs('xl') {
+      box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
+      border: get90Per(0.2px) solid #010101;
+      border-radius: get90Per(2.6px);
+    }
+    @include mediaQs('xxl') {
+      box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
+      border: get100Per(0.2px) solid #010101;
+      border-radius: get100Per(2.6px);
+    }
+  }
+  &::-ms-fill-lower {
+    background: #2a6495;
+    @include mediaQs('xs') {
+      box-shadow: get55Per(1px) get55Per(1px) get55Per(1px) #000000, get55Per(0px) get55Per(0px) get55Per(1px) #0d0d0d;
+      border: get55Per(0.2px) solid #010101;
+      border-radius: get55Per(2.6px);
+    }
+    @include mediaQs('s') {
+      box-shadow: get65Per(1px) get65Per(1px) get65Per(1px) #000000, get65Per(0px) get65Per(0px) get65Per(1px) #0d0d0d;
+      border: get65Per(0.2px) solid #010101;
+      border-radius: get65Per(2.6px);
+    }
+    @include mediaQs('m') {
+      box-shadow: get75Per(1px) get75Per(1px) get75Per(1px) #000000, get75Per(0px) get75Per(0px) get75Per(1px) #0d0d0d;
+      border: get75Per(0.2px) solid #010101;
+      border-radius: get75Per(2.6px);
+    }
+    @include mediaQs('l') {
+      box-shadow: get85Per(1px) get85Per(1px) get85Per(1px) #000000, get85Per(0px) get85Per(0px) get85Per(1px) #0d0d0d;
+      border: get85Per(0.2px) solid #010101;
+      border-radius: get85Per(2.6px);
+    }
+    @include mediaQs('xl') {
+      box-shadow: get90Per(1px) get90Per(1px) get90Per(1px) #000000, get90Per(0px) get90Per(0px) get90Per(1px) #0d0d0d;
+      border: get90Per(0.2px) solid #010101;
+      border-radius: get90Per(2.6px);
+    }
+    @include mediaQs('xxl') {
+      box-shadow: get100Per(1px) get100Per(1px) get100Per(1px) #000000, get100Per(0px) get100Per(0px) get100Per(1px) #0d0d0d;
+      border: get100Per(0.2px) solid #010101;
+      border-radius: get100Per(2.6px);
+    }
+  }
+  #red {
+    // Chrome & Safari
+    &::-webkit-slider-thumb {
+      background-color: red;
+    }
+    // Firefox
+    &::-moz-range-thumb {
+      background-color: red;
+    }
+    // Internet Explorer
+    &::-ms-thumb {
+      background-color: red;
+    }
+  }
+  #green {
+    // Chrome & Safari
+    &::-webkit-slider-thumb {
+      background-color: green;
+    }
+    // Firefox
+    &::-moz-range-thumb {
+      background-color: green;
+    }
+    // Internet Explorer
+    &::-ms-thumb {
+      background-color: green;
+    }
+  }
+  #blue {
+    // Chrome & Safari
+    &::-webkit-slider-thumb {
+      background-color: blue;
+    }
+    // Firefox
+    &::-moz-range-thumb {
+      background-color: blue;
+    }
+    // Internet Explorer
+    &::-ms-thumb {
+      background-color: blue;
+    }
+  }
 }
 
 #color-settings {
@@ -385,37 +385,180 @@ input[type=range] {
         get100Per(9%),
         get100Per(8%)
       );
+      #color-preview {
+        background-color: rgb(223, 12, 12);
+        border-radius: 100%;
+        vertical-align: middle;
+        @include mediaQs('xs') {
+          margin-right: get55Per(15px);
+          width: get55Per(25px);
+          height: get55Per(25px);
+        }
+        @include mediaQs('s') {
+          margin-right: get65Per(15px);
+          width: get65Per(25px);
+          height: get65Per(25px);
+        }
+        @include mediaQs('m') {
+          margin-right: get75Per(15px);
+          width: get75Per(25px);
+          height: get75Per(25px);
+        }
+        @include mediaQs('l') {
+          margin-right: get85Per(15px);
+          width: get85Per(25px);
+          height: get85Per(25px);
+        }
+        @include mediaQs('xl') {
+          margin-right: get90Per(15px);
+          width: get90Per(25px);
+          height: get90Per(25px);
+        }
+        @include mediaQs('xxl') {
+          margin-right: get100Per(15px);
+          width: get100Per(25px);
+          height: get100Per(25px);
+        }
+      }
+      #color-text {
+        font-family: $font-stack-primary;
+        font-weight: $weight-s;
+        text-align: right;
+        @include mediaQs('xs') {
+          margin-right: get55Per(5px);
+          font-size: get55Per(1em);
+          width: get55Per(25px);
+          height: get55Per(25px);
+        }
+        @include mediaQs('s') {
+          margin-right: get65Per(5px);
+          font-size: get65Per(1em);
+          width: get65Per(25px);
+          height: get65Per(25px);
+        }
+        @include mediaQs('m') {
+          margin-right: get75Per(5px);
+          font-size: get75Per(1em);
+          width: get75Per(25px);
+          height: get75Per(25px);
+        }
+        @include mediaQs('l') {
+          margin-right: get85Per(5px);
+          font-size: get85Per(1em);
+          width: get85Per(25px);
+          height: get85Per(25px);
+        }
+        @include mediaQs('xl') {
+          margin-right: get90Per(5px);
+          font-size: get90Per(1em);
+          width: get90Per(25px);
+          height: get90Per(25px);
+        }
+        @include mediaQs('xxl') {
+          margin-right: get100Per(5px);
+          font-size: get100Per(1em);
+          width: get100Per(25px);
+          height: get100Per(25px);
+        }
+      }
     }
   }
 }
 
-.percentage {
-    width: 12%;
-    height: auto;
+#green,
+#blue {
+  @include mediaQs('xs') {
+    margin-left: get55Per(50px);
+  }
+  @include mediaQs('s') {
+    margin-left: get65Per(50px);
+  }
+  @include mediaQs('m') {
+    margin-left: get75Per(50px);
+  }
+  @include mediaQs('l') {
+    margin-left: get85Per(50px);
+  }
+  @include mediaQs('xl') {
+    margin-left: get90Per(50px);
+  }
+  @include mediaQs('xxl') {
+    margin-left: get100Per(50px);
+  }
 }
 
-.percentage,
-#color-text {
-    font-family: $font-stack-primary;
-    font-weight: $weight-s;
-    text-align: right;
-}
-
-#color-preview {
-    background-color: rgb(223, 12, 12);
-    border-radius: 100%;
-    vertical-align: middle;
+.container {
+  @include mediaQs('xs') {
+    padding-top: get55Per(15px);
+  }
+  @include mediaQs('s') {
+    padding-top: get65Per(15px);
+  }
+  @include mediaQs('m') {
+    padding-top: get75Per(15px);
+  }
+  @include mediaQs('l') {
+    padding-top: get85Per(15px);
+  }
+  @include mediaQs('xl') {
+    padding-top: get90Per(15px);
+  }
+  @include mediaQs('xxl') {
+    padding-top: get100Per(15px);
+  }
 }
 
 .title {
-    font-family: $font-stack-primary;
-    font-weight: $weight-s;
-    width: 25%;
+  font-family: $font-stack-primary;
+  font-weight: $weight-s;
+  width: 25%;
+  @include mediaQ(
+    font-size, 
+    get55Per(1.15em),
+    get65Per(1.15em),
+    get75Per(1.15em),
+    get85Per(1.15em),
+    get90Per(1.15em),
+    get100Per(1.15em)
+  );
+}
+
+.percentage {
+  width: 12%;
+  height: auto;
+  font-family: $font-stack-primary;
+  font-weight: $weight-s;
+  text-align: right;
+  @include mediaQ(
+    font-size, 
+    get55Per(1.15em),
+    get65Per(1.15em),
+    get75Per(1.15em),
+    get85Per(1.15em),
+    get90Per(1.15em),
+    get100Per(1.15em)
+  );
+}
+
+.color,
+#size,
+#bounciness,
+#friction,
+#gravity {
+  @include mediaQ(
+    margin-top, 
+    get55Per(6px),
+    get65Per(6px),
+    get75Per(6px),
+    get85Per(6px),
+    get90Per(6px),
+    get100Per(6px)
+  );
 }
 
 #settings-wrapper > div {
-    width: 65%;
-    margin: 0 auto;
+  width: 65%;
+  margin: 0 auto;
 }
 
 .input-container,
@@ -436,226 +579,46 @@ input[type=range] {
 #gravity-details,
 #bounciness-details,
 #friction-details {
-    width: 100%;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 // Global Media Queries
 @media (min-width:320px) {
-    .color {
-        width: calc(100% / 3 - 18.7px);
-    }
-    #color-preview {
-        margin-right: 8.25px;
-    }
-    #green,
-    #blue {
-        margin-left: 27.5px;
-    }
-    .container {
-        padding-top: 8.25px;
-    }
-    #color-text {
-        margin-right: 2.75px;
-        font-size: 0.55em;
-    }
-    .title,
-    .percentage {
-        font-size: 0.6325em;
-    }
-    #color-preview,
-    #color-text {
-        width: 13.75px;
-        height: 13.75px;
-    }
-    .color,
-    #size,
-    #bounciness,
-    #friction,
-    #gravity {
-        margin-top: 3.3px;
-    }
+  .color {
+    width: calc(100% / 3 - 18.7px);
+  }
 }
 
 @media (min-width:481px) {
-    .color {
-        width: calc(100% / 3 - 22.1px);
-    }
-    #color-preview {
-        margin-right: 9.75px;
-    }
-    #green,
-    #blue {
-        margin-left: 32.5px;
-    }
-    .container {
-        padding-top: 9.75px;
-    }
-    #color-text {
-        margin-right: 3.25px;
-        font-size: 0.65em;
-    }
-    .title,
-    .percentage {
-        font-size: 0.7475em;
-    }
-    #color-preview,
-    #color-text {
-        width: 16.25px;
-        height: 16.25px;
-    }
-    .color,
-    #size,
-    #bounciness,
-    #friction,
-    #gravity {
-        margin-top: 3.9px;
-    }
+  .color {
+    width: calc(100% / 3 - 22.1px);
+  }
 }
 
 @media (min-width:641px) {
-    .color {
-        width: calc(100% / 3 - 25.5px);
-    }
-    #color-preview {
-        margin-right: 11.25px;
-    }
-    #green,
-    #blue {
-        margin-left: 37.5px;
-    }
-    .container {
-        padding-top: 11.25px;
-    }
-    #color-text {
-        margin-right: 3.75px;
-        font-size: 0.75em;
-    }
-    .title,
-    .percentage {
-        font-size: 0.8625em;
-    }
-    #color-preview,
-    #color-text {
-        width: 18.75px;
-        height: 18.75px;
-    }
-    .color,
-    #size,
-    #bounciness,
-    #friction,
-    #gravity {
-        margin-top: 4.5px;
-    }
+  .color {
+    width: calc(100% / 3 - 25.5px);
+  }
 }
 
 @media (min-width:961px) {
-    #green,
-    #blue {
-        margin-left: 42.5px;
-    }
-    .container {
-        padding-top: 12.75px;
-    }
-    .color {
-        width: calc(100% / 3 - 28.9px);
-    }
-    #color-preview {
-        margin-right: 12.75px;
-    }
-    #color-text {
-        font-size: 0.85em;
-        margin-right: 4.25px;
-    }
-    .title,
-    .percentage {
-        font-size: 0.9775em;
-    }
-    #color-preview,
-    #color-text {
-        width: 21.25px;
-        height: 21.25px;
-    }
-    .color,
-    #size,
-    #bounciness,
-    #friction,
-    #gravity {
-        margin-top: 5.1px;
-    }
+  .color {
+    width: calc(100% / 3 - 28.9px);
+  }
 }
 
 @media (min-width:1025px) {
-    .color {
-        width: calc(100% / 3 - 30.6px);
-    }
-    #color-preview {
-        margin-right: 13.5px;
-    }
-    #green,
-    #blue {
-        margin-left: 45px;
-    }
-    .container {
-        padding-top: 13.5px;
-    }
-    #color-text {
-        margin-right: 4.5px;
-        font-size: 0.9em;
-    }
-    .title,
-    .percentage {
-        font-size: 1.035em;
-    }
-    #color-preview,
-    #color-text {
-        width: 22.5px;
-        height: 22.5px;
-    }
-    .color,
-    #size,
-    #bounciness,
-    #friction,
-    #gravity {
-        margin-top: 5.4px;
-    }
+  .color {
+    width: calc(100% / 3 - 30.6px);
+  }
 }
 
 @media (min-width:1281px) {
-    .color {
-        width: calc(100% / 3 - 34px);
-    }
-    #color-preview {
-        margin-right: 15px;
-    }
-    #green,
-    #blue {
-        margin-left: 50px;
-    }
-    .container {
-        padding-top: 15px;
-    }
-    #color-text {
-        margin-right: 5px;
-        font-size: 1em;
-    }
-    .title,
-    .percentage {
-        font-size: 1.15em;
-    }
-    #color-preview,
-    #color-text {
-        width: 25px;
-        height: 25px;
-    }
-    .color,
-    #size,
-    #bounciness,
-    #friction,
-    #gravity {
-        margin-top: 6px;
-    }
+  .color {
+    width: calc(100% / 3 - 34px);
+  }
 }

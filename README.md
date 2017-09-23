@@ -1,6 +1,6 @@
 <h1>#bouncing_balls</h1>
 
-<h4>JavaScript app built using React.js and Redux</h4>
+<h4>JavaScript app built using ReactJS / Redux / Sass</h4>
 
 <h2>Features</h2>
 
@@ -17,8 +17,9 @@
 <ul>
 	<li>Clone repository.</li>
 	<li>Redirect to folder.</li>
-	<li>Run npm install.</li>
-	<li>Run npm start.</li>
+	<li>npm install.</li>
+	<li>npm run sass.</li>
+	<li>npm start.</li>
 	<li>Enjoy!</li>
 </ul>
 

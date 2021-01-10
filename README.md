@@ -17,8 +17,8 @@
 <ul>
 	<li>Clone repository.</li>
 	<li>Redirect to folder.</li>
-	<li>`npm install`</li>
-	<li>`npm start`</li>
+	<code>npm install</code>
+	<code>npm start</code>
 	<li>Enjoy!</li>
 </ul>
 

@@ -17,9 +17,8 @@
 <ul>
 	<li>Clone repository.</li>
 	<li>Redirect to folder.</li>
-	<li>npm install.</li>
-	<li>npm run sass.</li>
-	<li>npm start.</li>
+	<li>`npm install`</li>
+	<li>`npm start`</li>
 	<li>Enjoy!</li>
 </ul>
 

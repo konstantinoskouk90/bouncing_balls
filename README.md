@@ -1,4 +1,4 @@
-<h1>#bouncing_balls</h1>
+<h1>#bounce</h1>
 
 <h4>JavaScript app built using ReactJS / Redux / Sass</h4>
 
@@ -11,7 +11,7 @@
     <li>Set the environment's physics by changing the gravity, bounciness and friction.</li>
 </ul>
 
-<h2>Installation - How-To</h2>
+<h2>Installation - How To</h2>
 
 <p>Node Package Manager is recommended, though not mandatory to run the app.</p>
 <ul>
@@ -48,5 +48,5 @@
 
 <h2>Author & Contact</h2>
 
-<p>Created by: <i>Konstantinos Koukourakis</i></p>
+<p>Created by: <i>Kostas Koukourakis</i></p>
 <p><a href="mailto:konstantinoskouk90@gmail.com" target="_top">konstantinoskouk90@gmail.com</a></p>

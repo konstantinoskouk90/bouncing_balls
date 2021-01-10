@@ -2,5 +2,4 @@ DS_Store
 node_modules
 .eslintcache
 .sass-cache
-src/stylesheets/.sass-cache
 src/stylesheets/css

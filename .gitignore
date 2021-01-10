@@ -3,4 +3,4 @@ node_modules
 .eslintcache
 .sass-cache
 stylesheets/.sass-cache
-stylesheets/css
+stylesheets/css/.css.*
